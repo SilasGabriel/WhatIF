@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:Label ID="Label1" runat="server" Text="Modulos Existentes"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Lista de Módulos"></asp:Label>
         <hr />
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="idModulo" DataSourceID="SqlDataSource1" PageSize="5" OnRowCommand="GridView1_RowCommand">
             <Columns>

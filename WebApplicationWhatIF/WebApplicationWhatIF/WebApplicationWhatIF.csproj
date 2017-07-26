@@ -58,12 +58,44 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
+    <Content Include="WebFormAdministrador.aspx" />
+    <Content Include="WebFormAutenticar.aspx" />
+    <Content Include="WebFormCadastroAluno.aspx" />
+    <Content Include="WebFormIndex.aspx" />
     <Content Include="WebFormModulo.aspx" />
     <Content Include="WebFormModuloEdit.aspx" />
     <Content Include="WebFormModuloNew.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebFormAdministrador.aspx.cs">
+      <DependentUpon>WebFormAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormAdministrador.aspx.designer.cs">
+      <DependentUpon>WebFormAdministrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormAutenticar.aspx.cs">
+      <DependentUpon>WebFormAutenticar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormAutenticar.aspx.designer.cs">
+      <DependentUpon>WebFormAutenticar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCadastroAluno.aspx.cs">
+      <DependentUpon>WebFormCadastroAluno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCadastroAluno.aspx.designer.cs">
+      <DependentUpon>WebFormCadastroAluno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormIndex.aspx.cs">
+      <DependentUpon>WebFormIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormIndex.aspx.designer.cs">
+      <DependentUpon>WebFormIndex.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebFormModulo.aspx.cs">
       <DependentUpon>WebFormModulo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

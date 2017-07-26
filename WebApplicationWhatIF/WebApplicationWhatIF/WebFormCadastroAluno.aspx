@@ -30,11 +30,35 @@
             border-color:#008000;
             border-style:dashed;
         }
+        #header {
+            background-color: #E6FFE6;
+            width: 100%;
+            height: 60px;
+        }
+        .auto-style6 {
+            width: 1280px;
+            height: 1280px;
+        }
+                body {
+            margin:0;
+            padding:0;
+            border:0;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
     <div >
+		<div id="header" style="background-color: #DDDDDD">
+                    <table style="width: 100%; height: 60px;">
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td align="center">
+                                <img class="auto-style6" src="Images/Logo.jpg" style="width:55px; height:55px;" /></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                    </div>
 					<br /><br />
         <table id="cadastro" >
             <tr>

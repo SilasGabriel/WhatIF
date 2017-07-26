@@ -57,5 +57,11 @@ namespace WebApplicationWhatIF
 
             Response.Redirect("~/WebFormModulo.aspx");
         }
+
+        protected void Logout_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("~/WebFormAutenticar.aspx");
+        }
     }
 }

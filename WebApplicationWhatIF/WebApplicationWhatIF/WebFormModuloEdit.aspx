@@ -11,10 +11,43 @@
             return confirm('Deseja realmente excluir este registro?');
         }
     </script>
+    <style>
+        #header {
+            background-color: #DDDDDD;
+            width: 100%;
+            height: 60px;
+        }
+        .auto-style1 {
+            width: 646px;
+        }
+        .auto-style2 {
+            width: 71px;
+        }
+                body {
+            margin:0;
+            padding:0;
+            border:0;
+        }
+    </style>
 <body>
     <form id="form1" runat="server">
     <div>
-    
+        <div id="header">
+        <table style="width: 100%; height: 60px;">
+            <tr>
+                <td class="auto-style2">&nbsp;</td>
+                <td align="center" class="auto-style1">
+                    <img class="auto-style6" src="Images/Logo.jpg" style="width:55px; height:55px;" /></td>
+                <td>
+        <asp:Button ID="Logout" runat="server" Text="Logout" OnClick="Logout_Click" style="margin-left: 0px" />
+                </td>
+            </tr>
+        </table>
+        <br />
+        </div>
+        
+        <br />
+        <br />
         <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="idModulo" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="78px" Width="300px">
             <AlternatingRowStyle BackColor="White" />
             <CommandRowStyle BackColor="#C5BBAF" Font-Bold="True" />

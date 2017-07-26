@@ -6,16 +6,40 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
-        .auto-style1 {
-            width: 654px;
+        #header {
+            background-color: #DDDDDD;
+            width: 100%;
+            height: 60px;
+        }
+        .auto-style2 {
+            width: 671px;
+        }
+        .auto-style3 {
+            width: 69px;
+        }
+                body {
+            margin:0;
+            padding:0;
+            border:0;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
+
     <div style="height: 229px">
-        <div style="width:100%;">
-        <asp:Button ID="Logout" runat="server"  Text="Logout" OnClick="Logout_Click" />
+        <div id="header">
+        <table style="width: 100%; height: 60px;">
+            <tr>
+                <td class="auto-style3">&nbsp;</td>
+                <td align="center" class="auto-style2">
+                    <img class="auto-style6" src="Images/Logo.jpg" style="width:55px; height:55px;" /></td>
+                <td>
+        <asp:Button ID="Button1" runat="server" Text="Logout" OnClick="Logout_Click" style="margin-left: 0px" />
+                </td>
+            </tr>
+        </table>
+        <br />
         </div>
         <br />
         <div id="div1" runat="server"></div>

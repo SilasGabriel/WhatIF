@@ -34,15 +34,21 @@ namespace WebApplicationWhatIF
                 HyperLink adm = new HyperLink();
                 adm.Text = "CRUDs do ADM";
                 adm.NavigateUrl = "~/WebFormAdministrador.aspx";
-                Page.Controls.Add(adm);
+                div1.Controls.Add(adm);
             }
             else
             {
                 Label user = new Label();
-                user.Text = "Bem-vindo, usuário";
-                Page.Controls.Add(user);
+                user.Text = "Bem-vindo, " + Session["nome"];
+                div1.Controls.Add(user);
             }
 
+        }
+
+        protected void Logout_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("~/WebFormAutenticar.aspx");
         }
     }
 }

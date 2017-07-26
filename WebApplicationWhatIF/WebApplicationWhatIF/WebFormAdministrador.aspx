@@ -10,6 +10,7 @@
     <form id="form1" runat="server">
     <div>
         <asp:HyperLink ID="CrudModulo" runat="server" NavigateUrl="~/WebFormModulo.aspx">CRUD módulo</asp:HyperLink>
+        <br /><asp:HyperLink ID="Back" runat="server" NavigateUrl="~/WebFormIndex.aspx">Voltar</asp:HyperLink>
     </div>
     </form>
 </body>

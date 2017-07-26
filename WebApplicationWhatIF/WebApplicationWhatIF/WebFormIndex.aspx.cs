@@ -12,40 +12,45 @@ namespace WebApplicationWhatIF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string leitorAdm = string.Empty;
-            bool aux = false;
-            using (SqlConnection connection = new SqlConnection("Data source=Valera;initial catalog=2017WhatIF;Persist Security Info=true; User ID=2017WhatIF;Password=Senha@123"))
+            if ((Session["Nome"] != null) && (Session["Senha"] != null))
             {
-                using (SqlCommand command = new SqlCommand("SELECT administrador FROM Aluno WHERE nome='" + Session["Nome"] + "' and senha='" + Session["Senha"] + "'", connection))
+                string leitorAdm = string.Empty;
+                bool aux = false;
+                using (SqlConnection connection = new SqlConnection("Data source=Valera;initial catalog=2017WhatIF;Persist Security Info=true; User ID=2017WhatIF;Password=Senha@123"))
                 {
-                    connection.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    using (SqlCommand command = new SqlCommand("SELECT administrador FROM Aluno WHERE nome='" + Session["Nome"] + "' and senha='" + Session["Senha"] + "'", connection))
                     {
-                        while (reader.Read())
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            leitorAdm = reader[0].ToString();
-                            aux = Convert.ToBoolean(leitorAdm);
+                            while (reader.Read())
+                            {
+                                leitorAdm = reader[0].ToString();
+                                aux = Convert.ToBoolean(leitorAdm);
+                            }
                         }
                     }
                 }
+                if (aux)
+                {
+                    HyperLink adm = new HyperLink();
+                    adm.Text = "Página do Administrador";
+                    adm.NavigateUrl = "~/WebFormAdministrador.aspx";
+                    Label nomeadm = new Label();
+                    nomeadm.Text = "Bem-vindo, " + Session["nome"];
+                    div1.Controls.Add(nomeadm);
+                    div1.Controls.Add(adm);
+                }
+                else
+                {
+                    Label user = new Label();
+                    user.Text = "Bem-vindo, " + Session["nome"];
+                    div1.Controls.Add(user);
+                }
             }
-            if (aux)
-            {
-                HyperLink adm = new HyperLink();
-                adm.Text = "Página do Administrador";
-                adm.NavigateUrl = "~/WebFormAdministrador.aspx";
-                Label nomeadm = new Label();
-                nomeadm.Text = "Bem-vindo, " + Session["nome"];
-                div1.Controls.Add(nomeadm);
-                div1.Controls.Add(adm);
+            else {
+                Response.Redirect("~/WebFormAutenticar.aspx");
             }
-            else
-            {
-                Label user = new Label();
-                user.Text = "Bem-vindo, " + Session["nome"];
-                div1.Controls.Add(user);
-            }
-
         }
 
         protected void Logout_Click(object sender, EventArgs e)

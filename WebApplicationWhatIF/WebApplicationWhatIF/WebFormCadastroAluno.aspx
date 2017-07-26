@@ -40,6 +40,7 @@
             <tr>
                 
                 <td colspan="2" align="center" class="auto-style2"> Cadastro
+					<hr />
 					</td>
              
             </tr>

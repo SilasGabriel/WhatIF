@@ -30,6 +30,7 @@
             <tr>
            
                 <td colspan="2" align="center">Login
+                    <hr />
     </td>
                
             </tr>

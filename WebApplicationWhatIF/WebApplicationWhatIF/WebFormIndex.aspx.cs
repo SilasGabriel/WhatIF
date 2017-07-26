@@ -32,7 +32,7 @@ namespace WebApplicationWhatIF
             if (aux)
             {
                 HyperLink adm = new HyperLink();
-                adm.Text = "CRUDs do ADM";
+                adm.Text = "Página do Administrador";
                 adm.NavigateUrl = "~/WebFormAdministrador.aspx";
                 div1.Controls.Add(adm);
             }

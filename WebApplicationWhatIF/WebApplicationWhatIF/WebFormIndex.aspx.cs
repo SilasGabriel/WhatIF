@@ -34,6 +34,9 @@ namespace WebApplicationWhatIF
                 HyperLink adm = new HyperLink();
                 adm.Text = "Página do Administrador";
                 adm.NavigateUrl = "~/WebFormAdministrador.aspx";
+                Label nomeadm = new Label();
+                nomeadm.Text = "Bem-vindo, " + Session["nome"];
+                div1.Controls.Add(nomeadm);
                 div1.Controls.Add(adm);
             }
             else

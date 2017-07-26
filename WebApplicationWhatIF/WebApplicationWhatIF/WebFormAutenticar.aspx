@@ -41,7 +41,7 @@
             </tr>
             <tr>
                 <td class="auto-style2">Senha</td>
-                <td class="auto-style1"> <asp:TextBox ID="TextBoxSenha" runat="server" TextMode="Password" size="10" Width="300px"></asp:TextBox>
+                <td class="auto-style1"> <asp:TextBox ID="TextBoxSenha" runat="server" TextMode="Password" Width="300px" MaxLenght="10" MinLength="6"></asp:TextBox>
                 </td>
                 
             </tr>

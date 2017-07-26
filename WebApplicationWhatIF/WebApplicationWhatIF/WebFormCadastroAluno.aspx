@@ -53,7 +53,7 @@
             </tr>
             <tr>
                 <td class="auto-style1">Senha</td>
-                <td class="auto-style4"> <asp:TextBox ID="TextBoxSenha" runat="server" TextMode="Password" size="10" MaxLength="10" Width="200px"></asp:TextBox>
+                <td class="auto-style4"> <asp:TextBox ID="TextBoxSenha" runat="server" TextMode="Password" size="10" MaxLength="10" Width="200px" placeholder="Senha entre 6 e 10 caracteres" MinLength="6"></asp:TextBox>
 					</td>
                 <td class="auto-style1">
 					<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxSenha" ErrorMessage="Senha é obrigatória."></asp:RequiredFieldValidator>
@@ -62,7 +62,7 @@
             <tr>
                 <td>Confirmar Senha</td>
                 <td class="auto-style5">
-                <asp:TextBox ID="TextBoxConfirmarSenha" runat="server" TextMode="Password" MaxLength="10" Width="200px"></asp:TextBox>
+                <asp:TextBox ID="TextBoxConfirmarSenha" runat="server" TextMode="Password" MaxLength="10" Width="200px" MinLength="6"></asp:TextBox>
                 </td>
                 <td>
                 <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBoxSenha" ControlToValidate="TextBoxConfirmarSenha" ErrorMessage="Senhas diferentes"></asp:CompareValidator>

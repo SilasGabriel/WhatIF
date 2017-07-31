@@ -41,7 +41,8 @@
         <div id="header">
         <table style="width: 100%; height: 60px;">
             <tr>
-                <td class="auto-style5">&nbsp;</td>
+                <td class="auto-style5"><asp:HyperLink ID="Back" runat="server" NavigateUrl="~/WebFormIndex.aspx">Voltar</asp:HyperLink>
+                </td>
                 <td align="center" class="auto-style4">
                     <img class="auto-style6" src="Images/Logo.jpg" style="width:55px; height:55px;" /></td>
                 <td class="auto-style5">
@@ -54,18 +55,17 @@
         
         <br />
         <br />
+        <br />
         <table style="width:100%;">
             <tr>
                 <td class="auto-style2" style="width:80%">
         <asp:HyperLink ID="CrudModulo" runat="server" NavigateUrl="~/WebFormModulo.aspx">CRUD módulo</asp:HyperLink>
                 </td>
-                <td class="auto-style1" align:"center" style="width:10%"><asp:HyperLink ID="Back" runat="server" NavigateUrl="~/WebFormIndex.aspx">Voltar</asp:HyperLink>
-                </td>
+                <td class="auto-style1" align:"center" style="width:10%">&nbsp;</td>
                 <td class="auto-style3" align:"center" style="width:10%">
                     &nbsp;</td>
             </tr>
         </table>
-        <br />
         <br />
         <br />
     </div>

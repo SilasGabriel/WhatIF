@@ -37,7 +37,7 @@ namespace WebApplicationWhatIF
                     adm.Text = "Página do Administrador";
                     adm.NavigateUrl = "~/WebFormAdministrador.aspx";
                     Label nomeadm = new Label();
-                    nomeadm.Text = "Bem-vindo, " + Session["nome"];
+                    nomeadm.Text = "Bem-vindo, " + Session["nome"]+"<br />";
                     div1.Controls.Add(nomeadm);
                     div1.Controls.Add(adm);
                 }

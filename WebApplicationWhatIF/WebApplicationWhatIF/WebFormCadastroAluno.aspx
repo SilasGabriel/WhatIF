@@ -44,6 +44,9 @@
             padding:0;
             border:0;
         }
+        .auto-style7 {
+            width: 15px;
+        }
     </style>
 </head>
 <body>
@@ -72,16 +75,10 @@
                 <td class="auto-style2">Nome</td>
                 <td class="auto-style3"> <asp:TextBox ID="TextBoxNome" runat="server" size="20" MaxLength="100" placeholder="Justus da Silva" Width="200px"></asp:TextBox>
 					</td>
-                <td class="auto-style2">
-					<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxNome" ErrorMessage="Nome é obrigatório."></asp:RequiredFieldValidator>
-					</td>
             </tr>
             <tr>
                 <td class="auto-style1">Senha</td>
                 <td class="auto-style4"> <asp:TextBox ID="TextBoxSenha" runat="server" TextMode="Password" size="10" MaxLength="10" Width="200px" placeholder="Senha entre 6 e 10 caracteres" MinLength="6"></asp:TextBox>
-					</td>
-                <td class="auto-style1">
-					<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxSenha" ErrorMessage="Senha é obrigatória."></asp:RequiredFieldValidator>
 					</td>
             </tr>
             <tr>
@@ -89,18 +86,11 @@
                 <td class="auto-style5">
                 <asp:TextBox ID="TextBoxConfirmarSenha" runat="server" TextMode="Password" MaxLength="10" Width="200px" MinLength="6"></asp:TextBox>
                 </td>
-                <td>
-                <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBoxSenha" ControlToValidate="TextBoxConfirmarSenha" ErrorMessage="Senhas diferentes"></asp:CompareValidator>
-					<br />
-					<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBoxConfirmarSenha" ErrorMessage="Confirmar a senha é obrigatório."></asp:RequiredFieldValidator>
-					</td>
+                
             </tr>
             <tr>
                 <td>Email</td>
                 <td class="auto-style5"> <asp:TextBox ID="TextBoxEmail" runat="server" TextMode="Email" MaxLength="100" Width="200px"></asp:TextBox>
-                    </td>
-                <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBoxEmail" ErrorMessage="Email é obrigatório"></asp:RequiredFieldValidator>
                     </td>
             </tr>
             <tr>
@@ -111,10 +101,45 @@
                     <asp:ListItem Value="0">Privado</asp:ListItem>
                 </asp:DropDownList>
                     </td>
-                <td>&nbsp;</td>
             </tr>
             <tr>
-                <td colspan="2" align="center"><asp:Button ID="ButtonEnviar" runat="server" Text="Enviar" OnClick="ButtonEnviar_Click" /></td>
+                <td colspan="2" align="center"><asp:Button ID="ButtonEnviar" runat="server" Text="Enviar" OnClick="ButtonEnviar_Click" />
+                    <table style="width:100%;">
+                        <tr>
+                            <td>
+					<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxNome" ErrorMessage="Nome é obrigatório."></asp:RequiredFieldValidator>
+					        </td>
+                          
+                        </tr>
+                        <tr>
+                            <td>
+					<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxSenha" ErrorMessage="Senha é obrigatória."></asp:RequiredFieldValidator>
+					        </td>
+                         
+                        
+                        </tr>
+                        <tr>
+                            <td>
+                <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBoxSenha" ControlToValidate="TextBoxConfirmarSenha" ErrorMessage="Senhas diferentes"></asp:CompareValidator>
+					        </td>
+                           
+                         
+                        </tr>
+                        <tr>
+                            <td>
+					<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBoxConfirmarSenha" ErrorMessage="Confirmar a senha é obrigatório."></asp:RequiredFieldValidator>
+					        </td>
+                         
+                      
+                        </tr>
+                        <tr>
+                            <td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBoxEmail" ErrorMessage="Email é obrigatório"></asp:RequiredFieldValidator>
+                            </td>
+                       
+                        </tr>
+                    </table>
+                </td>
             </tr>
         </table>
     </div>

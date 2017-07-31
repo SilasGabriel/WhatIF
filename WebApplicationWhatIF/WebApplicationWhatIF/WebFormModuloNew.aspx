@@ -12,20 +12,38 @@
             height: 60px;
         }
         .auto-style1 {
-            width: 651px;
+            width: 80%;
         }
         .auto-style2 {
-            width: 70px;
-        }
-        .auto-style3 {
-            width: 206px;
+            width: 10%;
         }
         body {
             margin:0;
             padding:0;
             border:0;
         }
-    </style>
+        .auto-style4 {
+            width: 299px;
+        }
+        .auto-style5 {
+            width: 299px;
+            height: 20px;
+        }
+        .auto-style6 {
+            width: 206px;
+            height: 29px;
+        }
+        .auto-style8 {
+            height: 20px;
+        }
+        .auto-style11 {
+            width: 299px;
+            height: 26px;
+        }
+        .auto-style12 {
+            height: 26px;
+        }
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -38,61 +56,81 @@
                 </td>
                 <td align="center" class="auto-style1">
                     <img class="auto-style6" src="Images/Logo.jpg" style="width:55px; height:55px;" /></td>
-                <td>
-        <asp:Button ID="Logout" runat="server" Text="Logout" OnClick="Logout_Click" style="margin-left: 0px" />
+                <td class="auto-style2">
+        <asp:Button ID="Logout" runat="server" Text="Logout" OnClick="Logout_Click" style="margin-right: 15px;margin-left:23px;"/>
                 </td>
             </tr>
         </table>
         <br />
         </div>
         <br /><br />
+        <table style="width:600px;border-width:2px;border-style:dashed;border-color:#008000;margin:auto">
+            <tr>
+                <td class="auto-style11" colspan="2">
         <asp:Label ID="Label1" runat="server" Text="Inserir Módulo"></asp:Label>
-        <hr />
-        <table style="width:100%;border-width:2px;border-style:dashed;border-color:#008000";>
-            <tr>
-                <td>Título</td>
-                <td class="auto-style3">
-        <asp:TextBox ID="TituloId" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TituloId" ErrorMessage="*Preencha o campo"></asp:RequiredFieldValidator>
-                </td>
+          
             </tr>
             <tr>
-                <td>Descrição</td>
-                <td class="auto-style3">
-        <asp:TextBox ID="DescricaoId" runat="server" Width="200px"></asp:TextBox>
+                <td class="auto-style11" colspan="2">
+        <hr style="width: 600px" />
                 </td>
-                <td>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="DescricaoId" ErrorMessage="*Preencha o campo"></asp:RequiredFieldValidator>
-                </td>
+
+          
             </tr>
             <tr>
-                <td>DisciplinaID</td>
-                <td class="auto-style3">
-        <asp:TextBox ID="DisciplinaId" runat="server" Width="200px"></asp:TextBox>
+                <td class="auto-style11">Título</td>
+                <td class="auto-style12">
+        <asp:TextBox ID="TituloId" runat="server" Width="300px"></asp:TextBox>
                 </td>
-                <td>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="DisciplinaId" ErrorMessage="*Preencha o campo"></asp:RequiredFieldValidator>
-                </td>
+          
             </tr>
             <tr>
-                <td>&nbsp;</td>
-                <td class="auto-style3">
+                <td class="auto-style4">Descrição</td>
+                <td>
+        <asp:TextBox ID="DescricaoId" runat="server" Width="300px" Height="46px" TextMode="MultiLine"></asp:TextBox>
+                </td>
+            
+            </tr>
+            <tr>
+                <td class="auto-style4">DisciplinaID (Português - 1; Matemática - 2)</td>
+                <td>
+        <asp:TextBox ID="DisciplinaId" runat="server" Width="300px"></asp:TextBox>
+                </td>
+           
+            </tr>
+            <tr>
+                <td class="auto-style5"></td>
+                <td class="auto-style8">
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Adicionar" />
                 </td>
-                <td>&nbsp;</td>
+            
+            <tr>
+                <td class="auto-style5">
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TituloId" ErrorMessage="*Informe o título"></asp:RequiredFieldValidator>
+                </td>
+                <td class="auto-style8">
+                    &nbsp;</td>
+            
+            </tr>
+            <tr>
+                <td class="auto-style5">
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="DescricaoId" ErrorMessage="*Preencha a descrição"></asp:RequiredFieldValidator>
+                </td>
+                <td class="auto-style8">
+                    &nbsp;</td>
+            
+            </tr>
+            <tr>
+                <td class="auto-style5">
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="DisciplinaId" ErrorMessage="*Informe o ID da Disciplina"></asp:RequiredFieldValidator>
+                </td>
+                <td class="auto-style8">
+                    &nbsp;</td>
+
             </tr>
         </table>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+   
     
     </div>
     </form>

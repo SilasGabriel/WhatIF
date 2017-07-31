@@ -12,10 +12,11 @@
             height: 60px;
         }
         .auto-style2 {
-            width: 671px;
+            width: 80%;
         }
         .auto-style3 {
-            width: 69px;
+            width: 10%;
+
         }
                 body {
             margin:0;
@@ -34,8 +35,8 @@
                 <td class="auto-style3">&nbsp;</td>
                 <td align="center" class="auto-style2">
                     <img class="auto-style6" src="Images/Logo.jpg" style="width:55px; height:55px;" /></td>
-                <td>
-        <asp:Button ID="Button1" runat="server" Text="Logout" OnClick="Logout_Click" style="margin-left: 0px" />
+                <td class="auto-style3">
+                    <asp:Button ID="Button1" runat="server" Text="Logout" OnClick="Logout_Click" style="margin-right: 15px;margin-left:23px;"/>
                 </td>
             </tr>
         </table>

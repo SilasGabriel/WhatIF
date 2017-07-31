@@ -18,10 +18,10 @@
             height: 60px;
         }
         .auto-style1 {
-            width: 646px;
+            width: 80%;
         }
         .auto-style2 {
-            width: 71px;
+            width: 10%;
         }
                 body {
             margin:0;
@@ -38,8 +38,8 @@
                 <td class="auto-style2">&nbsp;</td>
                 <td align="center" class="auto-style1">
                     <img class="auto-style6" src="Images/Logo.jpg" style="width:55px; height:55px;" /></td>
-                <td>
-        <asp:Button ID="Logout" runat="server" Text="Logout" OnClick="Logout_Click" style="margin-left: 0px" />
+                <td class="auto-style2">
+        <asp:Button ID="Logout" runat="server" Text="Logout" OnClick="Logout_Click" style="margin-right: 15px;margin-left:23px;"/>
                 </td>
             </tr>
         </table>
@@ -48,7 +48,7 @@
         
         <br />
         <br />
-        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="idModulo" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="78px" Width="300px">
+        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="idModulo" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="150px" Width="310px">
             <AlternatingRowStyle BackColor="White" />
             <CommandRowStyle BackColor="#C5BBAF" Font-Bold="True" />
             <EditRowStyle BackColor="#7C6F57" />

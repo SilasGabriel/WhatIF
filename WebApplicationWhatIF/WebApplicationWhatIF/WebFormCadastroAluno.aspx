@@ -97,8 +97,8 @@
                 <td>Escola</td>
                 <td align="right" class="auto-style5">
                 <asp:DropDownList ID="DropDownListEscola" runat="server" Width="100px">
-                    <asp:ListItem Value="1">Pública</asp:ListItem>
-                    <asp:ListItem Value="0">Privado</asp:ListItem>
+                    <asp:ListItem Value="true">Pública</asp:ListItem>
+                    <asp:ListItem Value="false">Privado</asp:ListItem>
                 </asp:DropDownList>
                     </td>
             </tr>

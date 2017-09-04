@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,6 @@ namespace WebApplicationWhatIF.DAL
     public class DALAluno
     {
         private string connectionString = "";
-
         public DALAluno()
         {
             connectionString = ConfigurationManager.ConnectionStrings["2017WhatIFConnectionString"].ConnectionString;
@@ -22,7 +22,6 @@ namespace WebApplicationWhatIF.DAL
         public void Insert(Modelo.Aluno obj)
         {
             SqlConnection sc = new SqlConnection("Data source=Valera;initial catalog=2017WhatIF;Persist Security Info=true;User ID=2017WhatIF;Password=Senha@123");
-
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = System.Data.CommandType.Text;
             int auxEscolaPublica;
@@ -35,6 +34,32 @@ namespace WebApplicationWhatIF.DAL
             sc.Open();
             cmd.ExecuteNonQuery();
             sc.Close();
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public bool Autenticar(string nome, string senha) 
+        { 
+            SqlConnection sc = new SqlConnection("Data source=Valera;initial catalog=2017WhatIF;Persist Security Info=true;User ID=2017WhatIF;Password=Senha@123");
+            SqlCommand cmd = new SqlCommand();
+            //SqlConnection con = new SqlConnection();
+            SqlDataAdapter sda = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.Connection = sc;
+            cmd.CommandText = "select * from Aluno where nome='" + nome + "' and senha='" + senha + "'";
+            sda.SelectCommand = cmd;
+            sc.Open();
+            cmd.ExecuteNonQuery();
+            sc.Close();
+            sda.Fill(ds, "Aluno");
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                return true; 
+            }
+            else
+            {
+                return false; 
+            }
         }
 
     }

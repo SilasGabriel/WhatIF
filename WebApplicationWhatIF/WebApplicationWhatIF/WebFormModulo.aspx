@@ -45,11 +45,11 @@
         </div>
         <asp:Label ID="Label1" runat="server" Text="Lista de Módulos"></asp:Label>
         <hr />
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="idModulo" DataSourceID="SqlDataSource1" PageSize="5" OnRowCommand="GridView1_RowCommand">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="ObjectDataSource1" PageSize="5" OnRowCommand="GridView1_RowCommand">
             <Columns>
-                <asp:BoundField DataField="idModulo" HeaderText="idModulo" InsertVisible="False" ReadOnly="True" SortExpression="idModulo" />
-                <asp:BoundField DataField="titulo" HeaderText="titulo" SortExpression="titulo" />
-                <asp:BoundField DataField="descricao" HeaderText="descricao" SortExpression="descricao" />
+                <asp:BoundField DataField="idModulo" HeaderText="idModulo" SortExpression="idModulo" />
+                <asp:BoundField DataField="titulo" HeaderText="Título" SortExpression="titulo" />
+                <asp:BoundField DataField="descricao" HeaderText="Descrição" SortExpression="descricao" />
                 <asp:BoundField DataField="idDisciplina" HeaderText="idDisciplina" SortExpression="idDisciplina" />
                 <asp:ButtonField CommandName="Editar" Text="Editar" />
             </Columns>
@@ -63,7 +63,7 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#00547E" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:2017WhatIFConnectionString %>" SelectCommand="SELECT * FROM [Modulo]"></asp:SqlDataSource>
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebApplicationWhatIF.Modelo.Modulo" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="WebApplicationWhatIF.DAL.DALModulo" UpdateMethod="Update"></asp:ObjectDataSource>
     
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormModuloNew.aspx">Adicionar novo módulo</asp:HyperLink>
         <br />

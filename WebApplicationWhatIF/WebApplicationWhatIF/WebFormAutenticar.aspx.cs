@@ -23,17 +23,15 @@ namespace WebApplicationWhatIF
 
         protected void ButtonEntrar_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = "select * from Aluno where nome='" + TextBoxLogin.Text + "' and senha='" + TextBoxSenha.Text + "'";
-            cmd.Connection = con;
-            sda.SelectCommand = cmd;
-            sda.Fill(ds, "Aluno");
-            if (ds.Tables[0].Rows.Count > 0)
+            WebApplicationWhatIF.DAL.DALAluno dalaluno = new WebApplicationWhatIF.DAL.DALAluno();
+            bool verif = dalaluno.Autenticar(TextBoxLogin.Text, TextBoxSenha.Text);
+            if (verif)
             {
                 Session["Nome"] = TextBoxLogin.Text;
                 Session["Senha"] = TextBoxSenha.Text;
                 Response.Redirect("~/WebFormIndex.aspx");
             }
-            else
+            else 
             {
                 teste.Text = "Usuário inválido!";
             }

@@ -38,23 +38,11 @@ namespace WebApplicationWhatIF
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string aSQLConecStr;
-
-            // Lendo a conexão de dados do Web.Config
-            aSQLConecStr = ConfigurationManager.ConnectionStrings["2017WhatIFConnectionString"].ConnectionString;
-
-            // Abrindo a Conexão com o banco de dados
-            SqlConnection aSQLCon = new SqlConnection(aSQLConecStr);
-            aSQLCon.Open();
-
-            // Executando o comando
-            SqlCommand aSQL = new SqlCommand("INSERT INTO Modulo( titulo, descricao, idDisciplina) VALUES (@titulo, @descricao, @idDisciplina)", aSQLCon);
-            aSQL.Parameters.AddWithValue("@titulo", TituloId.Text);
-            aSQL.Parameters.AddWithValue("@descricao", DescricaoId.Text);
-            aSQL.Parameters.AddWithValue("@idDisciplina", DisciplinaId.Text);
-     
-            aSQL.ExecuteNonQuery();
-
+            int disciplinaid = int.Parse(DisciplinaId.Text);
+            Modelo.Modulo mod = new Modelo.Modulo(0, Titulo.Text, Descricao.Text, disciplinaid);
+            WebApplicationWhatIF.DAL.DALModulo dalmodulo = new WebApplicationWhatIF.DAL.DALModulo();
+            dalmodulo.Insert(mod);
+           
             Response.Redirect("~/WebFormModulo.aspx");
         }
 

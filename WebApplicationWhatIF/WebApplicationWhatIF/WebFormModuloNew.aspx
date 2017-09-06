@@ -81,14 +81,14 @@
             <tr>
                 <td class="auto-style11">Título</td>
                 <td class="auto-style12">
-        <asp:TextBox ID="TituloId" runat="server" Width="300px"></asp:TextBox>
+        <asp:TextBox ID="Titulo" runat="server" Width="300px"></asp:TextBox>
                 </td>
           
             </tr>
             <tr>
                 <td class="auto-style4">Descrição</td>
                 <td>
-        <asp:TextBox ID="DescricaoId" runat="server" Width="300px" Height="46px" TextMode="MultiLine"></asp:TextBox>
+        <asp:TextBox ID="Descricao" runat="server" Width="300px" Height="46px" TextMode="MultiLine"></asp:TextBox>
                 </td>
             
             </tr>

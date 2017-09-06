@@ -49,22 +49,22 @@ namespace WebApplicationWhatIF {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// TituloId control.
+        /// Titulo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TituloId;
+        protected global::System.Web.UI.WebControls.TextBox Titulo;
         
         /// <summary>
-        /// DescricaoId control.
+        /// Descricao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DescricaoId;
+        protected global::System.Web.UI.WebControls.TextBox Descricao;
         
         /// <summary>
         /// DisciplinaId control.

@@ -42,10 +42,10 @@ namespace WebApplicationWhatIF.DAL
                 {
                     // Cria objeto com dados lidos do banco de dados
                     DALmodulo = new Modelo.Modulo(
-                        dr["idModulo"].ToString(),
+                        int.Parse(dr["idModulo"].ToString()),
                         dr["titulo"].ToString(),
                         dr["descricao"].ToString(),
-                        dr["idDisciplina"].ToString()
+                        int.Parse(dr["idDisciplina"].ToString())
                         );
                   
                     DALlistModulo.Add(DALmodulo);
@@ -86,10 +86,10 @@ namespace WebApplicationWhatIF.DAL
                 {
                     // Cria objeto com dados lidos do banco de dados
                     DALmodulo = new Modelo.Modulo(
-                        dr["idModulo"].ToString(),
+                        int.Parse(dr["idModulo"].ToString()),
                         dr["titulo"].ToString(),
                         dr["descricao"].ToString(),
-                        dr["idDisciplina"].ToString()
+                        int.Parse(dr["idDisciplina"].ToString())
                         );
                    
                     DALlistModulo.Add(DALmodulo);
@@ -128,8 +128,10 @@ namespace WebApplicationWhatIF.DAL
             SqlConnection sc = new SqlConnection("Data source=Valera;initial catalog=2017WhatIF;Persist Security Info=true;User ID=2017WhatIF;Password=Senha@123");
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = "INSERT INTO Modulo(idModulo, titulo, descricao, idDisciplina)"
-                + "" + "VALUES('" + obj.idModulo + "', '" + obj.titulo + "', '" + obj.descricao + "', " + obj.idDisciplina + ")";
+            cmd.CommandText = "INSERT INTO Modulo( titulo, descricao, idDisciplina) VALUES (@titulo, @descricao, @idDisciplina)";
+            cmd.Parameters.AddWithValue("@titulo", obj.titulo);
+            cmd.Parameters.AddWithValue("@descricao", obj.descricao);
+            cmd.Parameters.AddWithValue("@idDisciplina", obj.idDisciplina);
             cmd.Connection = sc;
 
             sc.Open();

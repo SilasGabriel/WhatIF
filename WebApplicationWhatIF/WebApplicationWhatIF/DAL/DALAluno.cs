@@ -16,8 +16,7 @@ namespace WebApplicationWhatIF.DAL
         {
             connectionString = ConfigurationManager.ConnectionStrings["2017WhatIFConnectionString"].ConnectionString;
         }
-        //[DataObjectMethod(DataObjectMethodType.Select)]
-        //public void Select()
+
         [DataObjectMethod(DataObjectMethodType.Insert)]
         public void Insert(Modelo.Aluno obj)
         {
@@ -41,7 +40,6 @@ namespace WebApplicationWhatIF.DAL
         { 
             SqlConnection sc = new SqlConnection("Data source=Valera;initial catalog=2017WhatIF;Persist Security Info=true;User ID=2017WhatIF;Password=Senha@123");
             SqlCommand cmd = new SqlCommand();
-            //SqlConnection con = new SqlConnection();
             SqlDataAdapter sda = new SqlDataAdapter();
             DataSet ds = new DataSet();
             cmd.CommandType = System.Data.CommandType.Text;

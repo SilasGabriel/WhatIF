@@ -20,7 +20,7 @@ namespace WebApplicationWhatIF.DAL
         //SelectAll
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Modulo> SelectAll(){
-            // Variavel para armazenar um livro
+         
             Modelo.Modulo DALmodulo;
             // Cria Lista Vazia
             List<Modelo.Modulo> DALlistModulo = new List<Modelo.Modulo>();
@@ -34,7 +34,7 @@ namespace WebApplicationWhatIF.DAL
             cmd.CommandText = "Select * from Modulo";
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
-            // Le titulo do livro do resultado e apresenta no segundo rótulo
+           
             if (dr.HasRows)
             {
 
@@ -47,7 +47,7 @@ namespace WebApplicationWhatIF.DAL
                         dr["descricao"].ToString(),
                         dr["idDisciplina"].ToString()
                         );
-                    // Adiciona o livro lido à lista
+                  
                     DALlistModulo.Add(DALmodulo);
                 }
             }
@@ -63,7 +63,7 @@ namespace WebApplicationWhatIF.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Modulo> Select(string idModulo)
         {
-            // Variavel para armazenar um livro
+            
             Modelo.Modulo DALmodulo;
             // Cria Lista Vazia
             List<Modelo.Modulo> DALlistModulo = new List<Modelo.Modulo>();
@@ -91,7 +91,7 @@ namespace WebApplicationWhatIF.DAL
                         dr["descricao"].ToString(),
                         dr["idDisciplina"].ToString()
                         );
-                    // Adiciona o livro lido à lista
+                   
                     DALlistModulo.Add(DALmodulo);
                 }
             }

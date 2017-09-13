@@ -38,8 +38,3 @@ C:\Users\20151011110171\Desktop\Projeto\WhatIF\WebApplicationWhatIF\WebApplicati
 C:\Users\20151011110171\Desktop\Projeto\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.csprojResolveAssemblyReference.cache
 C:\Users\20151011110171\Desktop\Projeto\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.dll
 C:\Users\20151011110171\Desktop\Projeto\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.pdb
-C:\Users\20151011110171\Desktop\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\bin\WebApplicationWhatIF.dll
-C:\Users\20151011110171\Desktop\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\bin\WebApplicationWhatIF.pdb
-C:\Users\20151011110171\Desktop\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.csprojResolveAssemblyReference.cache
-C:\Users\20151011110171\Desktop\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.dll
-C:\Users\20151011110171\Desktop\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.pdb

@@ -14,24 +14,14 @@ namespace WebApplicationWhatIF
         {
             if ((Session["Nome"] != null) && (Session["Senha"] != null))
             {
-                string leitorAdm = string.Empty;
-                bool aux = false;
-                using (SqlConnection connection = new SqlConnection("Data source=Valera;initial catalog=2017WhatIF;Persist Security Info=true; User ID=2017WhatIF;Password=Senha@123"))
+                DAL.DALAluno dalalu = new DAL.DALAluno();
+                if (!dalalu.verifADM(Session["Nome"], Session["Senha"]))
                 {
-                    using (SqlCommand command = new SqlCommand("SELECT administrador FROM Aluno WHERE nome='" + Session["Nome"] + "' and senha='" + Session["Senha"] + "'", connection))
-                    {
-                        connection.Open();
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                leitorAdm = reader[0].ToString();
-                                aux = Convert.ToBoolean(leitorAdm);
-                            }
-                        }
-                    }
+                    Label user = new Label();
+                    user.Text = "Bem-vindo, " + Session["nome"];
+                    div1.Controls.Add(user);
                 }
-                if (aux)
+                else
                 {
                     HyperLink adm = new HyperLink();
                     adm.Text = "Página do Administrador";
@@ -40,12 +30,6 @@ namespace WebApplicationWhatIF
                     nomeadm.Text = "Bem-vindo, " + Session["nome"]+"<br />";
                     div1.Controls.Add(nomeadm);
                     div1.Controls.Add(adm);
-                }
-                else
-                {
-                    Label user = new Label();
-                    user.Text = "Bem-vindo, " + Session["nome"];
-                    div1.Controls.Add(user);
                 }
             }
             else {

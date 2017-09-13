@@ -19,6 +19,7 @@ namespace WebApplicationWhatIF.Modelo
             this.nome = "";
             this.senha = ""; 
             this.email = "";
+            //this.escolaPublica = false;
             this.administrador = false; 
         }
         public Aluno(string nome, string senha, string email, bool escolaPublica, bool administrador)

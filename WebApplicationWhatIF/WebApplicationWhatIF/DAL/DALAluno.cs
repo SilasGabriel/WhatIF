@@ -16,18 +16,17 @@ namespace WebApplicationWhatIF.DAL
         {
             connectionString = ConfigurationManager.ConnectionStrings["2017WhatIFConnectionString"].ConnectionString;
         }
-
         [DataObjectMethod(DataObjectMethodType.Insert)]
         public void Insert(Modelo.Aluno obj)
         {
             SqlConnection sc = new SqlConnection(connectionString);
-            SqlCommand cmd =  new SqlCommand();
+            SqlCommand cmd = new SqlCommand();
             cmd.CommandType = System.Data.CommandType.Text;
             int auxEscolaPublica;
             if (obj.escolaPublica) auxEscolaPublica = 1;
             else auxEscolaPublica = 0;
             cmd.CommandText = "INSERT INTO Aluno(nome, senha, email, escolaPublica, administrador)"
-                + "" + "VALUES( '" + obj.nome + "', '" + obj.senha + "', '" + obj.email + "', " + auxEscolaPublica + ", 0)";
+                + "" + "VALUES('" + obj.nome + "', '" + obj.senha + "', '" + obj.email + "', " + auxEscolaPublica + ", 0)";
             cmd.Connection = sc;
 
             sc.Open();
@@ -37,7 +36,7 @@ namespace WebApplicationWhatIF.DAL
 
         [DataObjectMethod(DataObjectMethodType.Select)]
         public bool Autenticar(string nome, string senha) 
-        {
+        { 
             SqlConnection sc = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand();
             SqlDataAdapter sda = new SqlDataAdapter();
@@ -60,5 +59,27 @@ namespace WebApplicationWhatIF.DAL
             }
         }
 
+        //Verificar
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public bool verifADM(object nome, object senha){
+         string leitorAdm = string.Empty;
+            bool aux = false;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("SELECT administrador FROM Aluno WHERE nome='" + nome+ "' and senha='" + senha + "'", connection))
+                {
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            leitorAdm = reader[0].ToString();
+                            aux = Convert.ToBoolean(leitorAdm);
+                        }
+                    }
+                }
+            }
+            return aux;
+        }
     }
 }

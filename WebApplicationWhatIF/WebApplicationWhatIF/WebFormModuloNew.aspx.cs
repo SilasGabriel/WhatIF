@@ -13,24 +13,8 @@ namespace WebApplicationWhatIF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string leitorAdm = string.Empty;
-            bool aux = false;
-            using (SqlConnection connection = new SqlConnection("Data source=Valera;initial catalog=2017WhatIF;Persist Security Info=true; User ID=2017WhatIF;Password=Senha@123"))
-            {
-                using (SqlCommand command = new SqlCommand("SELECT administrador FROM Aluno WHERE nome='" + Session["Nome"] + "' and senha='" + Session["Senha"] + "'", connection))
-                {
-                    connection.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            leitorAdm = reader[0].ToString();
-                            aux = Convert.ToBoolean(leitorAdm);
-                        }
-                    }
-                }
-            }
-            if (aux == false)
+            DAL.DALAluno dalalu = new DAL.DALAluno();
+            if (!dalalu.verifADM(Session["Nome"], Session["Senha"]))
             {
                 Response.Redirect("~/WebFormIndex.aspx");
             }
@@ -38,11 +22,15 @@ namespace WebApplicationWhatIF
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            int disciplinaid = int.Parse(DisciplinaId.Text);
-            Modelo.Modulo mod = new Modelo.Modulo(0, Titulo.Text, Descricao.Text, disciplinaid);
-            WebApplicationWhatIF.DAL.DALModulo dalmodulo = new WebApplicationWhatIF.DAL.DALModulo();
+            DAL.DALModulo dalmodulo = new DAL.DALModulo();
+            Modelo.Disciplina dis = new Modelo.Disciplina();
+            DAL.DALDisciplina daldis = new DAL.DALDisciplina();
+            dis = (daldis.Select(Convert.ToInt32(DisciplinaId.Text)))[0];
+            Modelo.Modulo mod = new Modelo.Modulo();
+            mod.titulo = TituloId.Text;
+            mod.descricao = DescricaoId.Text;
+            mod.disciplina = dis;
             dalmodulo.Insert(mod);
-           
             Response.Redirect("~/WebFormModulo.aspx");
         }
 

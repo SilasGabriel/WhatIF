@@ -7,24 +7,23 @@ namespace WebApplicationWhatIF.Modelo
 {
     public class Modulo
     {
-        public int idModulo { get; set; }
+        public string idModulo { get; set; }
         public string titulo { get; set; }
         public string descricao { get; set; }
-        public int idDisciplina { get; set; }
+        public Disciplina disciplina { get; set; }
         // Construtor
         public Modulo()
         {
-            this.idModulo = 0;
+            this.idModulo = "";
             this.titulo = "";
             this.descricao = "";
-            this.idDisciplina = 0;
         }
-        public Modulo(int idModulo, string titulo, string descricao, int idDisciplina)
+        public Modulo(string idModulo, string titulo, string descricao, Disciplina disciplina)
         {
             this.idModulo = idModulo;
             this.titulo = titulo;
             this.descricao = descricao;
-            this.idDisciplina = idDisciplina;
+            this.disciplina = disciplina;
         }
     }​
 }

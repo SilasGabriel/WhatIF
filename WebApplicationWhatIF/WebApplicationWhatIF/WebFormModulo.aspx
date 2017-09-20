@@ -45,7 +45,7 @@
         </div>
         <asp:Label ID="Label1" runat="server" Text="Lista de Módulos"></asp:Label>
         <hr />
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="ObjectDataSource1" PageSize="5" OnRowCommand="GridView1_RowCommand">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="ObjectDataSource1" PageSize="5" OnRowCommand="GridView1_RowCommand" Width="500px">
             <Columns>
                 <asp:BoundField DataField="idModulo" HeaderText="idModulo" SortExpression="idModulo" />
                 <asp:BoundField DataField="titulo" HeaderText="Título" SortExpression="titulo" />

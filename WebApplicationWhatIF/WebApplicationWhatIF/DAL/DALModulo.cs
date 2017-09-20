@@ -153,7 +153,6 @@ namespace WebApplicationWhatIF.DAL
             conn.Open();
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
-            // Define comando de exclusão
             Modelo.Disciplina dis = new Modelo.Disciplina();
             dis = obj.disciplina;
             SqlCommand cmd = new SqlCommand("UPDATE Modulo SET titulo = @titulo, descricao = @descricao, idDisciplina = @idDisciplina WHERE idModulo = @idModulo", conn);

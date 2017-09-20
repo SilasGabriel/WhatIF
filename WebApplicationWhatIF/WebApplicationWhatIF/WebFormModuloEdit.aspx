@@ -54,10 +54,12 @@
                 <asp:BoundField DataField="idModulo" HeaderText="idModulo" InsertVisible="False" ReadOnly="True" SortExpression="idModulo" />
                 <asp:BoundField DataField="titulo" HeaderText="titulo" SortExpression="titulo" />
                 <asp:BoundField DataField="descricao" HeaderText="descricao" SortExpression="descricao" />
-                <asp:BoundField DataField="disciplina.idDisciplina" HeaderText="ID Disciplina" ReadOnly="True" />
                 <asp:TemplateField ShowHeader="False">
                   <EditItemTemplate>
-                        <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Atualizar" ForeColor="White"></asp:LinkButton>
+                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ObjectDataSource2" DataTextField="nome" DataValueField="idDisciplina" SelectedValue='<%# Bind("idDisciplina") %>'  >
+                        </asp:DropDownList>
+                        <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="WebApplicationWhatIF.DAL.DALDisciplina"></asp:ObjectDataSource>
+                        <br /><asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Atualizar" ForeColor="White"></asp:LinkButton>
                         &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" ForeColor="White"></asp:LinkButton>
                     </EditItemTemplate>
 
@@ -76,11 +78,14 @@
             <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
             <RowStyle BackColor="White" ForeColor="#333333" />
         </asp:DetailsView>
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebApplicationWhatIF.Modelo.Modulo" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="Select" TypeName="WebApplicationWhatIF.DAL.DALModulo" UpdateMethod="Update">
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebApplicationWhatIF.Modelo.Modulo" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="Select" TypeName="WebApplicationWhatIF.DAL.DALModulo" UpdateMethod="Update" OnUpdating="ObjectDataSource1_Updating">
             <SelectParameters>
                 <asp:SessionParameter Name="idModulo" SessionField="idModulo" Type="Int32" />
             </SelectParameters>
         </asp:ObjectDataSource>
+    
+        <asp:DropDownList ID="DropDownList2" runat="server">
+        </asp:DropDownList>
     
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormModulo.aspx">Voltar para lista de módulos</asp:HyperLink>
     

@@ -24,5 +24,11 @@ namespace WebApplicationWhatIF
             Session.Abandon();
             Response.Redirect("~/WebFormAutenticar.aspx");
         }
+
+        protected void ObjectDataSource1_Updating(object sender, ObjectDataSourceMethodEventArgs e)
+        {
+            DropDownList drop = (DetailsView1.FindControl("DropDownList1") as DropDownList);
+            Modelo.Disciplina d = (drop.Items[drop.SelectedIndex] as Modelo.Disciplina);
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace WebApplicationWhatIF.Modelo
         {
             this.nome = "";
         }
-        public Disciplina(int idDisciplina,string nome)
+        public Disciplina(int idDisciplina, string nome)
         {
             this.idDisciplina = idDisciplina;
             this.nome = nome;

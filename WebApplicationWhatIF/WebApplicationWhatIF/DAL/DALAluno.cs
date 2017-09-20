@@ -26,7 +26,12 @@ namespace WebApplicationWhatIF.DAL
             if (obj.escolaPublica) auxEscolaPublica = 1;
             else auxEscolaPublica = 0;
             cmd.CommandText = "INSERT INTO Aluno(nome, senha, email, escolaPublica, administrador)"
-                + "" + "VALUES('" + obj.nome + "', '" + obj.senha + "', '" + obj.email + "', " + auxEscolaPublica + ", 0)";
+                + "" + "VALUES(@nome, @senha, @email, @escolaPublica, @administrador)";
+            cmd.Parameters.AddWithValue("@nome", obj.nome);
+            cmd.Parameters.AddWithValue("@senha", obj.senha);
+            cmd.Parameters.AddWithValue("@email", obj.email);
+            cmd.Parameters.AddWithValue("@escolaPublica", auxEscolaPublica);
+            cmd.Parameters.AddWithValue("@administrador", 0);
             cmd.Connection = sc;
 
             sc.Open();
@@ -43,7 +48,9 @@ namespace WebApplicationWhatIF.DAL
             DataSet ds = new DataSet();
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.Connection = sc;
-            cmd.CommandText = "select * from Aluno where nome='" + nome + "' and senha='" + senha + "'";
+            cmd.CommandText = "SELECT * from Aluno WHERE nome = @nome and senha = @senha";
+            cmd.Parameters.AddWithValue("@nome", nome);
+            cmd.Parameters.AddWithValue("@senha", senha);
             sda.SelectCommand = cmd;
             sc.Open();
             cmd.ExecuteNonQuery();
@@ -63,13 +70,19 @@ namespace WebApplicationWhatIF.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public bool verifADM(object nome, object senha){
          string leitorAdm = string.Empty;
-            bool aux = false;
+            bool aux = false;    
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (SqlCommand command = new SqlCommand("SELECT administrador FROM Aluno WHERE nome='" + nome+ "' and senha='" + senha + "'", connection))
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = "SELECT administrador from Aluno WHERE nome = @nome and senha = @senha";
+                cmd.Parameters.AddWithValue("@nome", nome);
+                cmd.Parameters.AddWithValue("@senha", senha);
+                cmd.Connection = connection;
+                using (cmd)
                 {
                     connection.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {

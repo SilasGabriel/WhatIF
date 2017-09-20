@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -60,7 +61,7 @@ namespace WebApplicationWhatIF.DAL
 
         //Select
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Modulo> Select(string idModulo)
+        public List<Modelo.Modulo> Select(int idModulo)
         {
             // Variavel para armazenar um livro
             Modelo.Modulo DALmodulo;
@@ -133,7 +134,10 @@ namespace WebApplicationWhatIF.DAL
             cmd.CommandType = System.Data.CommandType.Text;
             Modelo.Disciplina dis = new Modelo.Disciplina();
             dis = obj.disciplina;
-            cmd.CommandText = "INSERT INTO Modulo(titulo, descricao, idDisciplina)" + "" + "VALUES('" + obj.titulo + "', '" + obj.descricao + "', " + dis.idDisciplina + ")";
+            cmd.CommandText = "INSERT INTO Modulo(titulo, descricao, idDisciplina) VALUES(@titulo, @descricao, @idDisciplina)";
+            cmd.Parameters.AddWithValue("@titulo", obj.titulo);
+            cmd.Parameters.AddWithValue("@descricao", obj.descricao);
+            cmd.Parameters.AddWithValue("@idDisciplina", dis.idDisciplina);
             cmd.Connection = sc;
 
             cmd.ExecuteNonQuery();
@@ -156,8 +160,7 @@ namespace WebApplicationWhatIF.DAL
             cmd.Parameters.AddWithValue("@idModulo", obj.idModulo);
             cmd.Parameters.AddWithValue("@titulo", obj.titulo);
             cmd.Parameters.AddWithValue("@descricao", obj.descricao);
-            cmd.Parameters.AddWithValue("@idDisciplina", dis.idDisciplina);
-
+            cmd.Parameters.AddWithValue("@idDisciplina", dis.idDisciplina);           
             // Executa Comando
             cmd.ExecuteNonQuery();
 

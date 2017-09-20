@@ -19,7 +19,6 @@ namespace WebApplicationWhatIF.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Disciplina> Select(int idDisciplina)
         {
-            // Variavel para armazenar um livro
             Modelo.Disciplina DALdis;
             // Cria Lista Vazia
             List<Modelo.Disciplina> DALlistDis = new List<Modelo.Disciplina>();
@@ -32,9 +31,7 @@ namespace WebApplicationWhatIF.DAL
             // define SQL do comando
             cmd.CommandText = "Select * from Disciplina Where idDisciplina = @idDisciplina";
             cmd.Parameters.AddWithValue("@idDisciplina", idDisciplina);
-            // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
-            // Le titulo do livro do resultado e apresenta no segundo rótulo
             if (dr.HasRows)
             {
 
@@ -45,7 +42,7 @@ namespace WebApplicationWhatIF.DAL
                         Convert.ToInt32(dr["idDisciplina"]),
                         dr["nome"].ToString()
                         );
-                    // Adiciona o livro lido à lista
+                    // Adiciona a disciplina lida à lista
                     DALlistDis.Add(DALdis);
                 }
             }

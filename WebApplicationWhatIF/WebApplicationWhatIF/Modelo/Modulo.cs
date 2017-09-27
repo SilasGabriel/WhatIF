@@ -17,6 +17,7 @@ namespace WebApplicationWhatIF.Modelo
             this.idModulo = "";
             this.titulo = "";
             this.descricao = "";
+            this.disciplina = new Disciplina();
         }
         public Modulo(string idModulo, string titulo, string descricao, Disciplina disciplina)
         {

@@ -56,7 +56,7 @@
                 <asp:BoundField DataField="descricao" HeaderText="descricao" SortExpression="descricao" />
                 <asp:TemplateField ShowHeader="False">
                   <EditItemTemplate>
-                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ObjectDataSource2" DataTextField="nome" DataValueField="idDisciplina" SelectedValue='<%# Bind("idDisciplina") %>'  >
+                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ObjectDataSource2" DataTextField="nome" DataValueField="idDisciplina" SelectedValue='<%# Bind("disciplina") %>'  >
                         </asp:DropDownList>
                         <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="WebApplicationWhatIF.DAL.DALDisciplina"></asp:ObjectDataSource>
                         <br /><asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Atualizar" ForeColor="White"></asp:LinkButton>
@@ -83,9 +83,6 @@
                 <asp:SessionParameter Name="idModulo" SessionField="idModulo" Type="Int32" />
             </SelectParameters>
         </asp:ObjectDataSource>
-    
-        <asp:DropDownList ID="DropDownList2" runat="server">
-        </asp:DropDownList>
     
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormModulo.aspx">Voltar para lista de módulos</asp:HyperLink>
     

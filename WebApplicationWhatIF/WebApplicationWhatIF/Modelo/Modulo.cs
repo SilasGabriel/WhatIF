@@ -11,20 +11,27 @@ namespace WebApplicationWhatIF.Modelo
         public string titulo { get; set; }
         public string descricao { get; set; }
         public Disciplina disciplina { get; set; }
+        public int idDisciplina
+        {
+            get { return disciplina.idDisciplina; }
+            set { disciplina.idDisciplina = value; }
+        }
         // Construtor
         public Modulo()
         {
             this.idModulo = "";
             this.titulo = "";
             this.descricao = "";
-            this.disciplina = new Disciplina();
+            disciplina = new Disciplina();
         }
-        public Modulo(string idModulo, string titulo, string descricao, Disciplina disciplina)
+        public Modulo(string idModulo, string titulo, string descricao, int idDisciplina)
         {
             this.idModulo = idModulo;
             this.titulo = titulo;
             this.descricao = descricao;
-            this.disciplina = disciplina;
+            disciplina = new Disciplina();
+            DAL.DALDisciplina daldis = new DAL.DALDisciplina();
+            disciplina = daldis.Select(idDisciplina)[0];
         }
     }​
 }

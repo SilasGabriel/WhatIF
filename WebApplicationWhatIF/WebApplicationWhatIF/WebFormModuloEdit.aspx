@@ -32,7 +32,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <div id="header">
+        <div id="header">>
         <table style="width: 100%; height: 60px;">
             <tr>
                 <td class="auto-style2">&nbsp;</td>
@@ -56,7 +56,7 @@
                 <asp:BoundField DataField="descricao" HeaderText="descricao" SortExpression="descricao" />
                 <asp:TemplateField ShowHeader="False">
                   <EditItemTemplate>
-                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ObjectDataSource2" DataTextField="nome" DataValueField="idDisciplina" SelectedValue='<%# Bind("disciplina") %>'  >
+                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ObjectDataSource2" DataTextField="nome" DataValueField="idDisciplina" SelectedValue='<%# Bind("idDisciplina") %>'  >
                         </asp:DropDownList>
                         <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="WebApplicationWhatIF.DAL.DALDisciplina"></asp:ObjectDataSource>
                         <br /><asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Atualizar" ForeColor="White"></asp:LinkButton>
@@ -78,7 +78,7 @@
             <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
             <RowStyle BackColor="White" ForeColor="#333333" />
         </asp:DetailsView>
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebApplicationWhatIF.Modelo.Modulo" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="Select" TypeName="WebApplicationWhatIF.DAL.DALModulo" UpdateMethod="Update" OnUpdating="ObjectDataSource1_Updating">
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebApplicationWhatIF.Modelo.Modulo" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="Select" TypeName="WebApplicationWhatIF.DAL.DALModulo" UpdateMethod="Update">
             <SelectParameters>
                 <asp:SessionParameter Name="idModulo" SessionField="idModulo" Type="Int32" />
             </SelectParameters>
@@ -90,3 +90,4 @@
     </form>
 </body>
 </html>
+

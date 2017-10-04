@@ -53,3 +53,8 @@ C:\Users\20151011110295\Downloads\WhatIF-master\WebApplicationWhatIF\WebApplicat
 C:\Users\20151011110295\Downloads\WhatIF-master\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.csprojResolveAssemblyReference.cache
 C:\Users\20151011110295\Downloads\WhatIF-master\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.dll
 C:\Users\20151011110295\Downloads\WhatIF-master\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.pdb
+E:\Android\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.csprojResolveAssemblyReference.cache
+E:\Android\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.dll
+E:\Android\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\bin\WebApplicationWhatIF.dll
+E:\Android\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\bin\WebApplicationWhatIF.pdb
+E:\Android\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.pdb

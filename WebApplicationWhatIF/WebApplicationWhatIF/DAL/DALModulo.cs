@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 
 namespace WebApplicationWhatIF.DAL
 {
@@ -46,8 +47,11 @@ namespace WebApplicationWhatIF.DAL
                         dr["idModulo"].ToString(),
                         dr["titulo"].ToString(),
                         dr["descricao"].ToString(),
-                        dis
-                        );
+                        Convert.ToInt32(dr["idDisciplina"]));
+                        
+                    if (DALmodulo.idDisciplina != null)
+                        DALmodulo.disciplina = daldis.Select(DALmodulo.idDisciplina)[0]; 
+                        // Adiciona o livro lido à lista
                     DALlistModulo.Add(DALmodulo);
                 }
             }
@@ -92,9 +96,11 @@ namespace WebApplicationWhatIF.DAL
                         dr["idModulo"].ToString(),
                         dr["titulo"].ToString(),
                         dr["descricao"].ToString(),
-                        dis
-                        );
-                    // Adiciona o modulo lido à lista
+                         Convert.ToInt32(dr["idDisciplina"]));
+
+                    if (DALmodulo.idDisciplina != null)
+                        DALmodulo.disciplina = daldis.Select(DALmodulo.idDisciplina)[0];
+                    // Adiciona o livro lido à lista
                     DALlistModulo.Add(DALmodulo);
                 }
             }
@@ -146,7 +152,8 @@ namespace WebApplicationWhatIF.DAL
 
         //Update
         [DataObjectMethod(DataObjectMethodType.Update)]
-        public void Update(Modelo.Modulo obj) { 
+        public void Update(Modelo.Modulo obj)
+        { 
             // Cria Conexão com banco de dados
             SqlConnection conn = new SqlConnection(connectionString);
             // Abre conexão com o banco de dados
@@ -154,12 +161,13 @@ namespace WebApplicationWhatIF.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             Modelo.Disciplina dis = new Modelo.Disciplina();
-            dis = obj.disciplina;
+            dis.idDisciplina = obj.idDisciplina;
             SqlCommand cmd = new SqlCommand("UPDATE Modulo SET titulo = @titulo, descricao = @descricao, idDisciplina = @idDisciplina WHERE idModulo = @idModulo", conn);
             cmd.Parameters.AddWithValue("@idModulo", obj.idModulo);
             cmd.Parameters.AddWithValue("@titulo", obj.titulo);
             cmd.Parameters.AddWithValue("@descricao", obj.descricao);
-            cmd.Parameters.AddWithValue("@idDisciplina", dis.idDisciplina);           
+            cmd.Parameters.AddWithValue("@idDisciplina", dis.idDisciplina); 
+          
             // Executa Comando
             cmd.ExecuteNonQuery();
 

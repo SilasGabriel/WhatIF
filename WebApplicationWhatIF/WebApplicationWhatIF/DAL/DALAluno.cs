@@ -16,6 +16,8 @@ namespace WebApplicationWhatIF.DAL
         {
             connectionString = ConfigurationManager.ConnectionStrings["2017WhatIFConnectionString"].ConnectionString;
         }
+
+        // FAZER IR A FOTO PADRÃO
         [DataObjectMethod(DataObjectMethodType.Insert)]
         public void Insert(Modelo.Aluno obj)
         {
@@ -26,12 +28,13 @@ namespace WebApplicationWhatIF.DAL
             if (obj.escolaPublica) auxEscolaPublica = 1;
             else auxEscolaPublica = 0;
             cmd.CommandText = "INSERT INTO Aluno(nome, senha, email, escolaPublica, administrador)"
-                + "" + "VALUES(@nome, @senha, @email, @escolaPublica, @administrador)";
+                + "" + "VALUES(@nome, @senha, @email, @escolaPublica, @administrador, @fotoperfil)";
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@senha", obj.senha);
             cmd.Parameters.AddWithValue("@email", obj.email);
             cmd.Parameters.AddWithValue("@escolaPublica", auxEscolaPublica);
             cmd.Parameters.AddWithValue("@administrador", 0);
+            cmd.Parameters.AddWithValue("@fotoperfil", obj.fotoperfil);
             cmd.Connection = sc;
 
             sc.Open();
@@ -39,6 +42,8 @@ namespace WebApplicationWhatIF.DAL
             sc.Close();
         }
 
+
+        // FAZER INJECTION SORT, FAZER CRIAR O OBJETO ALUNO
         [DataObjectMethod(DataObjectMethodType.Select)]
         public bool Autenticar(string nome, string senha) 
         { 

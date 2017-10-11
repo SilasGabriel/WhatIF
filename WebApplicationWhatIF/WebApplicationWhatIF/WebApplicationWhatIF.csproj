@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\iconePerfil.jpg" />
     <Content Include="Images\Logo.jpg" />
     <Content Include="Web.config" />
     <Content Include="WebFormAdministrador.aspx" />

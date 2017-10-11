@@ -13,6 +13,7 @@ namespace WebApplicationWhatIF.Modelo
         public string email { get; set; }
         public bool escolaPublica { get; set; }
         public Boolean administrador { get; set; }
+        public byte[] fotoperfil { get; set; }
         // Construtor
         public Aluno()
         {

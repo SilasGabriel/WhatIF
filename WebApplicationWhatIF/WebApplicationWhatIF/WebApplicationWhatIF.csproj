@@ -63,6 +63,7 @@
     <Content Include="WebFormAdministrador.aspx" />
     <Content Include="WebFormAutenticar.aspx" />
     <Content Include="WebFormCadastroAluno.aspx" />
+    <Content Include="WebFormEditarPerfil.aspx" />
     <Content Include="WebFormIndex.aspx" />
     <Content Include="WebFormModulo.aspx" />
     <Content Include="WebFormModuloEdit.aspx" />
@@ -96,6 +97,13 @@
     </Compile>
     <Compile Include="WebFormCadastroAluno.aspx.designer.cs">
       <DependentUpon>WebFormCadastroAluno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormEditarPerfil.aspx.cs">
+      <DependentUpon>WebFormEditarPerfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormEditarPerfil.aspx.designer.cs">
+      <DependentUpon>WebFormEditarPerfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormIndex.aspx.cs">
       <DependentUpon>WebFormIndex.aspx</DependentUpon>

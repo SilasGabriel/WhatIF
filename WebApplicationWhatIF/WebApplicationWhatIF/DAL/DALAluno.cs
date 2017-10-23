@@ -128,7 +128,8 @@ namespace WebApplicationWhatIF.DAL
                         dr["senha"].ToString(),
                         dr["email"].ToString(),
                         Convert.ToBoolean(dr["escolaPublica"]),
-                        Convert.ToBoolean(dr["aministrador"])
+                        Convert.ToBoolean(dr["aministrador"]),
+                        (byte[])dr["fotoperfil"]
                         );
                     // Adiciona a disciplina lida à lista
                     DALlistAlu.Add(DALaluno);
@@ -172,7 +173,8 @@ namespace WebApplicationWhatIF.DAL
                         dr["senha"].ToString(),
                         dr["email"].ToString(),
                         Convert.ToBoolean(dr["escolaPublica"]),
-                        Convert.ToBoolean(dr["aministrador"])
+                        Convert.ToBoolean(dr["aministrador"]),
+                        (byte[])dr["fotoperfil"]
                         );
                     // Adiciona o livro lido à lista
                     aListAluno.Add(aAluno);

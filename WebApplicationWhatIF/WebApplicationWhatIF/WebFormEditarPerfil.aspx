@@ -10,10 +10,6 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:GridView ID="GridView1" runat="server" DataSourceID="ObjectDataSource1">
-        </asp:GridView>
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server"></asp:ObjectDataSource>
-    
     </div>
     </form>
 </body>

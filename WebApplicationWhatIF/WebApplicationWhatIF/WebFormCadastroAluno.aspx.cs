@@ -18,7 +18,7 @@ namespace WebApplicationWhatIF
         protected void ButtonEnviar_Click(object sender, EventArgs e)
         {
             bool escolaPublica = Convert.ToBoolean(DropDownListEscola.SelectedItem.Value);
-            Modelo.Aluno aluno = new Modelo.Aluno(TextBoxNome.Text, TextBoxSenha.Text, TextBoxEmail.Text, escolaPublica, false);
+            Modelo.Aluno aluno = new Modelo.Aluno(TextBoxNome.Text, TextBoxSenha.Text, TextBoxEmail.Text, escolaPublica, false, null);
             // FAZER IR FOTO PADRAO
             WebApplicationWhatIF.DAL.DALAluno dalaluno = new WebApplicationWhatIF.DAL.DALAluno();
             dalaluno.Insert(aluno);

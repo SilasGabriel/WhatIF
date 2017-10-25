@@ -10,6 +10,11 @@
     <form id="form1" runat="server">
     <div>
     
+        <asp:Image ID="Image1" runat="server" Height="100px" ImageUrl="HandlerAluno.ashx" Width="100px" />
+        <br />
+        <asp:FileUpload ID="FileUpload1" runat="server" />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Salvar" />
+    
     </div>
     </form>
 </body>

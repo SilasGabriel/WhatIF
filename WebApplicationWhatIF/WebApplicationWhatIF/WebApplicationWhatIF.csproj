@@ -73,6 +73,9 @@
     <Compile Include="DAL\DALAluno.cs" />
     <Compile Include="DAL\DALDisciplina.cs" />
     <Compile Include="DAL\DALModulo.cs" />
+    <Compile Include="HandlerAluno.ashx.cs">
+      <DependentUpon>HandlerAluno.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Aluno.cs" />
     <Compile Include="Modelo\Disciplina.cs" />
     <Compile Include="Modelo\Modulo.cs" />
@@ -135,6 +138,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="HandlerAluno.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

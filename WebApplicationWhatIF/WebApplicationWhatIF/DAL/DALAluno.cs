@@ -187,5 +187,27 @@ namespace WebApplicationWhatIF.DAL
 
             return aListAluno;
         }
+        //Update
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void Update(Modelo.Aluno obj)
+        {
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand com = conn.CreateCommand();
+            SqlCommand cmd = new SqlCommand("UPDATE Aluno SET nome = @nome, senha = @senha, email = @email, escolaPublica = @escolaPublica, administrador = @administrador, fotoperfil = @fotoperfil WHERE nome = @nome", conn);
+            cmd.Parameters.AddWithValue("@nome", obj.nome);
+            cmd.Parameters.AddWithValue("@senha", obj.senha);
+            cmd.Parameters.AddWithValue("@email", obj.email);
+            cmd.Parameters.AddWithValue("@escolaPublica", obj.escolaPublica);
+            cmd.Parameters.AddWithValue("@administrador", obj.administrador);
+            cmd.Parameters.AddWithValue("@fotoperfil", obj.fotoperfil);
+
+            // Executa Comando
+            cmd.ExecuteNonQuery();
+
+        }
     }
 }

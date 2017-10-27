@@ -44,6 +44,7 @@
         </div>
         <br />
         <div id="div1" runat="server"></div>
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormEditarPerfil.aspx">Editar Perfil</asp:HyperLink>
         <br />
         <br />
     </div>

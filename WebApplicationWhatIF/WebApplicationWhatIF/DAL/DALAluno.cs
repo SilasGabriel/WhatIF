@@ -123,14 +123,27 @@ namespace WebApplicationWhatIF.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     // Cria objeto com dados lidos do banco de dados
-                    DALaluno = new Modelo.Aluno(
-                        dr["nome"].ToString(),
-                        dr["senha"].ToString(),
-                        dr["email"].ToString(),
-                        Convert.ToBoolean(dr["escolaPublica"]),
-                        Convert.ToBoolean(dr["aministrador"]),
-                        (byte[])dr["fotoperfil"]
-                        );
+                    try
+                    {
+                        DALaluno = new Modelo.Aluno(
+                            dr["nome"].ToString(),
+                            dr["senha"].ToString(),
+                            dr["email"].ToString(),
+                            Convert.ToBoolean(dr["escolaPublica"]),
+                            Convert.ToBoolean(dr["administrador"]),
+                            (byte[])dr["fotoperfil"]
+                            );
+                    }
+                    catch (InvalidCastException) {
+                        DALaluno = new Modelo.Aluno(
+                            dr["nome"].ToString(),
+                            dr["senha"].ToString(),
+                            dr["email"].ToString(),
+                            Convert.ToBoolean(dr["escolaPublica"]),
+                            Convert.ToBoolean(dr["administrador"]),
+                            null
+                            );
+                    }
                     // Adiciona a disciplina lida à lista
                     DALlistAlu.Add(DALaluno);
                 }

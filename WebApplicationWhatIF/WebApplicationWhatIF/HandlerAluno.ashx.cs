@@ -8,7 +8,7 @@ namespace WebApplicationWhatIF
     /// <summary>
     /// Summary description for HandlerAluno
     /// </summary>
-    public class HandlerAluno : IHttpHandler
+    public class HandlerAluno : IHttpHandler, System.Web.SessionState.IRequiresSessionState
     {
 
         public void ProcessRequest(HttpContext context)
@@ -28,8 +28,11 @@ namespace WebApplicationWhatIF
             if (aListAluno.Count > 0)
             {
                 aluno = aListAluno[0];
-                context.Response.ContentType = aluno.fotoperfil.ToString();
-                context.Response.BinaryWrite(aluno.fotoperfil);
+                if (aluno.fotoperfil != null)
+                {
+                    context.Response.ContentType = aluno.fotoperfil.ToString();
+                    context.Response.BinaryWrite(aluno.fotoperfil);
+                }
             }
 
         }

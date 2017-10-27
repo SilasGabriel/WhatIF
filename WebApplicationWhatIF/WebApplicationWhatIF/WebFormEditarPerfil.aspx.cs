@@ -22,7 +22,7 @@ namespace WebApplicationWhatIF
             DAL.DALAluno dalaluno = new DAL.DALAluno();
 
             // Chama metodo de insert passando o objeto preenchido
-            aluno = dalaluno.Select(Session["Nome"].ToString())[0];
+            aluno = dalaluno.Select(Session["nome"].ToString())[0];
 
             // Instancia um Objeto de Livro com as informações fornecidas
             aluno.fotoperfil = FileUpload1.FileBytes;

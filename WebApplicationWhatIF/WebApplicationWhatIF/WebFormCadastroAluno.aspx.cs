@@ -21,7 +21,7 @@ namespace WebApplicationWhatIF
             Modelo.Aluno aluno = new Modelo.Aluno(TextBoxNome.Text, TextBoxSenha.Text, TextBoxEmail.Text, escolaPublica, false, null);
             // FAZER IR FOTO PADRAO
             WebApplicationWhatIF.DAL.DALAluno dalaluno = new WebApplicationWhatIF.DAL.DALAluno();
-            dalaluno.Insert(aluno);
+            dalaluno.InsertNovoAluno(aluno);
             Response.Redirect("~/WebFormAutenticar.aspx");
         }
     }

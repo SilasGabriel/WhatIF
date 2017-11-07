@@ -65,9 +65,11 @@
     <Content Include="WebFormCadastroAluno.aspx" />
     <Content Include="WebFormEditarPerfil.aspx" />
     <Content Include="WebFormIndex.aspx" />
+    <Content Include="WebFormListaDeAlunos.aspx" />
     <Content Include="WebFormModulo.aspx" />
     <Content Include="WebFormModuloEdit.aspx" />
     <Content Include="WebFormModuloNew.aspx" />
+    <Content Include="WebFormVerAluno.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\DALAluno.cs" />
@@ -75,6 +77,9 @@
     <Compile Include="DAL\DALModulo.cs" />
     <Compile Include="HandlerAluno.ashx.cs">
       <DependentUpon>HandlerAluno.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="HandlerAluno2.ashx.cs">
+      <DependentUpon>HandlerAluno2.ashx</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Aluno.cs" />
     <Compile Include="Modelo\Disciplina.cs" />
@@ -115,6 +120,13 @@
     <Compile Include="WebFormIndex.aspx.designer.cs">
       <DependentUpon>WebFormIndex.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebFormListaDeAlunos.aspx.cs">
+      <DependentUpon>WebFormListaDeAlunos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormListaDeAlunos.aspx.designer.cs">
+      <DependentUpon>WebFormListaDeAlunos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebFormModulo.aspx.cs">
       <DependentUpon>WebFormModulo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -136,9 +148,17 @@
     <Compile Include="WebFormModuloNew.aspx.designer.cs">
       <DependentUpon>WebFormModuloNew.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebFormVerAluno.aspx.cs">
+      <DependentUpon>WebFormVerAluno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormVerAluno.aspx.designer.cs">
+      <DependentUpon>WebFormVerAluno.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="HandlerAluno.ashx" />
+    <Content Include="HandlerAluno2.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

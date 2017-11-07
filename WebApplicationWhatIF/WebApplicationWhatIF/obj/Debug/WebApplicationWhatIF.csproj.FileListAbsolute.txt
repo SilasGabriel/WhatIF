@@ -58,3 +58,8 @@ E:\Android\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplica
 E:\Android\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\bin\WebApplicationWhatIF.dll
 E:\Android\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\bin\WebApplicationWhatIF.pdb
 E:\Android\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.pdb
+E:\Projeto Integrador\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\bin\WebApplicationWhatIF.dll
+E:\Projeto Integrador\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\bin\WebApplicationWhatIF.pdb
+E:\Projeto Integrador\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.dll
+E:\Projeto Integrador\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.pdb
+E:\Projeto Integrador\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.csprojResolveAssemblyReference.cache

@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -42,7 +44,32 @@ namespace WebApplicationWhatIF.DAL
             sc.Close();
         }
 
+        //Inserir novo aluno
+        [DataObjectMethod(DataObjectMethodType.Insert)]
+        public void InsertNovoAluno(Modelo.Aluno obj)
+        {
+            Byte[] imagem = File.ReadAllBytes(System.Web.HttpContext.Current.Server.MapPath("./Images/iconePerfil.jpg"));
+         
+            SqlConnection sc = new SqlConnection(connectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = System.Data.CommandType.Text;
+            int auxEscolaPublica;
+            if (obj.escolaPublica) auxEscolaPublica = 1;
+            else auxEscolaPublica = 0;
+            cmd.CommandText = "INSERT INTO Aluno(nome, senha, email, escolaPublica, administrador, fotoperfil)"
+                + "" + "VALUES(@nome, @senha, @email, @escolaPublica, @administrador, @fotoperfil)";
+            cmd.Parameters.AddWithValue("@nome", obj.nome);
+            cmd.Parameters.AddWithValue("@senha", obj.senha);
+            cmd.Parameters.AddWithValue("@email", obj.email);
+            cmd.Parameters.AddWithValue("@escolaPublica", auxEscolaPublica);
+            cmd.Parameters.AddWithValue("@administrador", 0);
+            cmd.Parameters.AddWithValue("@fotoperfil", imagem);
+            cmd.Connection = sc;
 
+            sc.Open();
+            cmd.ExecuteNonQuery();
+            sc.Close();
+        }
         // FAZER INJECTION SORT, FAZER CRIAR O OBJETO ALUNO
         [DataObjectMethod(DataObjectMethodType.Select)]
         public bool Autenticar(string nome, string senha) 
@@ -126,6 +153,7 @@ namespace WebApplicationWhatIF.DAL
                     try
                     {
                         DALaluno = new Modelo.Aluno(
+                            Convert.ToInt32(dr["idAluno"]),
                             dr["nome"].ToString(),
                             dr["senha"].ToString(),
                             dr["email"].ToString(),
@@ -136,6 +164,7 @@ namespace WebApplicationWhatIF.DAL
                     }
                     catch (InvalidCastException) {
                         DALaluno = new Modelo.Aluno(
+                            Convert.ToInt32(dr["idAluno"]),
                             dr["nome"].ToString(),
                             dr["senha"].ToString(),
                             dr["email"].ToString(),
@@ -155,7 +184,26 @@ namespace WebApplicationWhatIF.DAL
 
             return DALlistAlu;
         }
-        
+        //Select
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public DataSet SelectData(string nome)
+        {
+            // Cria Lista Vazia
+            List<Modelo.Aluno> DALlistAlu = new List<Modelo.Aluno>();
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand cmd = conn.CreateCommand();
+            // define SQL do comando
+            cmd.CommandText = "Select * from Aluno Where nome = @nome";
+            cmd.Parameters.AddWithValue("@nome", nome);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
         //SelectAll
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Aluno> SelectAll()
@@ -182,11 +230,12 @@ namespace WebApplicationWhatIF.DAL
                 {
                     // Cria objeto com dados lidos do banco de dados
                     aAluno = new Modelo.Aluno(
+                        Convert.ToInt32(dr["idAluno"]),
                         dr["nome"].ToString(),
                         dr["senha"].ToString(),
                         dr["email"].ToString(),
                         Convert.ToBoolean(dr["escolaPublica"]),
-                        Convert.ToBoolean(dr["aministrador"]),
+                        Convert.ToBoolean(dr["administrador"]),
                         (byte[])dr["fotoperfil"]
                         );
                     // Adiciona o livro lido à lista
@@ -209,8 +258,8 @@ namespace WebApplicationWhatIF.DAL
             // Abre conexão com o banco de dados
             conn.Open();
             // Cria comando SQL
-            SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Aluno SET nome = @nome, senha = @senha, email = @email, escolaPublica = @escolaPublica, administrador = @administrador, fotoperfil = @fotoperfil WHERE nome = @nome", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Aluno SET nome = @nome, senha = @senha, email = @email, escolaPublica = @escolaPublica, administrador = @administrador, fotoperfil = @fotoperfil WHERE idAluno = @idAluno", conn);
+            cmd.Parameters.AddWithValue("@idAluno", obj.idAluno);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@senha", obj.senha);
             cmd.Parameters.AddWithValue("@email", obj.email);
@@ -220,7 +269,26 @@ namespace WebApplicationWhatIF.DAL
 
             // Executa Comando
             cmd.ExecuteNonQuery();
+        }
+        //Update DetailsView
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void UpdateDetailsView(Modelo.Aluno obj)
+        {
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand cmd = new SqlCommand("UPDATE Aluno SET nome = @nome, senha = @senha, email = @email, escolaPublica = @escolaPublica, administrador = @administrador WHERE idAluno = @idAluno", conn);
+            cmd.Parameters.AddWithValue("@idAluno", obj.idAluno);
+            cmd.Parameters.AddWithValue("@nome", obj.nome);
+            cmd.Parameters.AddWithValue("@senha", obj.senha);
+            cmd.Parameters.AddWithValue("@email", obj.email);
+            cmd.Parameters.AddWithValue("@escolaPublica", obj.escolaPublica);
+            cmd.Parameters.AddWithValue("@administrador", obj.administrador);
 
+            // Executa Comando
+            cmd.ExecuteNonQuery();
         }
     }
 }

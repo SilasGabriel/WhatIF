@@ -33,6 +33,15 @@ namespace WebApplicationWhatIF.Modelo
             this.administrador = administrador;
             this.fotoperfil = fotoperfil;
         }
-
+        public Aluno(int idAluno,string nome, string senha, string email, bool escolaPublica, bool administrador, byte[] fotoperfil)
+        {
+            this.idAluno = idAluno;
+            this.nome = nome;
+            this.senha = senha;
+            this.email = email;
+            this.escolaPublica = escolaPublica;
+            this.administrador = administrador;
+            this.fotoperfil = fotoperfil;
+        }
     }
 }

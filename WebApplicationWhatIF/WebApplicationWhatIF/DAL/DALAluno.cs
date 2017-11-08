@@ -249,6 +249,50 @@ namespace WebApplicationWhatIF.DAL
 
             return aListAluno;
         }
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Aluno> SelectAdm()
+        {
+            // Variavel para armazenar um livro
+            Modelo.Aluno aAluno;
+            // Cria Lista Vazia
+            List<Modelo.Aluno> aListAluno = new List<Modelo.Aluno>();
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand cmd = conn.CreateCommand();
+            // define SQL do comando
+            cmd.CommandText = "Select * from Aluno where administrador = 1";
+            // Executa comando, gerando objeto DbDataReader
+            SqlDataReader dr = cmd.ExecuteReader();
+            // Le titulo do livro do resultado e apresenta no segundo rótulo
+            if (dr.HasRows)
+            {
+
+                while (dr.Read()) // Le o proximo registro
+                {
+                    // Cria objeto com dados lidos do banco de dados
+                    aAluno = new Modelo.Aluno(
+                        Convert.ToInt32(dr["idAluno"]),
+                        dr["nome"].ToString(),
+                        dr["senha"].ToString(),
+                        dr["email"].ToString(),
+                        Convert.ToBoolean(dr["escolaPublica"]),
+                        Convert.ToBoolean(dr["administrador"]),
+                        (byte[])dr["fotoperfil"]
+                        );
+                    // Adiciona o livro lido à lista
+                    aListAluno.Add(aAluno);
+                }
+            }
+            // Fecha DataReader
+            dr.Close();
+            // Fecha Conexão
+            conn.Close();
+
+            return aListAluno;
+        }
         //Update
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void Update(Modelo.Aluno obj)

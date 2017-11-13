@@ -39,11 +39,17 @@ namespace WebApplicationWhatIF
                 aluno.email = tx2.Text;
             }
             aluno.escolaPublica = Convert.ToBoolean(DropDownListEscola.SelectedItem.Value);
-            aluno.fotoperfil = FileUpload1.FileBytes;
-            
-            // Instancia objeto da camada de negocio
-            dalaluno.Update(aluno);
-
+            //Caso o usuário não selecione nenhum arquivo, o upload ocorrerá sem a foto de perfil
+            if (FileUpload1.FileName == "")
+            {
+                // Instancia objeto da camada de negocio
+                dalaluno.UpdatePerfilSemFoto(aluno);
+            }
+            else
+            {
+                aluno.fotoperfil = FileUpload1.FileBytes;
+                dalaluno.Update(aluno);
+            }
             //Muda o nome na sessão
             Response.Redirect("~/WebFormIndex.aspx");
         }

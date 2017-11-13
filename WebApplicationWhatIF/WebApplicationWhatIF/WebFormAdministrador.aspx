@@ -59,7 +59,9 @@
         <table style="width:100%;">
             <tr>
                 <td class="auto-style2" style="width:80%">
-        <asp:HyperLink ID="CrudModulo" runat="server" NavigateUrl="~/WebFormModulo.aspx">CRUD módulo</asp:HyperLink>
+                    <asp:HyperLink ID="CrudModulo" runat="server" NavigateUrl="~/WebFormModulo.aspx">CRUD módulo</asp:HyperLink>
+                    <br />
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormListaDeAlunos.aspx">Lista de Alunos</asp:HyperLink>
                 </td>
                 <td class="auto-style1" align:"center" style="width:10%">&nbsp;</td>
                 <td class="auto-style3" align:"center" style="width:10%">

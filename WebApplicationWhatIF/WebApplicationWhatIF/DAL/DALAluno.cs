@@ -219,7 +219,7 @@ namespace WebApplicationWhatIF.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "Select * from Aluno";
+            cmd.CommandText = "exec sp_listar_todos_os_alunos";
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
             // Le titulo do livro do resultado e apresenta no segundo rótulo
@@ -263,7 +263,7 @@ namespace WebApplicationWhatIF.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "Select * from Aluno where administrador = 1";
+            cmd.CommandText = "exec dbo.sp_listar_alunos_administradores";
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
             // Le titulo do livro do resultado e apresenta no segundo rótulo
@@ -323,13 +323,30 @@ namespace WebApplicationWhatIF.DAL
             // Abre conexão com o banco de dados
             conn.Open();
             // Cria comando SQL
-            SqlCommand cmd = new SqlCommand("UPDATE Aluno SET nome = @nome, senha = @senha, email = @email, escolaPublica = @escolaPublica, administrador = @administrador WHERE idAluno = @idAluno", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Aluno SET nome = @nome, email = @email, escolaPublica = @escolaPublica, administrador = @administrador WHERE idAluno = @idAluno", conn);
             cmd.Parameters.AddWithValue("@idAluno", obj.idAluno);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
-            cmd.Parameters.AddWithValue("@senha", obj.senha);
             cmd.Parameters.AddWithValue("@email", obj.email);
             cmd.Parameters.AddWithValue("@escolaPublica", obj.escolaPublica);
             cmd.Parameters.AddWithValue("@administrador", obj.administrador);
+
+            // Executa Comando
+            cmd.ExecuteNonQuery();
+        }
+        //Update para foto de perfil
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void UpdatePerfilSemFoto(Modelo.Aluno obj)
+        {
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand cmd = new SqlCommand("UPDATE Aluno SET nome = @nome, email = @email, escolaPublica = @escolaPublica WHERE idAluno = @idAluno", conn);
+            cmd.Parameters.AddWithValue("@idAluno", obj.idAluno);
+            cmd.Parameters.AddWithValue("@nome", obj.nome);
+            cmd.Parameters.AddWithValue("@email", obj.email);
+            cmd.Parameters.AddWithValue("@escolaPublica", obj.escolaPublica);
 
             // Executa Comando
             cmd.ExecuteNonQuery();

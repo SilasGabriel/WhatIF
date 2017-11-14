@@ -32,7 +32,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <div id="header">>
+        <div id="header">
         <table style="width: 100%; height: 60px;">
             <tr>
                 <td class="auto-style2">&nbsp;</td>
@@ -54,6 +54,7 @@
                 <asp:BoundField DataField="idModulo" HeaderText="idModulo" InsertVisible="False" ReadOnly="True" SortExpression="idModulo" />
                 <asp:BoundField DataField="titulo" HeaderText="titulo" SortExpression="titulo" />
                 <asp:BoundField DataField="descricao" HeaderText="descricao" SortExpression="descricao" />
+                <asp:BoundField DataField="disciplina.nome" HeaderText="Disciplina" ReadOnly="True" SortExpression="idDisciplina" />
                 <asp:TemplateField ShowHeader="False">
                   <EditItemTemplate>
                         <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ObjectDataSource2" DataTextField="nome" DataValueField="idDisciplina" SelectedValue='<%# Bind("idDisciplina") %>'  >

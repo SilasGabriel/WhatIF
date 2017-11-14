@@ -12,7 +12,7 @@
             <Fields>
                 <asp:TemplateField>
                     <ItemTemplate>
-                        <asp:Image ID="Image1" runat="server" ImageUrl='<%# "HandlerAluno2.ashx?Nome=" + Eval("nome") %>' />
+                        <asp:Image ID="Image1" runat="server" ImageUrl='<%# "HandlerAluno2.ashx?Nome=" + Eval("nome") %>' Height="100px" Width="100px" />
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="idAluno" HeaderText="idAluno" ReadOnly="True" SortExpression="idAluno" />

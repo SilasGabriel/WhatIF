@@ -54,10 +54,25 @@
                 <asp:BoundField DataField="idModulo" HeaderText="idModulo" InsertVisible="False" ReadOnly="True" SortExpression="idModulo" />
                 <asp:BoundField DataField="titulo" HeaderText="titulo" SortExpression="titulo" />
                 <asp:BoundField DataField="descricao" HeaderText="descricao" SortExpression="descricao" />
-                <asp:BoundField DataField="disciplina.nome" HeaderText="Disciplina" ReadOnly="True" SortExpression="idDisciplina" />
+                <asp:TemplateField>
+                    <ItemTemplate>
+                    <asp:DataList runat="server" DataSourceID="ObjectDataSource3">
+                        <ItemTemplate>
+                            disciplina:<asp:Label ID="disciplinaLabel" runat="server" Text='<%# Eval("disciplina.nome") %>' />
+                            <br />
+                            <br />
+                        </ItemTemplate>
+                        </asp:DataList> 
+                        <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="Select" TypeName="WebApplicationWhatIF.DAL.DALModulo">
+                            <SelectParameters>
+                                <asp:SessionParameter Name="idModulo" SessionField="idModulo" Type="Int32" />
+                            </SelectParameters>
+                        </asp:ObjectDataSource>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:TemplateField ShowHeader="False">
                   <EditItemTemplate>
-                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ObjectDataSource2" DataTextField="nome" DataValueField="idDisciplina" SelectedValue='<%# Bind("idDisciplina") %>'  >
+                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ObjectDataSource2" DataTextField="nome" DataValueField="idDisciplina" SelectedValue='<%# Bind("idDisciplina") %>' style="height: 22px; width: 88px"  >
                         </asp:DropDownList>
                         <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="WebApplicationWhatIF.DAL.DALDisciplina"></asp:ObjectDataSource>
                         <br /><asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Atualizar" ForeColor="White"></asp:LinkButton>

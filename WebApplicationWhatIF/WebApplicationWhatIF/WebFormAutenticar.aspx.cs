@@ -11,14 +11,9 @@ namespace WebApplicationWhatIF
 {
     public partial class WebFormAutenticar : System.Web.UI.Page
     {
-        private SqlCommand cmd = new SqlCommand();
-        private SqlConnection con = new SqlConnection();
-        private SqlDataAdapter sda = new SqlDataAdapter();
-        private DataSet ds = new DataSet();
         protected void Page_Load(object sender, EventArgs e)
         {
-            con.ConnectionString = "Data source=Valera;initial catalog=2017WhatIF;Persist Security Info=true; User ID=2017WhatIF;Password=Senha@123";
-            con.Open();
+
         }
 
         protected void ButtonEntrar_Click(object sender, EventArgs e)

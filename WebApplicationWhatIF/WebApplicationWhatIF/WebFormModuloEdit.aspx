@@ -51,7 +51,7 @@
         <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="idModulo" DataSourceID="ObjectDataSource1" GridLines="Horizontal" Height="150px" Width="350px" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px">
             <EditRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
             <Fields>
-                <asp:BoundField DataField="idModulo" HeaderText="idModulo" InsertVisible="False" ReadOnly="True" SortExpression="idModulo" />
+                <asp:BoundField DataField="idModulo" HeaderText="idModulo" ReadOnly="True" SortExpression="idModulo" />
                 <asp:BoundField DataField="titulo" HeaderText="titulo" SortExpression="titulo" />
                 <asp:BoundField DataField="descricao" HeaderText="descricao" SortExpression="descricao" />
                 <asp:TemplateField>
@@ -68,24 +68,27 @@
                                 <asp:SessionParameter Name="idModulo" SessionField="idModulo" Type="Int32" />
                             </SelectParameters>
                         </asp:ObjectDataSource>
+                    
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField ShowHeader="False">
-                  <EditItemTemplate>
+                    <EditItemTemplate>
                         <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ObjectDataSource2" DataTextField="nome" DataValueField="idDisciplina" SelectedValue='<%# Bind("idDisciplina") %>' style="height: 22px; width: 88px"  >
                         </asp:DropDownList>
                         <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="WebApplicationWhatIF.DAL.DALDisciplina"></asp:ObjectDataSource>
                         <br /><asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Atualizar" ForeColor="White"></asp:LinkButton>
                         &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" ForeColor="White"></asp:LinkButton>
-                    </EditItemTemplate>
-
-                    <InsertItemTemplate>
+                    
+</EditItemTemplate>
+<InsertItemTemplate>
                         <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Insert" Text="Inserir"></asp:LinkButton>
                         &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar"></asp:LinkButton>
-                    </InsertItemTemplate>
+                    
+</InsertItemTemplate>
                     <ItemTemplate>
                         <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar" ForeColor="#006600"></asp:LinkButton>
                         &nbsp;&nbsp;<asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" CommandName="Delete" Text="Excluir" OnClientClick="javascript:return ConfirmaExclusao();" ForeColor="#006600"></asp:LinkButton>
+                    
                     </ItemTemplate>
                 </asp:TemplateField>
             </Fields>

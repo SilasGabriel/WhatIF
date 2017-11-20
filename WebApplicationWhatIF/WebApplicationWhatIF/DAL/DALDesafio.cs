@@ -225,7 +225,9 @@ namespace WebApplicationWhatIF.DAL
             // Abre conexão com o banco de dados
             conn.Open();
             // Cria comando SQL
-            SqlCommand com = conn.CreateCommand();
+            SqlCommand cmd1 = new SqlCommand("Delete FROM alternativaDesafio WHERE idDesafio = @idDesafio", conn);
+            cmd1.Parameters.AddWithValue("idDesafio", obj.idDesafio);
+            cmd1.ExecuteNonQuery();
             // Define comando de exclusão
             SqlCommand cmd = new SqlCommand("DELETE FROM Desafio WHERE idDesafio = @idDesafio", conn);
             cmd.Parameters.AddWithValue("@idDesafio", obj.idDesafio);

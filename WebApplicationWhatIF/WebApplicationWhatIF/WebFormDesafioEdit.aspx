@@ -24,7 +24,7 @@
                         <asp:Image ID="Image1" runat="server" ImageUrl='<%# "HandlerDesafio2.ashx?idDesafio=" + Eval("idDesafio") %>' Height="100px" Width="100px" />
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:BoundField DataField="idDesafio" HeaderText="idDesafio" SortExpression="idDesafio" />
+                <asp:BoundField DataField="idDesafio" HeaderText="idDesafio" SortExpression="idDesafio" InsertVisible="False" ReadOnly="True" />
                 <asp:BoundField DataField="titulo" HeaderText="titulo" SortExpression="titulo" />
                 <asp:BoundField DataField="questao" HeaderText="questao" SortExpression="questao" />
                 <asp:CommandField ShowEditButton="True" />
@@ -41,6 +41,7 @@
             </SelectParameters>
         </asp:ObjectDataSource>
     <br />
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormDesafio.aspx">Voltar</asp:HyperLink>
     </div>
     </form>
 </body>

@@ -33,6 +33,42 @@ namespace WebApplicationWhatIF
                 // Chama a tela de edição
                 Response.Redirect("~\\WebFormDesafioEdit.aspx");
             }
+            // Verifica se o comando é "Adicionar alternativas"
+            if (e.CommandName == "Addalterna")
+            {
+                string codigo;
+
+                // Le o numero da linha selecionada
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                // Copia o conteúdo da primeira célula da linha -> Código do Livro
+                codigo = GridView1.Rows[index].Cells[0].Text;
+
+                // Grava código do Livro na sessão
+                Session["idDesafio"] = codigo;
+                Session["correta"] = "falso";
+
+                // Chama a tela de edição
+                Response.Redirect("~\\WebFormAlternativaDesafioNew.aspx");
+            }
+            // Verifica se o comando é "Adicionar alternativa correta"
+            if (e.CommandName == "Addcorreta")
+            {
+                string codigo;
+
+                // Le o numero da linha selecionada
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                // Copia o conteúdo da primeira célula da linha -> Código do Livro
+                codigo = GridView1.Rows[index].Cells[0].Text;
+
+                // Grava código do Livro na sessão
+                Session["idDesafio"] = codigo;
+                Session["correta"] = "verdade";
+
+                // Chama a tela de edição
+                Response.Redirect("~\\WebFormAlternativaDesafioNew.aspx");
+            }
         }
     }
 }

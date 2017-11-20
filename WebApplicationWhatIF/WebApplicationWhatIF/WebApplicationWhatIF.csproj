@@ -63,6 +63,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="WebFormAdministrador.aspx" />
+    <Content Include="WebFormAlternativaDesafioNew.aspx" />
     <Content Include="WebFormAutenticar.aspx" />
     <Content Include="WebFormCadastroAluno.aspx" />
     <Content Include="WebFormDesafio.aspx" />
@@ -74,9 +75,11 @@
     <Content Include="WebFormModulo.aspx" />
     <Content Include="WebFormModuloEdit.aspx" />
     <Content Include="WebFormModuloNew.aspx" />
+    <Content Include="WebFormQuestãoDesafio.aspx" />
     <Content Include="WebFormVerAluno.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\DALAlternativaDesafio.cs" />
     <Compile Include="DAL\DALAluno.cs" />
     <Compile Include="DAL\DALDesafio.cs" />
     <Compile Include="DAL\DALDisciplina.cs" />
@@ -93,6 +96,7 @@
     <Compile Include="HandlerDesafio2.ashx.cs">
       <DependentUpon>HandlerDesafio2.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\alternativaDesafio.cs" />
     <Compile Include="Modelo\Aluno.cs" />
     <Compile Include="Modelo\Desafio.cs" />
     <Compile Include="Modelo\Disciplina.cs" />
@@ -104,6 +108,13 @@
     </Compile>
     <Compile Include="WebFormAdministrador.aspx.designer.cs">
       <DependentUpon>WebFormAdministrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormAlternativaDesafioNew.aspx.cs">
+      <DependentUpon>WebFormAlternativaDesafioNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormAlternativaDesafioNew.aspx.designer.cs">
+      <DependentUpon>WebFormAlternativaDesafioNew.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormAutenticar.aspx.cs">
       <DependentUpon>WebFormAutenticar.aspx</DependentUpon>
@@ -181,6 +192,13 @@
     </Compile>
     <Compile Include="WebFormModuloNew.aspx.designer.cs">
       <DependentUpon>WebFormModuloNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormQuestãoDesafio.aspx.cs">
+      <DependentUpon>WebFormQuestãoDesafio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormQuestãoDesafio.aspx.designer.cs">
+      <DependentUpon>WebFormQuestãoDesafio.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormVerAluno.aspx.cs">
       <DependentUpon>WebFormVerAluno.aspx</DependentUpon>

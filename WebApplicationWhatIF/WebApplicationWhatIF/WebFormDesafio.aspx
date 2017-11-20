@@ -10,13 +10,15 @@
     <form id="form1" runat="server">
     <div>
     <h1>Desafios</h1>
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="Black" GridLines="Vertical" OnRowCommand="GridView1_RowCommand" Width="427px">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="Black" GridLines="Vertical" OnRowCommand="GridView1_RowCommand" Width="539px" Height="704px">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="idDesafio" HeaderText="id" SortExpression="idDesafio" />
                 <asp:BoundField DataField="titulo" HeaderText="Título" SortExpression="titulo" />
                 <asp:BoundField DataField="questao" HeaderText="Questão" SortExpression="questao" />
                 <asp:ButtonField CommandName="Editar" Text="Editar" />
+                <asp:ButtonField CommandName="Addcorreta" Text="Adicionar alternativa correta" />
+                <asp:ButtonField CommandName="Addalterna" Text="Adicionar alternativas" />
             </Columns>
             <FooterStyle BackColor="#CCCC99" />
             <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
@@ -29,6 +31,7 @@
             <SortedDescendingHeaderStyle BackColor="#575357" />
         </asp:GridView>
         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebApplicationWhatIF.Modelo.Desafio" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="WebApplicationWhatIF.DAL.DALDesafio" UpdateMethod="Update"></asp:ObjectDataSource>
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormDesafioNew.aspx">Adicionar desafios</asp:HyperLink>
     <br />
 
     </div>

@@ -102,24 +102,27 @@ namespace WebApplicationWhatIF.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public bool verifADM(object nome, object senha){
          string leitorAdm = string.Empty;
-            bool aux = false;    
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            bool aux = false;
+            if ((nome != null) && (senha != null))
             {
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandText = "SELECT administrador from Aluno WHERE nome = @nome and senha = @senha";
-                cmd.Parameters.AddWithValue("@nome", nome);
-                cmd.Parameters.AddWithValue("@senha", senha);
-                cmd.Connection = connection;
-                using (cmd)
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    connection.Open();
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = "SELECT administrador from Aluno WHERE nome = @nome and senha = @senha";
+                    cmd.Parameters.AddWithValue("@nome", nome);
+                    cmd.Parameters.AddWithValue("@senha", senha);
+                    cmd.Connection = connection;
+                    using (cmd)
                     {
-                        while (reader.Read())
+                        connection.Open();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            leitorAdm = reader[0].ToString();
-                            aux = Convert.ToBoolean(leitorAdm);
+                            while (reader.Read())
+                            {
+                                leitorAdm = reader[0].ToString();
+                                aux = Convert.ToBoolean(leitorAdm);
+                            }
                         }
                     }
                 }

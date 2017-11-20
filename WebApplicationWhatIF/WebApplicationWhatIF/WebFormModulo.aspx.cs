@@ -38,7 +38,22 @@ namespace WebApplicationWhatIF
                 // Chama a tela de edição
                 Response.Redirect("~\\WebFormModuloEdit.aspx");
             }
+            if (e.CommandName == "Gerenciarmaterias")
+            {
+                string codigo;
 
+                // Le o numero da linha selecionada
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                // Copia o conteúdo da primeira célula da linha -> Código do Livro
+                codigo = GridView1.Rows[index].Cells[0].Text;
+
+                // Grava código do Livro na sessão
+                Session["idModulo"] = codigo;
+
+                // Chama a tela de edição
+                Response.Redirect("~\\WebFormMateriaNew.aspx");
+            }
         }
 
         protected void Logout_Click(object sender, EventArgs e)

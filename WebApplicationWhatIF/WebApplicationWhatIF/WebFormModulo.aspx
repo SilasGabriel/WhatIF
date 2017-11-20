@@ -52,6 +52,7 @@
                 <asp:BoundField DataField="descricao" HeaderText="Descrição" SortExpression="descricao" />
                 <asp:BoundField DataField="disciplina.nome" HeaderText="Disciplina" SortExpression="idDisciplina" />
                 <asp:ButtonField CommandName="Editar" Text="Editar" />
+                <asp:ButtonField CommandName="Gerenciarmaterias" Text="Gerenciar Matérias" />
             </Columns>
             <FooterStyle BackColor="White" ForeColor="#000066" />
             <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />

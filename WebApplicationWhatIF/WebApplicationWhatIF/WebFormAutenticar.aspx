@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-    <div style="margin-top:85px;">
+    <div style="margin-top:5%;">
         <!DOCTYPE html>
 
         <html xmlns="http://www.w3.org/1999/xhtml">
@@ -17,19 +17,19 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="auto">Nome</td>
+                        <td class="auto">Nome: </td>
                         <td class="auto"> <asp:TextBox ID="TextBoxLogin" class="dadosCadastro" runat="server" size="100" placeholder="Justus da Silva" MaxLength="100"></asp:TextBox>
 	                    </td>
                     </tr>
                     <tr>
-                        <td class="auto">Senha</td>
+                        <td class="auto">Senha: </td>
                         <td class="auto"> <asp:TextBox ID="TextBoxSenha" class="dadosCadastro" runat="server" TextMode="Password" MaxLenght="10" MinLength="6"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td class="auto"><asp:Label ID="teste" runat="server"></asp:Label>
                         </td>
-                        <td class="auto"><asp:Button ID="ButtonEntrar" class="dadosCadastro" runat="server" Text="Entrar" OnClick="ButtonEntrar_Click" />
+                        <td class="auto"><asp:Button ID="ButtonEntrar" class="butaoCadastro" runat="server" Text="Entrar" OnClick="ButtonEntrar_Click" />
                         </td>
                     </tr>
                     <tr>

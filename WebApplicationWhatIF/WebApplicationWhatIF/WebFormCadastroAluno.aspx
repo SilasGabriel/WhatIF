@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-    <div style="margin-top:30px;">
+    <div style="margin-top:42px;">
         <!DOCTYPE html>
 
         <html xmlns="http://www.w3.org/1999/xhtml">
@@ -41,9 +41,9 @@
                     <tr
                         <br />
                         <br />
-                        <td class="auto"><br /><br />Escola<br /><br /></td>
-                        <td align="right" class="auto">
-                        <asp:DropDownList ID="DropDownListEscola" runat="server" style="margin-right: 15px">
+                        <td class="auto">Escola</td>
+                        <td align="right" class="">
+                        <asp:DropDownList ID="DropDownListEscola" class="dadosCadastro" runat="server" style="margin-right: 22px">
                             <asp:ListItem Value="true">Pública</asp:ListItem>
                             <asp:ListItem Value="false">Privado</asp:ListItem>
                         </asp:DropDownList>
@@ -52,7 +52,7 @@
                         <br />
                     </tr>
                     <tr>
-                        <td colspan="2" align="center"><asp:Button ID="ButtonEnviar" class="dadosCadastro" runat="server" Text="Enviar" OnClick="ButtonEnviar_Click" />
+                        <td colspan="2" align="center"><asp:Button ID="ButtonEnviar" class="butaoCadastro" runat="server" Text="Enviar" OnClick="ButtonEnviar_Click" />
                             <table style="width:100%;">
                                 <tr>
                                     <td>

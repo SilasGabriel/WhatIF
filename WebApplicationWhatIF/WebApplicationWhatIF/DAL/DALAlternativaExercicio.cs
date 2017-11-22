@@ -8,20 +8,20 @@ using System.Web;
 
 namespace WebApplicationWhatIF.DAL
 {
-    public class DALAlternativaDesafio
+    public class DALAlternativaExercicio
     {
         string connectionString = "";
 
-        public DALAlternativaDesafio()
+        public DALAlternativaExercicio()
         {
             connectionString = ConfigurationManager.ConnectionStrings["2017WhatIFConnectionString"].ConnectionString;
         }
         //SelectAll
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.alternativaDesafio> SelectAll(int idDesafio){
-            Modelo.alternativaDesafio DALalternativaDesafio;
+        public List<Modelo.alternativaExercicio> SelectAll(int idExercicio){
+            Modelo.alternativaExercicio DALalternativaExercicio;
             // Cria Lista Vazia
-            List<Modelo.alternativaDesafio> DALlistAlternativaDesafio = new List<Modelo.alternativaDesafio>();
+            List<Modelo.alternativaExercicio> DALlistAlternativaExercicio = new List<Modelo.alternativaExercicio>();
             // Cria Conexão com banco de dados
             SqlConnection conn = new SqlConnection(connectionString);
             // Abre conexão com o banco de dados
@@ -29,8 +29,8 @@ namespace WebApplicationWhatIF.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "Select * from alternativaDesafio where idDesafio = @idDesafio";
-            cmd.Parameters.AddWithValue("@idDesafio", idDesafio);
+            cmd.CommandText = "Select * from alternativaExercicio where idExercicio = @idExercicio";
+            cmd.Parameters.AddWithValue("@idExercicio", idExercicio);
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
@@ -38,19 +38,19 @@ namespace WebApplicationWhatIF.DAL
 
                 while (dr.Read()) // Le o proximo registro
                 {
-                    Modelo.Desafio desafio = new Modelo.Desafio();
-                    DALDesafio daldesafio = new DALDesafio();
-                    desafio = (daldesafio.Select(Convert.ToInt32(dr["idDesafio"])))[0];
-                    DALalternativaDesafio = new Modelo.alternativaDesafio(
+                    Modelo.Exercicio exercicio = new Modelo.Exercicio();
+                    DALExercicio dalexercicio = new DALExercicio();
+                    exercicio = (dalexercicio.Select(Convert.ToInt32(dr["idExercicio"])))[0];
+                    DALalternativaExercicio = new Modelo.alternativaExercicio(
                         Convert.ToInt32(dr["idAlternativa"]),
                         dr["texto"].ToString(),
                         Convert.ToBoolean(dr["correta"]),
-                        Convert.ToInt32(dr["idDesafio"]));
+                        Convert.ToInt32(dr["idExercicio"]));
                         
-                    if (DALalternativaDesafio.idDesafio != null)
-                        DALalternativaDesafio.desafio = daldesafio.Select(DALalternativaDesafio.idDesafio)[0]; 
+                    if (DALalternativaExercicio.idExercicio != null)
+                        DALalternativaExercicio.exercicio = dalexercicio.Select(DALalternativaExercicio.idExercicio)[0]; 
                         // Adiciona o livro lido à lista
-                    DALlistAlternativaDesafio.Add(DALalternativaDesafio);
+                    DALlistAlternativaExercicio.Add(DALalternativaExercicio);
                 }
             }
             // Fecha DataReader
@@ -58,17 +58,16 @@ namespace WebApplicationWhatIF.DAL
             // Fecha Conexão
             conn.Close();
 
-            return DALlistAlternativaDesafio;
+            return DALlistAlternativaExercicio;
         }
 
         //Select
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.alternativaDesafio> Select(int idAlternativa)
+        public List<Modelo.alternativaExercicio> Select(int idAlternativa)
         {
-            // Variavel para armazenar um modulo
-            Modelo.alternativaDesafio DALalternativaDesafio;
+            Modelo.alternativaExercicio DALalternativaExercicio;
             // Cria Lista Vazia
-            List<Modelo.alternativaDesafio> DALlistAlternativaDesafio = new List<Modelo.alternativaDesafio>();
+            List<Modelo.alternativaExercicio> DALlistAlternativaExercicio = new List<Modelo.alternativaExercicio>();
             // Cria Conexão com banco de dados
             SqlConnection conn = new SqlConnection(connectionString);
             // Abre conexão com o banco de dados
@@ -76,30 +75,28 @@ namespace WebApplicationWhatIF.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "Select * from alternativaDesafio Where idAlternativa = @idAlternativa";
+            cmd.CommandText = "Select * from alternativaExercicio where idAlternativa = @idAlternativa";
             cmd.Parameters.AddWithValue("@idAlternativa", idAlternativa);
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
-            // Le titulo do modulo do resultado e apresenta no segundo rótulo
             if (dr.HasRows)
             {
 
                 while (dr.Read()) // Le o proximo registro
                 {
-                    Modelo.Desafio desafio = new Modelo.Desafio();
-                    DALDesafio daldesafio = new DALDesafio();
-                    desafio = (daldesafio.Select(Convert.ToInt32(dr["idDesafio"])))[0];
-                    // Cria objeto com dados lidos do banco de dados
-                    DALalternativaDesafio = new Modelo.alternativaDesafio(
-                       Convert.ToInt32(dr["idAlternativa"]),
+                    Modelo.Exercicio exercicio = new Modelo.Exercicio();
+                    DALExercicio dalexercicio = new DALExercicio();
+                    exercicio = (dalexercicio.Select(Convert.ToInt32(dr["idExercicio"])))[0];
+                    DALalternativaExercicio = new Modelo.alternativaExercicio(
+                        Convert.ToInt32(dr["idAlternativa"]),
                         dr["texto"].ToString(),
                         Convert.ToBoolean(dr["correta"]),
-                        Convert.ToInt32(dr["idDesafio"]));
+                        Convert.ToInt32(dr["idExercicio"]));
 
-                    if (DALalternativaDesafio.idDesafio != null)
-                        DALalternativaDesafio.desafio = daldesafio.Select(DALalternativaDesafio.idDesafio)[0];
+                    if (DALalternativaExercicio.idExercicio != null)
+                        DALalternativaExercicio.exercicio = dalexercicio.Select(DALalternativaExercicio.idExercicio)[0];
                     // Adiciona o livro lido à lista
-                    DALlistAlternativaDesafio.Add(DALalternativaDesafio);
+                    DALlistAlternativaExercicio.Add(DALalternativaExercicio);
                 }
             }
             // Fecha DataReader
@@ -107,12 +104,12 @@ namespace WebApplicationWhatIF.DAL
             // Fecha Conexão
             conn.Close();
 
-            return DALlistAlternativaDesafio;
+            return DALlistAlternativaExercicio;
         }
 
         //Delete
         [DataObjectMethod(DataObjectMethodType.Delete)]
-        public void Delete(Modelo.alternativaDesafio obj){
+        public void Delete(Modelo.alternativaExercicio obj){
             // Cria Conexão com banco de dados
             SqlConnection conn = new SqlConnection(connectionString);
             // Abre conexão com o banco de dados
@@ -120,7 +117,7 @@ namespace WebApplicationWhatIF.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("DELETE FROM alternativaDesafio WHERE idAlternativa = @idAlternativa", conn);
+            SqlCommand cmd = new SqlCommand("DELETE FROM alternativaExercicio WHERE idAlternativa = @idAlternativa", conn);
             cmd.Parameters.AddWithValue("@idAlternativa", obj.idAlternativa);
 
             // Executa Comando
@@ -130,18 +127,18 @@ namespace WebApplicationWhatIF.DAL
 
         //Insert
         [DataObjectMethod(DataObjectMethodType.Insert)]
-        public void Insert(Modelo.alternativaDesafio obj)
+        public void Insert(Modelo.alternativaExercicio obj)
         {
             SqlConnection sc = new SqlConnection(connectionString);
             sc.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = System.Data.CommandType.Text;
-            Modelo.Desafio desafio = new Modelo.Desafio();
-            desafio = obj.desafio;
-            cmd.CommandText = "INSERT INTO alternativaDesafio(texto, correta, idDesafio) VALUES(@texto, @correta, @idDesafio)";
+            Modelo.Exercicio exercicio = new Modelo.Exercicio();
+            exercicio = obj.exercicio;
+            cmd.CommandText = "INSERT INTO alternativaExercicio(texto, correta, idExercicio) VALUES(@texto, @correta, @idExercicio)";
             cmd.Parameters.AddWithValue("@texto", obj.texto);
             cmd.Parameters.AddWithValue("@correta", obj.correta);
-            cmd.Parameters.AddWithValue("@idDesafio", desafio.idDesafio);
+            cmd.Parameters.AddWithValue("@idExercicio", exercicio.idExercicio);
             cmd.Connection = sc;
 
             cmd.ExecuteNonQuery();
@@ -150,7 +147,7 @@ namespace WebApplicationWhatIF.DAL
 
         //Update
         [DataObjectMethod(DataObjectMethodType.Update)]
-        public void Update(Modelo.alternativaDesafio obj)
+        public void Update(Modelo.alternativaExercicio obj)
         { 
             // Cria Conexão com banco de dados
             SqlConnection conn = new SqlConnection(connectionString);
@@ -158,20 +155,20 @@ namespace WebApplicationWhatIF.DAL
             conn.Open();
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
-            Modelo.Desafio desafio = new Modelo.Desafio();
-            desafio.idDesafio = obj.idDesafio;
-            SqlCommand cmd = new SqlCommand("UPDATE alternativaDesafio SET texto = @texto, correta = @correta, idDesafio = @idDesafio WHERE idAlternativa = @idAlternativa", conn);
+            Modelo.Exercicio exercicio = new Modelo.Exercicio();
+            exercicio.idExercicio = obj.idExercicio;
+            SqlCommand cmd = new SqlCommand("UPDATE alternativaExercicio SET texto = @texto, correta = @correta, idExercicio = @idExercicio WHERE idAlternativa = @idAlternativa", conn);
             cmd.Parameters.AddWithValue("@idAlternativa", obj.idAlternativa);
             cmd.Parameters.AddWithValue("@texto", obj.texto);
             cmd.Parameters.AddWithValue("@correta", obj.correta);
-            cmd.Parameters.AddWithValue("@idDesafio", desafio.idDesafio);
+            cmd.Parameters.AddWithValue("@idExercicio", exercicio.idExercicio);
             // Executa Comando
             cmd.ExecuteNonQuery();
 
         }
         //Verificar se já existe alguma alternativa correta
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public bool verifCorreta(int idDesafio)
+        public bool verifCorreta(int idExercicio)
         {
             string leitorCorreta = string.Empty;
             bool aux = false;
@@ -179,8 +176,8 @@ namespace WebApplicationWhatIF.DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandText = "SELECT correta from alternativaDesafio WHERE idDesafio = @idDesafio";
-                cmd.Parameters.AddWithValue("@idDesafio", idDesafio);
+                cmd.CommandText = "SELECT correta from alternativaExercicio WHERE idExercicio = @idExercicio";
+                cmd.Parameters.AddWithValue("@idExercicio", idExercicio);
                 cmd.Connection = connection;
                 using (cmd)
                 {
@@ -201,15 +198,15 @@ namespace WebApplicationWhatIF.DAL
 
         //Calcula o número de alternativas
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public int calcAlterna(int idDesafio)
+        public int calcAlterna(int idExercicio)
         {
             int aux = 0;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandText = "SELECT idAlternativa from alternativaDesafio WHERE idDesafio = @idDesafio";
-                cmd.Parameters.AddWithValue("@idDesafio", idDesafio);
+                cmd.CommandText = "SELECT idAlternativa from alternativaExercicio WHERE idExercicio = @idExercicio";
+                cmd.Parameters.AddWithValue("@idExercicio", idExercicio);
                 cmd.Connection = connection;
                 using (cmd)
                 {
@@ -227,7 +224,7 @@ namespace WebApplicationWhatIF.DAL
         }
         //Retorna os ids das alternativas numa List de inteiros
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<int> idAlternativa(int idDesafio)
+        public List<int> idAlternativa(int idExercicio)
         {
             int leitor = 0;
             //int cont = 1;
@@ -236,8 +233,8 @@ namespace WebApplicationWhatIF.DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandText = "SELECT idAlternativa from alternativaDesafio WHERE idDesafio = @idDesafio";
-                cmd.Parameters.AddWithValue("@idDesafio", idDesafio);
+                cmd.CommandText = "SELECT idAlternativa from alternativaExercicio WHERE idExercicio = @idExercicio";
+                cmd.Parameters.AddWithValue("@idExercicio", idExercicio);
                 cmd.Connection = connection;
                 using (cmd)
                 {

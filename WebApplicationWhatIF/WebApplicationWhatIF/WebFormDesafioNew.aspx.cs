@@ -11,7 +11,11 @@ namespace WebApplicationWhatIF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            DAL.DALAluno dalalu = new DAL.DALAluno();
+            if (!dalalu.verifADM(Session["Nome"], Session["Senha"]))
+            {
+                Response.Redirect("~/WebFormIndex.aspx");
+            }
         }
         protected void Button1_Click(object sender, EventArgs e)
         {

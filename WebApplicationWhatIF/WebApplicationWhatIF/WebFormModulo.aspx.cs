@@ -38,6 +38,27 @@ namespace WebApplicationWhatIF
                 // Chama a tela de edição
                 Response.Redirect("~\\WebFormModuloEdit.aspx");
             }
+            // Verifica se o comando é "Excluir"
+            if (e.CommandName == "Excluir")
+            {
+                int codigo;
+
+                // Le o numero da linha selecionada
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                // Copia o conteúdo da primeira célula da linha -> Código do Livro
+                codigo = Convert.ToInt32(GridView1.Rows[index].Cells[0].Text);
+
+                // Grava código do Livro na sessão
+                Session["idModulo"] = codigo;
+                DAL.DALModulo dalmodulo = new DAL.DALModulo();
+                Modelo.Modulo modulo = new Modelo.Modulo();
+                modulo = dalmodulo.Select(codigo)[0];
+                dalmodulo.Delete(modulo);
+
+                // Chama a tela de edição
+                Response.Redirect("~\\WebFormModulo.aspx");
+            }
             if (e.CommandName == "Gerenciarmaterias")
             {
                 string codigo;

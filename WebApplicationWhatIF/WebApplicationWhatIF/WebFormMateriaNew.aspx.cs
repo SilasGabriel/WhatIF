@@ -11,7 +11,11 @@ namespace WebApplicationWhatIF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            DAL.DALAluno dalalu = new DAL.DALAluno();
+            if (!dalalu.verifADM(Session["Nome"], Session["Senha"]))
+            {
+                Response.Redirect("~/WebFormIndex.aspx");
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -47,6 +51,34 @@ namespace WebApplicationWhatIF
                 dalmateria.Delete(materia);
                 // Chama a tela de edição
                 Response.Redirect("~\\WebFormMateriaNew.aspx");
+            }
+            // Verifica se o comando é "Excluir"
+            if (e.CommandName == "Gerenciarexercicios")
+            {
+                int codigo;
+
+                // Le o numero da linha selecionada
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                // Copia o conteúdo da primeira célula da linha -> Código do Livro
+                codigo = Convert.ToInt32(GridView1.Rows[index].Cells[0].Text);
+                
+                // Chama a tela de edição
+                Response.Redirect("~\\WebFormExercicioNew.aspx?idMateria=" + codigo);
+            }
+            if (e.CommandName == "Editar")
+            {
+                int codigo;
+
+                // Le o numero da linha selecionada
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                // Copia o conteúdo da primeira célula da linha -> Código do Livro
+                codigo = Convert.ToInt32(GridView1.Rows[index].Cells[0].Text);
+
+                Session["idMateria"] = codigo;
+                // Chama a tela de edição
+                Response.Redirect("~\\WebFormMateriaEdit.aspx?idMateria=" + codigo);
             }
         }
     }

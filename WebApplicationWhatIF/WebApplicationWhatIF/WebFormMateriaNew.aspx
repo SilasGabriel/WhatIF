@@ -29,16 +29,9 @@
                 <asp:BoundField DataField="titulo" HeaderText="Título" SortExpression="titulo" />
                 <asp:BoundField DataField="descricao" HeaderText="Descrição" SortExpression="descricao" />
                 <asp:BoundField DataField="idModulo" HeaderText="idModulo" SortExpression="idModulo" ReadOnly="True" />
-                <asp:TemplateField ShowHeader="False">
-                    <EditItemTemplate>
-                        <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Atualizar"></asp:LinkButton>
-                        &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar"></asp:LinkButton>
-                    </EditItemTemplate>
-                    <ItemTemplate>
-                        <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar"></asp:LinkButton>
-                    </ItemTemplate>
-                </asp:TemplateField>
+                <asp:ButtonField CommandName="Editar" Text="Editar" />
                 <asp:ButtonField CommandName="Excluir" Text="Excluir" />
+                <asp:ButtonField CommandName="Gerenciarexercicios" Text="Gerenciar Exercícios" />
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -51,7 +44,11 @@
             <SortedDescendingCellStyle BackColor="#E9EBEF" />
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebApplicationWhatIF.Modelo.Materia" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="WebApplicationWhatIF.DAL.DALMateria" UpdateMethod="Update"></asp:ObjectDataSource>
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebApplicationWhatIF.Modelo.Materia" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAllIdModulo" TypeName="WebApplicationWhatIF.DAL.DALMateria" UpdateMethod="Update">
+            <SelectParameters>
+                <asp:SessionParameter Name="idModulo" SessionField="idModulo" Type="Int32" />
+            </SelectParameters>
+        </asp:ObjectDataSource>
         <br />
         <table style="width:100%;">
             <tr>

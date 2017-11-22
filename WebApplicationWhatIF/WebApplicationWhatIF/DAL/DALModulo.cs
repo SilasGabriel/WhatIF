@@ -111,6 +111,54 @@ namespace WebApplicationWhatIF.DAL
 
             return DALlistModulo;
         }
+        
+        //SelectAll
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Modulo> SelectAllIdDisciplina(int idDisciplina)
+        {
+            Modelo.Modulo DALmodulo;
+            // Cria Lista Vazia
+            List<Modelo.Modulo> DALlistModulo = new List<Modelo.Modulo>();
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand cmd = conn.CreateCommand();
+            // define SQL do comando
+            cmd.CommandText = "Select * from Modulo where idDisciplina = @idDisciplina";
+            cmd.Parameters.AddWithValue("@idDisciplina", idDisciplina);
+            // Executa comando, gerando objeto DbDataReader
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+
+                while (dr.Read()) // Le o proximo registro
+                {
+                    Modelo.Disciplina dis = new Modelo.Disciplina();
+                    DALDisciplina daldis = new DALDisciplina();
+                    dis = (daldis.Select(Convert.ToInt32(dr["idDisciplina"])))[0];
+                    Modelo.Modulo mod = new Modelo.Modulo();
+                    DALmodulo = new Modelo.Modulo(
+                        dr["idModulo"].ToString(),
+                        dr["titulo"].ToString(),
+                        dr["descricao"].ToString(),
+                        Convert.ToInt32(dr["idDisciplina"]));
+
+                    if (DALmodulo.idDisciplina != null)
+                        DALmodulo.disciplina = daldis.Select(DALmodulo.idDisciplina)[0];
+                    // Adiciona o livro lido à lista
+                    DALlistModulo.Add(DALmodulo);
+                }
+            }
+            // Fecha DataReader
+            dr.Close();
+            // Fecha Conexão
+            conn.Close();
+
+            return DALlistModulo;
+        }
+        
 
         //Delete
         [DataObjectMethod(DataObjectMethodType.Delete)]
@@ -120,8 +168,34 @@ namespace WebApplicationWhatIF.DAL
             // Abre conexão com o banco de dados
             conn.Open();
             // Cria comando SQL
-            SqlCommand com = conn.CreateCommand();
+            SqlCommand com = conn.CreateCommand();           
+            
+            List<Modelo.Materia> materia = new List<Modelo.Materia>();
+            DAL.DALMateria dalmateria = new DAL.DALMateria();
+            materia = dalmateria.SelectAllIdModulo(Convert.ToInt32(obj.idModulo));
+            List<Modelo.Exercicio> exercicio = new List<Modelo.Exercicio>();
+            DAL.DALExercicio dalexer = new DAL.DALExercicio();
+            for (int i = 0; i < materia.Count; i++)
+            {
+                exercicio = dalexer.SelectAllIdMateria(materia[i].idMateria);
+                for (int j = 0; j < exercicio.Count; j++)
+                {
+                    SqlCommand cmd3 = new SqlCommand("DELETE FROM alternativaExercicio WHERE idExercicio = @idExercicio", conn);
+                    cmd3.Parameters.AddWithValue("@idExercicio", exercicio[j].idExercicio);
+                    cmd3.ExecuteNonQuery();
+                }
+            }
+            for (int i = 0; i < materia.Count; i++)
+            {
+                SqlCommand cmd2 = new SqlCommand("DELETE FROM Exercicio WHERE idMateria = @idMateria", conn);
+                cmd2.Parameters.AddWithValue("@idMateria", materia[i].idMateria);
+                cmd2.ExecuteNonQuery();
+            }
+            SqlCommand cmd1 = new SqlCommand("Delete FROM Materia WHERE idModulo = @idModulo", conn);
+            cmd1.Parameters.AddWithValue("idModulo", obj.idModulo);
+            cmd1.ExecuteNonQuery();
             // Define comando de exclusão
+            
             SqlCommand cmd = new SqlCommand("DELETE FROM Modulo WHERE idModulo = @idModulo", conn);
             cmd.Parameters.AddWithValue("@idModulo", obj.idModulo);
 

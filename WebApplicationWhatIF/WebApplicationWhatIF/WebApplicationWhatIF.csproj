@@ -64,15 +64,23 @@
     </Content>
     <Content Include="WebFormAdministrador.aspx" />
     <Content Include="WebFormAlternativaDesafioNew.aspx" />
+    <Content Include="WebFormAlternativaExercicioNew.aspx" />
     <Content Include="WebFormAutenticar.aspx" />
     <Content Include="WebFormCadastroAluno.aspx" />
     <Content Include="WebFormDesafio.aspx" />
     <Content Include="WebFormDesafioEdit.aspx" />
     <Content Include="WebFormDesafioNew.aspx" />
+    <Content Include="WebFormDisciplina.aspx" />
     <Content Include="WebFormEditarPerfil.aspx" />
+    <Content Include="WebFormExercicioEdit.aspx" />
+    <Content Include="WebFormExercicioNew.aspx" />
+    <Content Include="WebFormExercicioUsuario.aspx" />
     <Content Include="WebFormIndex.aspx" />
     <Content Include="WebFormListaDeAlunos.aspx" />
+    <Content Include="WebFormMateria.aspx" />
+    <Content Include="WebFormMateriaEdit.aspx" />
     <Content Include="WebFormMateriaNew.aspx" />
+    <Content Include="WebFormMateriaUsuario.aspx" />
     <Content Include="WebFormModulo.aspx" />
     <Content Include="WebFormModuloEdit.aspx" />
     <Content Include="WebFormModuloNew.aspx" />
@@ -81,9 +89,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\DALAlternativaDesafio.cs" />
+    <Compile Include="DAL\DALAlternativaExercicio.cs" />
     <Compile Include="DAL\DALAluno.cs" />
     <Compile Include="DAL\DALDesafio.cs" />
     <Compile Include="DAL\DALDisciplina.cs" />
+    <Compile Include="DAL\DALExercicio.cs" />
     <Compile Include="DAL\DALMateria.cs" />
     <Compile Include="DAL\DALModulo.cs" />
     <Compile Include="HandlerAluno.ashx.cs">
@@ -98,13 +108,24 @@
     <Compile Include="HandlerDesafio2.ashx.cs">
       <DependentUpon>HandlerDesafio2.ashx</DependentUpon>
     </Compile>
+    <Compile Include="HandlerExercicio.ashx.cs">
+      <DependentUpon>HandlerExercicio.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="HandlerExercicio2.ashx.cs">
+      <DependentUpon>HandlerExercicio2.ashx</DependentUpon>
+    </Compile>
     <Compile Include="HandlerMateria.ashx.cs">
       <DependentUpon>HandlerMateria.ashx</DependentUpon>
     </Compile>
+    <Compile Include="HandlerMateria2.ashx.cs">
+      <DependentUpon>HandlerMateria2.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\alternativaDesafio.cs" />
+    <Compile Include="Modelo\alternativaExercicio.cs" />
     <Compile Include="Modelo\Aluno.cs" />
     <Compile Include="Modelo\Desafio.cs" />
     <Compile Include="Modelo\Disciplina.cs" />
+    <Compile Include="Modelo\Exercicio.cs" />
     <Compile Include="Modelo\Materia.cs" />
     <Compile Include="Modelo\Modulo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -121,6 +142,13 @@
     </Compile>
     <Compile Include="WebFormAlternativaDesafioNew.aspx.designer.cs">
       <DependentUpon>WebFormAlternativaDesafioNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormAlternativaExercicioNew.aspx.cs">
+      <DependentUpon>WebFormAlternativaExercicioNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormAlternativaExercicioNew.aspx.designer.cs">
+      <DependentUpon>WebFormAlternativaExercicioNew.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormAutenticar.aspx.cs">
       <DependentUpon>WebFormAutenticar.aspx</DependentUpon>
@@ -157,12 +185,40 @@
     <Compile Include="WebFormDesafioNew.aspx.designer.cs">
       <DependentUpon>WebFormDesafioNew.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebFormDisciplina.aspx.cs">
+      <DependentUpon>WebFormDisciplina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormDisciplina.aspx.designer.cs">
+      <DependentUpon>WebFormDisciplina.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebFormEditarPerfil.aspx.cs">
       <DependentUpon>WebFormEditarPerfil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebFormEditarPerfil.aspx.designer.cs">
       <DependentUpon>WebFormEditarPerfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormExercicioEdit.aspx.cs">
+      <DependentUpon>WebFormExercicioEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormExercicioEdit.aspx.designer.cs">
+      <DependentUpon>WebFormExercicioEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormExercicioNew.aspx.cs">
+      <DependentUpon>WebFormExercicioNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormExercicioNew.aspx.designer.cs">
+      <DependentUpon>WebFormExercicioNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormExercicioUsuario.aspx.cs">
+      <DependentUpon>WebFormExercicioUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormExercicioUsuario.aspx.designer.cs">
+      <DependentUpon>WebFormExercicioUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormIndex.aspx.cs">
       <DependentUpon>WebFormIndex.aspx</DependentUpon>
@@ -178,12 +234,33 @@
     <Compile Include="WebFormListaDeAlunos.aspx.designer.cs">
       <DependentUpon>WebFormListaDeAlunos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebFormMateria.aspx.cs">
+      <DependentUpon>WebFormMateria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormMateria.aspx.designer.cs">
+      <DependentUpon>WebFormMateria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormMateriaEdit.aspx.cs">
+      <DependentUpon>WebFormMateriaEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormMateriaEdit.aspx.designer.cs">
+      <DependentUpon>WebFormMateriaEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebFormMateriaNew.aspx.cs">
       <DependentUpon>WebFormMateriaNew.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebFormMateriaNew.aspx.designer.cs">
       <DependentUpon>WebFormMateriaNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormMateriaUsuario.aspx.cs">
+      <DependentUpon>WebFormMateriaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormMateriaUsuario.aspx.designer.cs">
+      <DependentUpon>WebFormMateriaUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormModulo.aspx.cs">
       <DependentUpon>WebFormModulo.aspx</DependentUpon>
@@ -227,6 +304,9 @@
     <Content Include="HandlerAluno2.ashx" />
     <Content Include="HandlerDesafio2.ashx" />
     <Content Include="HandlerMateria.ashx" />
+    <Content Include="HandlerMateria2.ashx" />
+    <Content Include="HandlerExercicio.ashx" />
+    <Content Include="HandlerExercicio2.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

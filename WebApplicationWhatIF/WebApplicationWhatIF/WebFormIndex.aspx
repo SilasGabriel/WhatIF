@@ -47,6 +47,10 @@
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormEditarPerfil.aspx">Editar Perfil</asp:HyperLink>
         <br />
         <br />
+        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/WebFormDisciplina.aspx?idDisciplina=1">Português</asp:HyperLink>
+        <br />
+        <br />
+        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/WebFormDisciplina.aspx?idDisciplina=2">Matemática</asp:HyperLink>
     </div>
     </form>
 </body>

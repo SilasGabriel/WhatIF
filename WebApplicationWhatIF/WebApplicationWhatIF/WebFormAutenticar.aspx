@@ -2,54 +2,45 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-    <div style="margin-top:5%;">
+    <div style="margin-top:85px;">
         <!DOCTYPE html>
 
-    <html xmlns="http://www.w3.org/1999/xhtml">
+        <html xmlns="http://www.w3.org/1999/xhtml">
 
-    <body>
-        <div>
-            
-        <br />
-            <!-- <table style="margin:auto; width:30%; border-width:2px;border-style:dashed;border-color:#008000;background-color:#EDFBF1;"> -->
-
-            <table class="corpoCadastro">
-                <tr>
-           
-                    <td colspan="2" align="center"><h2 style="font-family:'Segoe UI Light'">LOGIN</h2>
-                        <hr />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">Nome</td>
-                    <td class="auto-style1"> <asp:TextBox ID="TextBoxLogin" runat="server" size="100" placeholder="Justus da Silva" MaxLength="100" Width="300px"></asp:TextBox>
-	                </td>
-              
-                </tr>
-                <tr>
-                    <td class="auto-style2">Senha</td>
-                    <td class="auto-style1"> <asp:TextBox ID="TextBoxSenha" runat="server" TextMode="Password" Width="300px" MaxLenght="10" MinLength="6"></asp:TextBox>
-                    </td>
-                
-                </tr>
-                <tr>
-                    <td class="auto-style2"><asp:Label ID="teste" runat="server"></asp:Label>
-                    </td>
-                    <td class="auto-style1"><asp:Button ID="ButtonEntrar" runat="server" Text="Entrar" OnClick="ButtonEntrar_Click" Width="75px" />
-                    </td>
-               
-                </tr>
-                <tr>
-                
-                    <td class="auto-style4" colspan="2" align="center">  <asp:HyperLink ID="HyperLink1" runat="server"  NavigateUrl="~/WebFormCadastroAluno.aspx" Width="150px">Criar novo usuário</asp:HyperLink>
-                    </td>
-               
-                </tr>
-            </table>
-        <br /><br />  
-        </div>
-    </body>
-    </html>
-        </div>
+        <body>
+            <div>
+                <!-- <table style="margin:auto; width:30%; border-width:2px;border-style:dashed;border-color:#008000;background-color:#EDFBF1;"> -->
+                <table class="corpoCadastro">
+                    <tr>
+                        <td colspan="2" align="center"><h2 style="font-family:'Segoe UI Light'">LOGIN</h2>
+                            <hr />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto">Nome</td>
+                        <td class="auto"> <asp:TextBox ID="TextBoxLogin" class="dadosCadastro" runat="server" size="100" placeholder="Justus da Silva" MaxLength="100"></asp:TextBox>
+	                    </td>
+                    </tr>
+                    <tr>
+                        <td class="auto">Senha</td>
+                        <td class="auto"> <asp:TextBox ID="TextBoxSenha" class="dadosCadastro" runat="server" TextMode="Password" MaxLenght="10" MinLength="6"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto"><asp:Label ID="teste" runat="server"></asp:Label>
+                        </td>
+                        <td class="auto"><asp:Button ID="ButtonEntrar" class="dadosCadastro" runat="server" Text="Entrar" OnClick="ButtonEntrar_Click" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style4" colspan="2" align="center">  <asp:HyperLink ID="HyperLink1" runat="server"  NavigateUrl="~/WebFormCadastroAluno.aspx" Width="150px">Criar novo usuário</asp:HyperLink>
+                        </td>
+                    </tr>
+                </table>
+            <br /><br />  
+            </div>
+        </body>
+        </html>
+    </div>
 </asp:Content>
 

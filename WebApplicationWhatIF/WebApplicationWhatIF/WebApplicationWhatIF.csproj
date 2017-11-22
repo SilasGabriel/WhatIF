@@ -57,8 +57,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\ialuno.png" />
+    <Content Include="Images\iaula.jpg" />
     <Content Include="Images\iconePerfil.jpg" />
+    <Content Include="Images\idesafio.jpg" />
     <Content Include="Images\Logo.jpg" />
+    <Content Include="Images\logo.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -85,6 +89,7 @@
     <Content Include="WebFormModuloEdit.aspx" />
     <Content Include="WebFormModuloNew.aspx" />
     <Content Include="WebFormQuestãoDesafio.aspx" />
+    <Content Include="WebFormTeste.aspx" />
     <Content Include="WebFormVerAluno.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +124,13 @@
     </Compile>
     <Compile Include="HandlerMateria2.ashx.cs">
       <DependentUpon>HandlerMateria2.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPageAluno.Master.cs">
+      <DependentUpon>MasterPageAluno.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPageAluno.Master.designer.cs">
+      <DependentUpon>MasterPageAluno.Master</DependentUpon>
     </Compile>
     <Compile Include="Modelo\alternativaDesafio.cs" />
     <Compile Include="Modelo\alternativaExercicio.cs" />
@@ -290,6 +302,13 @@
     <Compile Include="WebFormQuestãoDesafio.aspx.designer.cs">
       <DependentUpon>WebFormQuestãoDesafio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebFormTeste.aspx.cs">
+      <DependentUpon>WebFormTeste.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormTeste.aspx.designer.cs">
+      <DependentUpon>WebFormTeste.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebFormVerAluno.aspx.cs">
       <DependentUpon>WebFormVerAluno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -307,6 +326,7 @@
     <Content Include="HandlerMateria2.ashx" />
     <Content Include="HandlerExercicio.ashx" />
     <Content Include="HandlerExercicio2.ashx" />
+    <Content Include="MasterPageAluno.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

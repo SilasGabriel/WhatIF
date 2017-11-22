@@ -1,9 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormIndex.aspx.cs" Inherits="WebApplicationWhatIF.WebFormIndex" %>
-
-<!DOCTYPE html>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPageAluno.Master"  AutoEventWireup="true" CodeBehind="WebFormIndex.aspx.cs" Inherits="WebApplicationWhatIF.WebFormIndex" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+    <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head>
     <title>What IF</title>
     <style type="text/css">
         #header {
@@ -23,35 +25,22 @@
             padding:0;
             border:0;
         }
+        #asd {
+            position:absolute;
+            left : 10%;
+            width: 500px;
+        }
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <div style="margin-top:5%;">
 
-    <div style="height: 229px">
-        <div id="header">
-        <table style="width: 100%; height: 60px;">
-            <tr>
-                <td class="auto-style3">&nbsp;</td>
-                <td align="center" class="auto-style2">
-                    <img class="auto-style6" src="Images/Logo.jpg" style="width:55px; height:55px;" /></td>
-                <td class="auto-style3">
-                    <asp:Button ID="Button1" runat="server" Text="Logout" OnClick="Logout_Click" style="margin-right: 15px;margin-left:23px;"/>
-                </td>
-            </tr>
-        </table>
-        <br />
-        </div>
-        <br />
         <div id="div1" runat="server"></div>
-        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormEditarPerfil.aspx">Editar Perfil</asp:HyperLink>
-        <br />
-        <br />
-        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/WebFormDisciplina.aspx?idDisciplina=1">Português</asp:HyperLink>
-        <br />
-        <br />
-        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/WebFormDisciplina.aspx?idDisciplina=2">Matemática</asp:HyperLink>
-    </div>
-    </form>
+<div style="height: 229px">
+    <img src="Images/logo.png" runat="server" />
+       </div>
+        </div>
 </body>
 </html>
+    </asp:Content>
+

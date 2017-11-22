@@ -63,3 +63,8 @@ E:\Projeto Integrador\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\bin\WebAp
 E:\Projeto Integrador\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.dll
 E:\Projeto Integrador\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.pdb
 E:\Projeto Integrador\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.csprojResolveAssemblyReference.cache
+C:\Users\20151011110171\Desktop\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\bin\WebApplicationWhatIF.dll
+C:\Users\20151011110171\Desktop\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\bin\WebApplicationWhatIF.pdb
+C:\Users\20151011110171\Desktop\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.csprojResolveAssemblyReference.cache
+C:\Users\20151011110171\Desktop\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.dll
+C:\Users\20151011110171\Desktop\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.pdb

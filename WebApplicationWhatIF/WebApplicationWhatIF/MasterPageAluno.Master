@@ -1,0 +1,150 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPageAluno.master.cs" Inherits="WebApplicationWhatIF.MasterPageAluno" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        #cabecalho
+        {
+            background-color: #EDFBF1;
+            width: 100%;
+            height: 70px;
+            top: 0;
+            /* border-bottom: solid 1px rgba(0, 0, 0, .7); */
+            box-shadow: rgb(128, 128, 128) 2px 2px 5px 2px;
+            position: fixed;
+            /* margin-right: 0px; */
+        }
+        #rodape
+        {
+            background-color: #202223;
+            width: 100%;
+            height: 150px;
+            border: none;
+            bottom : 0;
+            position: fixed; 
+            /* border-top: solid 1px rgba(0, 0, 0, .7); */
+        }
+        .corpoCadastro
+        {
+            background-color: #EDFBF1;
+            width: 40%;
+            height: 600px;
+            margin-top: 10px; 
+            margin-bottom: 35px;
+            margin-left: 30%;
+            /* margin-right: 15%; */
+            box-shadow: rgb(128, 128, 128) 2px 2px 5px 2px;
+        }
+        body
+        {
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            background-color: #F2F2F2;
+            height: 100%;
+        }
+        p
+        {
+            font-family: Verdana;
+            color: #000;
+            font-size: 14px;
+            padding-left: 5%;
+        }
+        .textoRodape
+        {
+            font-family: Verdana;
+            color: #FFF;
+            font-size: 18px;
+        }
+        .butaoCabecalho
+        {
+            /*margin-left: 30px;*/
+            border: none;
+            background-color: #F2F2F2;
+            font-family: 'Times New Roman';
+            font-size: 16px;
+            width: 18%;
+            height: 100%;
+            color: #111;
+            text-align: left;
+        }
+        .butaoCadastro
+        {
+            background-color: #FF0032;
+            font-family: 'Times New Roman';
+            font-size: 20px;
+            color: #fff;
+            width: 95%;
+            height: 80px;
+            border: none;
+        }
+        .dadosCadastro
+        {
+            background-color: #F2F2F2;
+            font-family: 'Times New Roman';
+            font-size: 16px;
+            text-align: center;
+            width: 95%;
+            height: 80px;
+        }
+        #barraPesquisa
+        {
+            border: none;
+            background-color: #F2F2F2;
+            font-family: 'Times New Roman';
+            font-size: 16px;
+            width: 70%;
+            height: 70%;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <form id="form2" runat="server">
+    <div>
+        <div>
+            <table ID="cabecalho">
+                <tr>
+                    <td width="5%">
+                        <asp:ImageButton style="width:55px; height:55px;" ID="ImageButton2" runat="server" OnClick="ImageButton2_Click" ImageUrl="Images/logo.png"  />
+                    </td>
+                    <td width="45%">
+                        <asp:TextBox ID="barraPesquisa" runat="server" placeholder=" Pesquise..."></asp:TextBox>
+                    </td>
+                    <td width="0%">
+                        <asp:Button ID="Button1" class="butaoCabecalho" runat="server" Text="Matematica" OnClick="Button1_Click" />
+                        <asp:Button ID="Button2" class="butaoCabecalho" runat="server" Text="Português" OnClick="Button2_Click" />
+                        <asp:Button ID="Button3" class="butaoCabecalho" runat="server" Text="Problema Diário" OnClick="Button3_Click" />
+                        <asp:Button ID="Button4" class="butaoCabecalho" runat="server" Text="Simulado" />
+                        <asp:Button ID="Button5" class="butaoCadastro" runat="server" Text="Logar" style="height: 70%; width: 18%; font-size: 16px" OnClick="Button5_Click" />
+                        <asp:ImageButton style="margin-left: 10px;" ID="ImageButton1" runat="server" Height="30px" OnClick="ImageButton1_Click" Width="30px" />
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <div>
+            <table ID="rodape">
+                <tr>
+                    <td align="center">
+                        <p class="textoRodape"> "Educação não transforma o mundo. Educação muda as pessoas. Pessoas transformam o mundo." Paulo Freire </p>
+                        <hr  style="background-color: #FFF; height: 2px; width: 95%" />
+                        <p class="textoRodape"> WhatIF 2017 </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

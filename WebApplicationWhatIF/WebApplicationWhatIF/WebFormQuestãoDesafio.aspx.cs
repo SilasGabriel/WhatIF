@@ -11,7 +11,10 @@ namespace WebApplicationWhatIF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!((Session["Nome"] != null) && (Session["Senha"] != null)))
+            {
+               Response.Redirect("~/WebFormAutenticar.aspx");
+            }
         }
         protected void Button1_Click(object sender, EventArgs e)
         {

@@ -1,72 +1,21 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormCadastroAluno.aspx.cs" Inherits="WebApplicationWhatIF.WebFormCadastroAluno" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPageAluno.Master"   AutoEventWireup="true" CodeBehind="WebFormCadastroAluno.aspx.cs" Inherits="WebApplicationWhatIF.WebFormCadastroAluno" %>
 
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <style type="text/css" >
-        .auto-style1 {
-            height: 23px;
-        }
-        .auto-style2 {
-            height: 26px;
-        }
-        .auto-style3 {
-            height: 26px;
-            width: 207px;
-        }
-        .auto-style4 {
-            height: 23px;
-            width: 207px;
-        }
-        .auto-style5 {
-            width: 207px;
-        }
-        #cadastro {
-            margin:auto;
-            width:525px;
-            border-width: 2px;
-            border-color:#008000;
-            border-style:dashed;
-        }
-        #header {
-            background-color: #E6FFE6;
-            width: 100%;
-            height: 60px;
-        }
-        .auto-style6 {
-            width: 1280px;
-            height: 1280px;
-        }
-                body {
-            margin:0;
-            padding:0;
-            border:0;
-        }
-        .auto-style7 {
-            width: 15px;
-        }
-    </style>
-</head>
+
 <body>
-    <form id="form1" runat="server">
-    <div >
-		<div id="header" style="background-color: #DDDDDD">
-                    <table style="width: 100%; height: 60px;">
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td align="center">
-                                <img class="auto-style6" src="Images/Logo.jpg" style="width:55px; height:55px;" /></td>
-                            <td>&nbsp;</td>
-                        </tr>
-                    </table>
-                    </div>
-					<br /><br />
-        <table id="cadastro" >
+    <div style="margin-top:5%;">
+		
+        <table id="cadastro"  style="margin:auto; width:20%; border-width:2px;border-style:dashed;border-color:#008000;background-color:#EDFBF1;">
+
             <tr>
                 
-                <td colspan="2" align="center" class="auto-style2"> Cadastro
+                <td colspan="2" align="center" class="auto-style2"><h2 style="font-family:'Segoe UI Light'">CADASTRO</h2>
 					<hr />
 					</td>
              
@@ -143,6 +92,7 @@
             </tr>
         </table>
     </div>
-    </form>
 </body>
 </html>
+</asp:Content>
+

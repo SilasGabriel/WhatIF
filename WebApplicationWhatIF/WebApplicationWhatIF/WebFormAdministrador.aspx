@@ -1,9 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormAdministrador.aspx.cs" Inherits="WebApplicationWhatIF.WebFormAdministrador" %>
-
-<!DOCTYPE html>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPageAluno.Master"  AutoEventWireup="true" CodeBehind="WebFormAdministrador.aspx.cs" Inherits="WebApplicationWhatIF.WebFormAdministrador" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+    <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head>
     <title></title>
     <style type="text/css">
         .auto-style1 {
@@ -33,32 +35,19 @@
             padding:0;
             border:0;
         }
+        
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-        <div id="header">
-        <table style="width: 100%; height: 60px;">
-            <tr>
-                <td class="auto-style5"><asp:HyperLink ID="Back" runat="server" NavigateUrl="~/WebFormIndex.aspx">Voltar</asp:HyperLink>
-                </td>
-                <td align="center" class="auto-style4">
-                    <img class="auto-style6" src="Images/Logo.jpg" style="width:55px; height:55px;" /></td>
-                <td class="auto-style5">
-        <asp:Button ID="Logout" runat="server" Text="Logout" OnClick="Logout_Click" style="margin-right: 15px;margin-left:23px;"/>
-                </td>
-            </tr>
-        </table>
-        <br />
-        </div>
+    <div style="margin-top:5%;">
         
-        <br />
-        <br />
-        <br />
         <table style="width:100%;">
             <tr>
                 <td class="auto-style2" style="width:80%">
+                    <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="Images/iaula.jpg" Height="150px" OnClick="ImageButton1_Click" Width="150px" />
+                    <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="Images/idesafio.jpg" Height="150px" OnClick="ImageButton2_Click1" Width="150px"/>
+                    <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="Images/ialuno.png" Height="150px" OnClick="ImageButton4_Click1" Width="150px"/>
+
                     <asp:HyperLink ID="CrudModulo" runat="server" NavigateUrl="~/WebFormModulo.aspx">CRUDs de Aula</asp:HyperLink>
                     <br />
                     <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/WebFormDesafio.aspx">CRUD Desafio</asp:HyperLink>
@@ -73,6 +62,6 @@
         <br />
         <br />
     </div>
-    </form>
 </body>
 </html>
+    </asp:Content>

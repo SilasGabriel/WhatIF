@@ -73,6 +73,25 @@ namespace WebApplicationWhatIF
                 // Chama a tela de edição
                 Response.Redirect("~\\WebFormAlternativaDesafioNew.aspx");
             }
+            if (e.CommandName == "Excluir")
+            {
+                string codigo;
+
+                // Le o numero da linha selecionada
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                // Copia o conteúdo da primeira célula da linha -> Código do Livro
+                codigo = GridView1.Rows[index].Cells[0].Text;
+
+                // Grava código do Livro na sessão
+                DAL.DALDesafio daldes = new DAL.DALDesafio();
+                Modelo.Desafio des = new Modelo.Desafio();
+                des = daldes.Select(Convert.ToInt32(codigo))[0];
+                daldes.Delete(des);
+
+                // Chama a tela de edição
+                Response.Redirect("~\\WebFormDesafio.aspx");
+            }
         }
     }
 }

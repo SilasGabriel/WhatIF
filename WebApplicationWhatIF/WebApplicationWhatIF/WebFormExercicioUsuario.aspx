@@ -1,9 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormExercicioUsuario.aspx.cs" Inherits="WebApplicationWhatIF.WebFormExercicioUsuario" %>
-
-<!DOCTYPE html>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPageAluno.Master"   AutoEventWireup="true" CodeBehind="WebFormExercicioUsuario.aspx.cs" Inherits="WebApplicationWhatIF.WebFormExercicioUsuario" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+    <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head>
     <title></title>
     <style type="text/css">
         .auto-style1 {
@@ -25,12 +27,14 @@
         .auto-style7 {
             height: 25px;
         }
+        .qwe {
+            background-color: #EDFBF1;
+        }
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-    
+    <div style="margin-top:5%; margin-left:20%; margin-right:30%;">
+        <div class="qwe">
         <asp:Table ID="Table1" runat="server">
         </asp:Table>
         <br />
@@ -80,8 +84,8 @@
 
         <asp:Label ID="Label26" runat="server" Font-Names="Segoe UI Light"></asp:Label>
         <br />
-    
-
+        </div>
+        <div class="qwe">
         <asp:Table ID="Table2" runat="server">
         </asp:Table>
         <br />
@@ -131,8 +135,8 @@
 
         <br />
         <asp:Label ID="Label27" runat="server" Font-Names="Segoe UI Light"></asp:Label>
-    
-
+    </div>
+            <div class="qwe">
         <asp:Table ID="Table3" runat="server">
         </asp:Table>
         <br />
@@ -182,8 +186,8 @@
 
         <br />
         <asp:Label ID="Label28" runat="server" Font-Names="Segoe UI Light"></asp:Label>
-    
-
+    </div>
+                <div class="qwe">
         <asp:Table ID="Table4" runat="server">
         </asp:Table>
         <br />
@@ -233,8 +237,8 @@
 
         <br />
         <asp:Label ID="Label29" runat="server" Font-Names="Segoe UI Light"></asp:Label>
-    
-
+    </div>
+<div class="qwe">
         <asp:Table ID="Table5" runat="server">
         </asp:Table>
         <br />
@@ -284,6 +288,7 @@
         <br />
         <asp:Button ID="Button1" runat="server" Text="Responder" OnClick="Button1_Click" />
     </div>
-    </form>
+    </div>
 </body>
 </html>
+    </asp:Content>

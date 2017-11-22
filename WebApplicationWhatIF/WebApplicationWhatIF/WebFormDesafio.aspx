@@ -19,6 +19,7 @@
                 <asp:ButtonField CommandName="Editar" Text="Editar" />
                 <asp:ButtonField CommandName="Addcorreta" Text="Adicionar alternativa correta" />
                 <asp:ButtonField CommandName="Addalterna" Text="Adicionar alternativas" />
+                <asp:ButtonField CommandName="Excluir" Text="Excluir" />
             </Columns>
             <FooterStyle BackColor="#CCCC99" />
             <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />

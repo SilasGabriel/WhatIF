@@ -24,5 +24,20 @@ namespace WebApplicationWhatIF
             Session.Abandon();
             Response.Redirect("~/WebFormAutenticar.aspx");
         }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("~/WebFormModulo.aspx");
+        }
+        
+        protected void ImageButton2_Click1(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("~/WebFormDesafio.aspx");
+        }
+
+        protected void ImageButton4_Click1(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("~/WebFormListaDeAlunos.aspx");
+        }
     }
 }

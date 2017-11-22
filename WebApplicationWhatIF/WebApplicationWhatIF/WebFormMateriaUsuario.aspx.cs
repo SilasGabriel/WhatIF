@@ -44,7 +44,8 @@ namespace WebApplicationWhatIF
                 link.NavigateUrl = "~/WebFormExercicioUsuario.aspx?idMateria=" + idMateria;
                 link.Text = "Fazer o exercício";
                 link.Font.Name = "Segoe UI Light";
-                link.Font.Size = 12;
+                link.Font.Size = 18;
+                link.ID = "asd";
                 tc3 = new TableCell();
                 tc3.Controls.Add(link);
    

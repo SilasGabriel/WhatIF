@@ -40,9 +40,11 @@
         <div style="margin-top:5%;">
             <div id="div1" runat="server">
             </div>
-            <div style="height: 229px">
-                <img src="Images/logo.png" runat="server" />
-            </div>
+            <center>
+                <div style="height: 20%">
+                <img id="Img1" src="Images/logo.png" style="height:20%; width:20%" runat="server" />
+                </div>
+            </center>
         </div>
     </body>
     </html>

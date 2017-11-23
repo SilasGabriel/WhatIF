@@ -10,7 +10,7 @@
         <body>
             <div>
                 <!-- <table style="margin:auto; width:30%; border-width:2px;border-style:dashed;border-color:#008000;background-color:#EDFBF1;"> -->
-                <table class="corpoCadastro">
+                <table class="corpoAutenticar">
                     <tr>
                         <td colspan="2" align="center"><h2 style="font-family:'Segoe UI Light'">LOGIN</h2>
                             <hr />
@@ -33,8 +33,8 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="auto-style4" colspan="2" align="center">  <asp:HyperLink ID="HyperLink1" runat="server"  NavigateUrl="~/WebFormCadastroAluno.aspx" Width="150px">Criar novo usuário</asp:HyperLink>
-                        </td>
+                        <center><td class="auto-style4" colspan="2" align="center"> <asp:HyperLink ID="HyperLink1" runat="server"  NavigateUrl="~/WebFormCadastroAluno.aspx" Width="167px" Font-Names="Calibri" Font-Size="16px" Height="22px">Criar novo usuário</asp:HyperLink>
+                        </td></center>
                     </tr>
                 </table>
             <br /><br />  

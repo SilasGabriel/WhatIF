@@ -51,10 +51,10 @@
                         <br />
                         <br />
                     </tr>
-                    <tr>
-                        <td colspan="2" align="center"><asp:Button ID="ButtonEnviar" class="butaoCadastro" runat="server" Text="Enviar" OnClick="ButtonEnviar_Click" />
-                            <table style="width:100%;">
-                                <tr>
+                    <tr style="height:20px">
+                        <td colspan="2" align="center"><asp:Button ID="ButtonEnviar" class="butaoCadastro" runat="server" Text="Enviar" OnClick="ButtonEnviar_Click" /></td>
+                            <!--<table style="width:100%; height:10%">--></tr>
+                            <tr>
                                     <td>
 					                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxNome" ErrorMessage="Nome é obrigatório."></asp:RequiredFieldValidator>
 					                </td> 
@@ -79,9 +79,7 @@
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBoxEmail" ErrorMessage="Email é obrigatório"></asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
-                            </table>
-                        </td>
-                    </tr>
+                            <!--></table><-->
                 </table>
             </div>
         </body>

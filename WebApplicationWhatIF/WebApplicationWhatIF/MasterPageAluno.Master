@@ -69,8 +69,12 @@
             margin-top: 5px;
             */
             margin-left: 10%;
+            margin-bottom: 130px;
             /* margin-right: 15%; */
             box-shadow: rgb(128, 128, 128) 2px 2px 5px 2px;
+            padding-left: 0.5%;
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
         body
         {
@@ -123,6 +127,18 @@
             width: 95%;
             height: 40px;
             border: none;
+        }
+        .butaoEnviar
+        {
+            background-color: #2ecc71;
+            font-family: Calibri;
+            font-size: 16px;
+            color: #fff;
+            width: 95%;
+            height: 40px;
+            border: none;
+            margin-left: 2.0%; 
+            margin-right: 2.5%;
         }
         .dadosCadastro
         {

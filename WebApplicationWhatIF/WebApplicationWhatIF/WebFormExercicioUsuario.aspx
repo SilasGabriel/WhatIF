@@ -80,8 +80,6 @@
                         </td>
                     </tr>
                 </table>
-    
-
                 <asp:Label ID="Label26" runat="server" Font-Names="Segoe UI Light"></asp:Label>
                 <br />
                 </div>
@@ -131,12 +129,10 @@
                         </td>
                     </tr>
                 </table>
-    
-
                 <br />
                 <asp:Label ID="Label27" runat="server" Font-Names="Segoe UI Light"></asp:Label>
             </div>
-                    <div class="qwe">
+            <div class="qwe">
                 <asp:Table ID="Table3" runat="server">
                 </asp:Table>
                 <br />
@@ -182,12 +178,10 @@
                         </td>
                     </tr>
                 </table>
-    
-
                 <br />
                 <asp:Label ID="Label28" runat="server" Font-Names="Segoe UI Light"></asp:Label>
-            </div>
-                        <div class="qwe">
+                </div>
+                <div class="qwe">
                 <asp:Table ID="Table4" runat="server">
                 </asp:Table>
                 <br />
@@ -286,7 +280,7 @@
                 </table>
                 <asp:Label ID="Label30" runat="server" Font-Names="Segoe UI Light"></asp:Label>
                 <br />
-                <asp:Button ID="Button1" runat="server" Text="Responder" OnClick="Button1_Click" />
+                <asp:Button ID="Button1" runat="server" Text="Responder" OnClick="Button1_Click" class="butaoEnviar"/>
             </div>
             </div>
         </body>

@@ -1,9 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormMateriaNew.aspx.cs" Inherits="WebApplicationWhatIF.WebFormMateriaNew" %>
-
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPageAluno.Master"  AutoEventWireup="true" CodeBehind="WebFormMateriaNew.aspx.cs" Inherits="WebApplicationWhatIF.WebFormMateriaNew" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head>
     <title></title>
     <style type="text/css">
         .auto-style1 {
@@ -19,7 +21,6 @@
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
     <div>
     
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand">
@@ -90,6 +91,6 @@
         </table>
         <asp:HyperLink ID="HyperLink1" runat="server" Font-Names="Segoe UI Light" NavigateUrl="~/WebFormModulo.aspx">Voltar</asp:HyperLink>
     </div>
-    </form>
 </body>
 </html>
+    </asp:Content>

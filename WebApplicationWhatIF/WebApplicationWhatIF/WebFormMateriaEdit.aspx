@@ -1,13 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormMateriaEdit.aspx.cs" Inherits="WebApplicationWhatIF.WebFormMateriaEdit" %>
-
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPageAluno.Master"  AutoEventWireup="true" CodeBehind="WebFormMateriaEdit.aspx.cs" Inherits="WebApplicationWhatIF.WebFormMateriaEdit" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head>
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
     <div>
     <h2>Editar Matéria</h2>
         <table style="width:100%;">
@@ -69,6 +70,6 @@
         </table>
     
     </div>
-    </form>
 </body>
 </html>
+    </asp:Content>

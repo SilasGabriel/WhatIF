@@ -4,9 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
     <div style="margin-top:5%;">
         <!DOCTYPE html>
-
         <html xmlns="http://www.w3.org/1999/xhtml">
-
         <body>
             <div>
                 <!-- <table style="margin:auto; width:30%; border-width:2px;border-style:dashed;border-color:#008000;background-color:#EDFBF1;"> -->

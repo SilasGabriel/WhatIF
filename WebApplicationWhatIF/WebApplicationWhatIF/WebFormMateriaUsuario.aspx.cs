@@ -11,6 +11,10 @@ namespace WebApplicationWhatIF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!((Session["Nome"] != null) && (Session["Senha"] != null)))
+            {
+                Response.Redirect("~/WebFormAutenticar.aspx");
+            }
             TableRow tr1, tr2, tr3, tr4;
             TableCell tc0, tc1, tc2, tc3;
             string idMateria = Request.QueryString["idMateria"];

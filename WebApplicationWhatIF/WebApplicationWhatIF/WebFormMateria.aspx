@@ -7,12 +7,11 @@
         <html xmlns="http://www.w3.org/1999/xhtml">
         <head >
             <title></title>
-
             <style>
             </style>
         </head>
         <body>
-            <div>
+            <div class="corpoCaminho">
                 <h2>
                     <asp:HyperLink ID="HyperLink1" runat="server"></asp:HyperLink>-
                     <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>

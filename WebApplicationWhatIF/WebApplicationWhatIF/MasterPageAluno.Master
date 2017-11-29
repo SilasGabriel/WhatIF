@@ -77,6 +77,17 @@
             padding-top: 10px;
             padding-bottom: 10px;
         }
+        .corpoCaminho
+        {
+            background-color: #EDFBF1;
+            width: 79.5%;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            margin-left: 10%;
+            margin-bottom: 10px;
+            box-shadow: rgb(128, 128, 128) 2px 2px 5px 2px;
+            padding-left: 0.5%;
+        }
         body
         {
             margin-left: 0px;

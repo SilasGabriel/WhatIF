@@ -12,7 +12,7 @@
             </style>
         </head>
         <body>
-            <div>
+            <div class="corpoCaminho">
                 <h2>
                     <asp:HyperLink ID="HyperLink1" runat="server"></asp:HyperLink>-
                     <asp:HyperLink ID="HyperLink2" runat="server"></asp:HyperLink>-

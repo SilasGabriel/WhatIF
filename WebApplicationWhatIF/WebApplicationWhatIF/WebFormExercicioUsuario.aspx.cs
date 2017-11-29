@@ -11,6 +11,10 @@ namespace WebApplicationWhatIF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!((Session["Nome"] != null) && (Session["Senha"] != null)))
+            {
+                Response.Redirect("~/WebFormAutenticar.aspx");
+            }
             List<Modelo.Exercicio> exercicios = new List<Modelo.Exercicio>();
             DAL.DALExercicio dalexercicio = new DAL.DALExercicio();
             exercicios = dalexercicio.SelectAllIdMateria(Convert.ToInt32(Request.QueryString["idMateria"]));

@@ -64,6 +64,23 @@ namespace WebApplicationWhatIF
                 Table1.Rows.Add(tr2);
                 Table1.Rows.Add(tr3);
                 Table1.Rows.Add(tr4);
+
+                DAL.DALMateria mat = new DAL.DALMateria();
+                Modelo.Materia mate = new Modelo.Materia();
+                mate = mat.Select(Convert.ToInt32(idMateria))[0];
+                Label1.Text = mate.titulo;
+
+                DAL.DALModulo mod = new DAL.DALModulo();
+                Modelo.Modulo modulo = new Modelo.Modulo();
+                modulo = mod.Select(Convert.ToInt32(mate.idModulo))[0];
+                HyperLink2.Text = modulo.titulo;
+                HyperLink2.NavigateUrl = "~/WebFormMateria.aspx?idModulo=" + mate.idModulo;
+
+                DAL.DALDisciplina disc = new DAL.DALDisciplina();
+                Modelo.Disciplina disciplina = new Modelo.Disciplina();
+                disciplina = disc.Select(modulo.idDisciplina)[0];
+                HyperLink1.Text = disciplina.nome;
+                HyperLink1.NavigateUrl = "~/WebFormDisciplina.aspx?idDisciplina=" + disciplina.idDisciplina;
         }
     }
 }

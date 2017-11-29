@@ -14,7 +14,7 @@
         <body>
             <div>
                 <h2>
-                    <asp:HyperLink ID="HyperLink1" runat="server"></asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink1" runat="server"></asp:HyperLink>-
                     <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                 </h2>
             </div>

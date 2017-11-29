@@ -13,6 +13,13 @@
         </head>
         <body>
             <div>
+                <h2>
+                    <asp:HyperLink ID="HyperLink1" runat="server"></asp:HyperLink>-
+                    <asp:HyperLink ID="HyperLink2" runat="server"></asp:HyperLink>-
+                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                </h2>
+            </div>
+            <div>
                 <asp:Table ID="Table1" runat="server" class="corpoNormal">
                 </asp:Table>
             </div>

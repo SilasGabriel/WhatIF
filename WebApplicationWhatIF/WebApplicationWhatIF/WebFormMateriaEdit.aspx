@@ -70,6 +70,7 @@
                         </td>
                     </tr>
                 </table>
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/WebFormAdministrador.aspx">Voltar</asp:HyperLink>
             </div>
         </body>
         </html>

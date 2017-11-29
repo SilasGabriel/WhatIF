@@ -544,6 +544,23 @@ namespace WebApplicationWhatIF
                     }
                 }
             }
+            DAL.DALMateria mat = new DAL.DALMateria();
+            Modelo.Materia mate = new Modelo.Materia();
+            mate = mat.Select(Convert.ToInt32(Request.QueryString["idMateria"]))[0];
+            HyperLink3.Text = mate.titulo;
+            HyperLink3.NavigateUrl = "~/WebFormMateriaUsuario.aspx?idMateria=" + mate.idModulo;
+
+            DAL.DALModulo mod = new DAL.DALModulo();
+            Modelo.Modulo modulo = new Modelo.Modulo();
+            modulo = mod.Select(Convert.ToInt32(mate.idModulo))[0];
+            HyperLink2.Text = modulo.titulo;
+            HyperLink2.NavigateUrl = "~/WebFormMateria.aspx?idModulo=" + mate.idModulo;
+
+            DAL.DALDisciplina disc = new DAL.DALDisciplina();
+            Modelo.Disciplina disciplina = new Modelo.Disciplina();
+            disciplina = disc.Select(modulo.idDisciplina)[0];
+            HyperLink1.Text = disciplina.nome;
+            HyperLink1.NavigateUrl = "~/WebFormDisciplina.aspx?idDisciplina=" + disciplina.idDisciplina;
         }
 
         protected void Button1_Click(object sender, EventArgs e)

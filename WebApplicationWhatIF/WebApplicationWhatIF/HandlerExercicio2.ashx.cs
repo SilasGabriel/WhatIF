@@ -18,7 +18,7 @@ namespace WebApplicationWhatIF
             Modelo.Exercicio exercicio;
             DAL.DALExercicio dalexercicio;
 
-            codigo = Convert.ToInt32(context.Session["idExercicio"]);
+            codigo = Convert.ToInt32(context.Request.QueryString["idExercicio"]);
 
             // Instancia objeto da camada de negocio
             dalexercicio = new DAL.DALExercicio();

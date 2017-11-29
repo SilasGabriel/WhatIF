@@ -39,7 +39,7 @@
                     </SelectParameters>
                 </asp:ObjectDataSource>
                 <br />
-                <h1>Inserir Exercício</h1>
+                <hr /><h2 style="font-family:'Segoe UI Light'"> ADICIONAR EXERCICIO </h2>
                 <table style="width: 100%;">
                     <tr>
                         <td>

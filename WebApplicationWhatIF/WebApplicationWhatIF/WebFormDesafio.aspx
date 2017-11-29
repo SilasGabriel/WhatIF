@@ -37,7 +37,7 @@
                 <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebApplicationWhatIF.Modelo.Desafio" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="WebApplicationWhatIF.DAL.DALDesafio" UpdateMethod="Update"></asp:ObjectDataSource>
                 <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormDesafioNew.aspx">Adicionar desafios</asp:HyperLink>
             <br />
-
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/WebFormAdministrador.aspx">Voltar</asp:HyperLink>
             </div>
         </body>
         </html>

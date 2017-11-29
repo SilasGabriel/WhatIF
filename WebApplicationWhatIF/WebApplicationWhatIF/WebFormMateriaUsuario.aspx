@@ -13,7 +13,7 @@
         </head>
         <body>
             <div class="corpoCaminho">
-                <h2>
+                <h2 style="font-family:Calibri">
                     <asp:HyperLink ID="HyperLink1" runat="server"></asp:HyperLink>-
                     <asp:HyperLink ID="HyperLink2" runat="server"></asp:HyperLink>-
                     <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>

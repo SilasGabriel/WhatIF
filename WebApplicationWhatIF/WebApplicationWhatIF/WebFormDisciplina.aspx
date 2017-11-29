@@ -12,7 +12,7 @@
         </head>
         <body>
             <div class="corpoCaminho">
-                <h2>
+                <h2 style="font-family:Calibri">
                     <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                 </h2>
             </div>

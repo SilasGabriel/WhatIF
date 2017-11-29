@@ -54,6 +54,9 @@
                 </asp:ObjectDataSource>
                 <br />
                 <table style="width:100%;">
+                    <td colspan="2" align="center"><hr /><h2 style="font-family:'Segoe UI Light'"> ADICIONAR MATÉRIA </h2>
+                    <hr />
+                    </td>
                     <tr>
                         <td class="auto-style2">
                             <asp:Label ID="Label1" runat="server" Text="Título" Font-Names="Segoe UI Light"></asp:Label>

@@ -54,7 +54,7 @@
                 <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebApplicationWhatIF.Modelo.Modulo" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="WebApplicationWhatIF.DAL.DALModulo" UpdateMethod="Update"></asp:ObjectDataSource>
                 <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormModuloNew.aspx">Adicionar novo módulo</asp:HyperLink>
                 <br />
-    
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/WebFormAdministrador.aspx">Voltar</asp:HyperLink>
             </div>
         </body>
         </html>

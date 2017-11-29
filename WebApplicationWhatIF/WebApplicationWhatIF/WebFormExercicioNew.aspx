@@ -9,7 +9,7 @@
     <title></title>
 </head>
 <body>
-    <div>
+    <div style="margin-top:5%">
     
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand">
             <AlternatingRowStyle BackColor="White" />

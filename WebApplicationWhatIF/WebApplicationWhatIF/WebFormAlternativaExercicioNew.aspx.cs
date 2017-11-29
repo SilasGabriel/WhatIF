@@ -11,6 +11,49 @@ namespace WebApplicationWhatIF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Modelo.Exercicio exer = new Modelo.Exercicio();
+            DAL.DALExercicio dalexercicio = new DAL.DALExercicio();
+            exer = dalexercicio.Select(Convert.ToInt32(Session["idExercicio"]))[0];
+            //Definindo variáveis que serão utilizadas na table
+            TableRow tr1, tr2, tr3;
+            TableCell tc0;
+            Label titulo = new Label();
+            Label questao = new Label();
+            Image fotoquestao = new Image();
+
+
+            //Adicionando título da questão do Desafio na table
+            titulo.Text = exer.titulo;
+            titulo.Font.Name = "Segoe UI Light";
+            titulo.Font.Size = 16;
+            titulo.Font.Bold = true;
+            tc0 = new TableCell();
+            tc0.Controls.Add(titulo);
+            tr1 = new TableRow();
+            tr1.Cells.Add(tc0);
+            Table1.Rows.Add(tr1);
+
+            //Adicionando imagem da questão do Desafio na table
+            if (exer.fotoquestao != null)
+            {
+                fotoquestao.ImageUrl = "~/HandlerExercicio2.ashx?idExercicio=" + exer.idExercicio;
+            }
+            tc0 = new TableCell();
+            tc0.Controls.Add(fotoquestao);
+            tr2 = new TableRow();
+            tr2.Cells.Add(tc0);
+            Table1.Rows.Add(tr2);
+
+            //Adicionando texto da questão do Desafio na table
+            questao.Text = exer.questao;
+            questao.Font.Name = "Segoe UI Light";
+            questao.Font.Size = 14;
+            questao.Font.Bold = true;
+            tc0 = new TableCell();
+            tc0.Controls.Add(questao);
+            tr3 = new TableRow();
+            tr3.Cells.Add(tc0);
+            Table1.Rows.Add(tr3);
             DAL.DALAluno dalalu = new DAL.DALAluno();
             if (!dalalu.verifADM(Session["Nome"], Session["Senha"]))
             {

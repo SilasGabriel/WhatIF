@@ -10,6 +10,7 @@
 </head>
 <body>
     <div>
+        <asp:Table ID="Table1" runat="server"></asp:Table>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None" Height="239px" Width="430px" OnRowCommand="GridView1_RowCommand">
             <AlternatingRowStyle BackColor="White" />
             <Columns>

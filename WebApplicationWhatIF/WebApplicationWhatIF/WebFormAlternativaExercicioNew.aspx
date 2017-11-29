@@ -11,7 +11,7 @@
 </head>
 <body>
     <div>
-    
+        <asp:Table ID="Table1" runat="server"></asp:Table>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand">
             <AlternatingRowStyle BackColor="White" />
             <Columns>

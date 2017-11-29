@@ -36,7 +36,7 @@
                 <td colspan="2" align="center"><h2 style="font-family:'Segoe UI Light'"> EDITAR MODULO </h2>
                     <hr />
                 </td>
-                <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="20" DataKeyNames="idModulo" DataSourceID="ObjectDataSource1" GridLines="Both" Height="150px" Width="350px" BackColor="White" BorderColor="#EDFBF1" BorderStyle="Solid" BorderWidth="3px">
+                <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="20" DataKeyNames="idModulo" DataSourceID="ObjectDataSource1" GridLines="Both" Height="150px" Width="700px" BackColor="White" BorderColor="#EDFBF1" BorderStyle="Solid" BorderWidth="3px">
                     <EditRowStyle BackColor="White" ForeColor="#000000" BorderColor="#2ecc71" BorderStyle="Solid" BorderWidth="3px"/>
                     <Fields>
                         <asp:BoundField DataField="idModulo" HeaderText="idModulo" ReadOnly="True" SortExpression="idModulo" />

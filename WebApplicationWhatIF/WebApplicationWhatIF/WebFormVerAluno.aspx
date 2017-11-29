@@ -1,13 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormVerAluno.aspx.cs" Inherits="WebApplicationWhatIF.WebFormVerAluno" %>
-
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPageAluno.Master" AutoEventWireup="true" CodeBehind="WebFormVerAluno.aspx.cs" Inherits="WebApplicationWhatIF.WebFormVerAluno" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
 <!DOCTYPE html>
-
+    <div style="margin-top:5%">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head>
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
         <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" Height="50px" Width="300px">
             <Fields>
                 <asp:TemplateField>
@@ -31,6 +32,7 @@
     <div>
     
     </div>
-    </form>
 </body>
 </html>
+        </div>
+    </asp:Content>

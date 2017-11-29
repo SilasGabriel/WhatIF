@@ -45,9 +45,9 @@
                         <td class="auto-style2" style="width:80%">
                             
 
-                            <asp:HyperLink ID="CrudModulo" runat="server" NavigateUrl="~/WebFormModulo.aspx">CRUDs de Aula</asp:HyperLink>
+                            <asp:HyperLink ID="CrudModulo" runat="server" NavigateUrl="~/WebFormModulo.aspx">Gerenciar Aulas</asp:HyperLink>
                             <br />
-                            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/WebFormDesafio.aspx">CRUD Desafio</asp:HyperLink>
+                            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/WebFormDesafio.aspx">Gerenciar Desafios</asp:HyperLink>
                             <br />
                             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormListaDeAlunos.aspx">Lista de Alunos</asp:HyperLink>
                         </td>

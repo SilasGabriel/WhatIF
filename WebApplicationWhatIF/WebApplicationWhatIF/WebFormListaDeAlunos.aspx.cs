@@ -29,7 +29,7 @@ namespace WebApplicationWhatIF
                 int index = Convert.ToInt32(e.CommandArgument);
 
                 // Copia o conteúdo da primeira célula da linha -> Código do Livro
-                nome = GridView1.Rows[index].Cells[0].Text;
+                nome = GridView1.Rows[index].Cells[1].Text;
 
                 // Grava código do Livro na sessão
                 Session["nomeAluno"] = nome;
@@ -38,5 +38,6 @@ namespace WebApplicationWhatIF
                 Response.Redirect("~\\WebFormVerAluno.aspx");
             }
         }
+
     }
 }

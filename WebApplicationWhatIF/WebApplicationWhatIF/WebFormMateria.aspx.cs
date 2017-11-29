@@ -31,6 +31,15 @@ namespace WebApplicationWhatIF
                 tr1.Cells.Add(tc0);
                 Table1.Rows.Add(tr1);
             }
+            DAL.DALModulo mod = new DAL.DALModulo();
+            Modelo.Modulo modulo = new Modelo.Modulo();
+            modulo = mod.Select(Convert.ToInt32(idModulo))[0];
+            Label1.Text = modulo.titulo;
+            DAL.DALDisciplina disc = new DAL.DALDisciplina();
+            Modelo.Disciplina disciplina = new Modelo.Disciplina();
+            disciplina = disc.Select(modulo.idDisciplina)[0];
+            HyperLink1.Text = disciplina.nome;
+            HyperLink1.NavigateUrl = "~/WebFormDisciplina.aspx?idDisciplina=" + disciplina.idDisciplina;
         }
     }
 }

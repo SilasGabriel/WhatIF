@@ -77,6 +77,8 @@
                                 <tr>
                                     <td>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBoxEmail" ErrorMessage="Email é obrigatório"></asp:RequiredFieldValidator>
+                                        <br />
+                                        <asp:Label ID="Label1" runat="server" Text="" Font-Names="Calibri"></asp:Label>
                                     </td>
                                 </tr>
                             <!--></table><-->

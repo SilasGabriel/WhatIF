@@ -18,6 +18,7 @@
             box-shadow: rgb(128, 128, 128) 2px 2px 5px 2px;
             position: fixed;
             /* margin-right: 0px; */
+            z-index:999;
         }
         #rodape
         {

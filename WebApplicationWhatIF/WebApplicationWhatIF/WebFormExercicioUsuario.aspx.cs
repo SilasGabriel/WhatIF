@@ -558,46 +558,46 @@ namespace WebApplicationWhatIF
                         {
                             if ((RadioButton1.Font.Name == "Arial") && (RadioButton1.Checked))
                             {
-                                Label26.Text = "Acertou, mizeravi!";
+                                Label26.Text = "&#10003;";
                                 break;
                             }
-                            else Label26.Text = "Errou, vai estudar, vagabundo!";
+                            else Label26.Text = "<g style='color: red;'>X</g>";
                         }
                         if (i == 1)
                         {
                             if ((RadioButton2.Font.Name == "Arial") && (RadioButton2.Checked))
                             {
-                                Label26.Text = "Acertou, mizeravi!";
+                                Label26.Text = "&#10003;";
                                 break;
                             }
-                            else Label26.Text = "Errou, vai estudar, vagabundo!";
+                            else Label26.Text = "<g style='color: red;'>X</g>";
                         }
                         if (i == 2)
                         {
                             if ((RadioButton3.Font.Name == "Arial") && (RadioButton3.Checked))
                             {
-                                Label26.Text = "Acertou, mizeravi!";
+                                Label26.Text = "&#10003;";
                                 break;
                             }
-                            else Label26.Text = "Errou, vai estudar, vagabundo!";
+                            else Label26.Text = "<g style='color: red;'>X</g>";
                         }
                         if (i == 3)
                         {
                             if ((RadioButton4.Font.Name == "Arial") && (RadioButton4.Checked))
                             {
-                                Label26.Text = "Acertou, mizeravi!";
+                                Label26.Text = "&#10003;";
                                 break;
                             }
-                            else Label26.Text = "Errou, vai estudar, vagabundo!";
+                            else Label26.Text = "<g style='color: red;'>X</g>";
                         }
                         if (i == 4)
                         {
                             if ((RadioButton5.Font.Name == "Arial") && (RadioButton5.Checked))
                             {
-                                Label26.Text = "Acertou, mizeravi!";
+                                Label26.Text = "&#10003;";
                                 break;
                             }
-                            else Label26.Text = "Errou, vai estudar, vagabundo!";
+                            else Label26.Text = "<g style='color: red;'>X</g>";
                         }
                     }
                 }
@@ -609,46 +609,46 @@ namespace WebApplicationWhatIF
                         {
                             if ((RadioButton6.Font.Name == "Arial") && (RadioButton6.Checked))
                             {
-                                Label27.Text = "Acertou, mizeravi!";
+                                Label27.Text = "&#10003;";
                                 break;
                             }
-                            else Label27.Text = "Errou, vai estudar, vagabundo!";
+                            else Label27.Text = "<g style='color: red;'>X</g>";
                         }
                         if (i == 1)
                         {
                             if ((RadioButton7.Font.Name == "Arial") && (RadioButton7.Checked))
                             {
-                                Label27.Text = "Acertou, mizeravi!";
+                                Label27.Text = "&#10003;";
                                 break;
                             }
-                            else Label27.Text = "Errou, vai estudar, vagabundo!";
+                            else Label27.Text = "<g style='color: red;'>X</g>";
                         }
                         if (i == 2)
                         {
                             if ((RadioButton8.Font.Name == "Arial") && (RadioButton8.Checked))
                             {
-                                Label27.Text = "Acertou, mizeravi!";
+                                Label27.Text = "&#10003;";
                                 break;
                             }
-                            else Label27.Text = "Errou, vai estudar, vagabundo!";
+                            else Label27.Text = "<g style='color: red;'>X</g>";
                         }
                         if (i == 3)
                         {
                             if ((RadioButton9.Font.Name == "Arial") && (RadioButton9.Checked))
                             {
-                                Label27.Text = "Acertou, mizeravi!";
+                                Label27.Text = "&#10003;";
                                 break;
                             }
-                            else Label27.Text = "Errou, vai estudar, vagabundo!";
+                            else Label27.Text = "<g style='color: red;'>X</g>";
                         }
                         if (i == 4)
                         {
                             if ((RadioButton10.Font.Name == "Arial") && (RadioButton10.Checked))
                             {
-                                Label27.Text = "Acertou, mizeravi!";
+                                Label27.Text = "&#10003;";
                                 break;
                             }
-                            else Label27.Text = "Errou, vai estudar, vagabundo!";
+                            else Label27.Text = "<g style='color: red;'>X</g>";
                         }
                     }
                 }
@@ -660,46 +660,46 @@ namespace WebApplicationWhatIF
                         {
                             if ((RadioButton11.Font.Name == "Arial") && (RadioButton11.Checked))
                             {
-                                Label28.Text = "Acertou, mizeravi!";
+                                Label28.Text = "&#10003;";
                                 break;
                             }
-                            else Label28.Text = "Errou, vai estudar, vagabundo!";
+                            else Label28.Text = "<g style='color: red;'>X</g>";
                         }
                         if (i == 1)
                         {
                             if ((RadioButton12.Font.Name == "Arial") && (RadioButton12.Checked))
                             {
-                                Label28.Text = "Acertou, mizeravi!";
+                                Label28.Text = "&#10003;";
                                 break;
                             }
-                            else Label28.Text = "Errou, vai estudar, vagabundo!";
+                            else Label28.Text = "<g style='color: red;'>X</g>";
                         }
                         if (i == 2)
                         {
                             if ((RadioButton13.Font.Name == "Arial") && (RadioButton13.Checked))
                             {
-                                Label28.Text = "Acertou, mizeravi!";
+                                Label28.Text = "&#10003;";
                                 break;
                             }
-                            else Label28.Text = "Errou, vai estudar, vagabundo!";
+                            else Label28.Text = "<g style='color: red;'>X</g>";
                         }
                         if (i == 3)
                         {
                             if ((RadioButton14.Font.Name == "Arial") && (RadioButton14.Checked))
                             {
-                                Label28.Text = "Acertou, mizeravi!";
+                                Label28.Text = "&#10003;";
                                 break;
                             }
-                            else Label28.Text = "Errou, vai estudar, vagabundo!";
+                            else Label28.Text = "<g style='color: red;'>X</g>";
                         }
                         if (i == 4)
                         {
                             if ((RadioButton15.Font.Name == "Arial") && (RadioButton15.Checked))
                             {
-                                Label28.Text = "Acertou, mizeravi!";
+                                Label28.Text = "&#10003;";
                                 break;
                             }
-                            else Label28.Text = "Errou, vai estudar, vagabundo!";
+                            else Label28.Text = "<g style='color: red;'>X</g>";
                         }
                     }
                 }
@@ -711,46 +711,46 @@ namespace WebApplicationWhatIF
                         {
                             if ((RadioButton16.Font.Name == "Arial") && (RadioButton16.Checked))
                             {
-                                Label29.Text = "Acertou, mizeravi!";
+                                Label29.Text = "&#10003;";
                                 break;
                             }
-                            else Label29.Text = "Errou, vai estudar, vagabundo!";
+                            else Label29.Text = "<g style='color: red;'>X</g>";
                         }
                         if (i == 1)
                         {
                             if ((RadioButton17.Font.Name == "Arial") && (RadioButton17.Checked))
                             {
-                                Label29.Text = "Acertou, mizeravi!";
+                                Label29.Text = "&#10003;";
                                 break;
                             }
-                            else Label29.Text = "Errou, vai estudar, vagabundo!";
+                            else Label29.Text = "<g style='color: red;'>X</g>";
                         }
                         if (i == 2)
                         {
                             if ((RadioButton18.Font.Name == "Arial") && (RadioButton18.Checked))
                             {
-                                Label29.Text = "Acertou, mizeravi!";
+                                Label29.Text = "&#10003;";
                                 break;
                             }
-                            else Label29.Text = "Errou, vai estudar, vagabundo!";
+                            else Label29.Text = "<g style='color: red;'>X</g>";
                         }
                         if (i == 3)
                         {
                             if ((RadioButton19.Font.Name == "Arial") && (RadioButton19.Checked))
                             {
-                                Label29.Text = "Acertou, mizeravi!";
+                                Label29.Text = "&#10003;";
                                 break;
                             }
-                            else Label29.Text = "Errou, vai estudar, vagabundo!";
+                            else Label29.Text = "<g style='color: red;'>X</g>";
                         }
                         if (i == 4)
                         {
                             if ((RadioButton20.Font.Name == "Arial") && (RadioButton20.Checked))
                             {
-                                Label29.Text = "Acertou, mizeravi!";
+                                Label29.Text = "&#10003;";
                                 break;
                             }
-                            else Label29.Text = "Errou, vai estudar, vagabundo!";
+                            else Label29.Text = "<g style='color: red;'>X</g>";
                         }
                     }
                 }
@@ -763,46 +763,46 @@ namespace WebApplicationWhatIF
                         {
                             if ((RadioButton21.Font.Name == "Arial") && (RadioButton21.Checked))
                             {
-                                Label30.Text = "Acertou, mizeravi!";
+                                Label30.Text = "&#10003;";
                                 break;
                             }
-                            else Label30.Text = "Errou, vai estudar, vagabundo!";
+                            else Label30.Text = "<g style='color: red;'>X</g>";
                         }
                         if (i == 1)
                         {
                             if ((RadioButton22.Font.Name == "Arial") && (RadioButton22.Checked))
                             {
-                                Label30.Text = "Acertou, mizeravi!";
+                                Label30.Text = "&#10003;";
                                 break;
                             }
-                            else Label30.Text = "Errou, vai estudar, vagabundo!";
+                            else Label30.Text = "<g style='color: red;'>X</g>";
                         }
                         if (i == 2)
                         {
                             if ((RadioButton23.Font.Name == "Arial") && (RadioButton23.Checked))
                             {
-                                Label30.Text = "Acertou, mizeravi!";
+                                Label30.Text = "&#10003;";
                                 break;
                             }
-                            else Label30.Text = "Errou, vai estudar, vagabundo!";
+                            else Label30.Text = "<g style='color: red;'>X</g>";
                         }
                         if (i == 3)
                         {
                             if ((RadioButton24.Font.Name == "Arial") && (RadioButton24.Checked))
                             {
-                                Label30.Text = "Acertou, mizeravi!";
+                                Label30.Text = "&#10003;";
                                 break;
                             }
-                            else Label30.Text = "Errou, vai estudar, vagabundo!";
+                            else Label30.Text = "<g style='color: red;'>X</g>";
                         }
                         if (i == 4)
                         {
                             if ((RadioButton25.Font.Name == "Arial") && (RadioButton25.Checked))
                             {
-                                Label30.Text = "Acertou, mizeravi!";
+                                Label30.Text = "&#10003;";
                                 break;
                             }
-                            else Label30.Text = "Errou, vai estudar, vagabundo!";
+                            else Label30.Text = "<g style='color: red;'>X</g>";
                         }
                     }
                 }

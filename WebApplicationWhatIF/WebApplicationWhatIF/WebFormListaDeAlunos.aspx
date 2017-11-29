@@ -14,11 +14,13 @@
                     <h2>Todos os Usuários</h2>
                     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowCommand="GridView1_RowCommand" Width="600px">
                         <Columns>
+                            <asp:BoundField DataField="idAluno" HeaderText="idAluno" SortExpression="idAluno" />
                             <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
+                            <asp:BoundField DataField="senha" HeaderText="Senha" SortExpression="senha" />
                             <asp:BoundField DataField="email" HeaderText="Email" SortExpression="email" />
                             <asp:CheckBoxField DataField="escolaPublica" HeaderText="Escola Pública" SortExpression="escolaPublica" />
                             <asp:CheckBoxField DataField="administrador" HeaderText="Administrador" SortExpression="administrador" />
-                            <asp:ButtonField CommandName="Visualizar" Text="Visualizar Aluno" />
+                            <asp:ButtonField CommandName="Visualizar" Text="Visualizar aluno" />
                         </Columns>
                     </asp:GridView>
                     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="WebApplicationWhatIF.DAL.DALAluno"></asp:ObjectDataSource>
@@ -33,6 +35,7 @@
                         <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
                         <asp:CheckBoxField DataField="escolaPublica" HeaderText="escolaPublica" SortExpression="escolaPublica" />
                         <asp:CheckBoxField DataField="administrador" HeaderText="administrador" SortExpression="administrador" />
+                        <asp:ButtonField CommandName="Visualizar" Text="Visualizar Adm" />
                     </Columns>
                 </asp:GridView>
                 <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAdm" TypeName="WebApplicationWhatIF.DAL.DALAluno"></asp:ObjectDataSource>

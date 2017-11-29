@@ -1,9 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormModuloNew.aspx.cs" Inherits="WebApplicationWhatIF.WebFormModuloNew" %>
-
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPageAluno.Master"  AutoEventWireup="true" CodeBehind="WebFormModuloNew.aspx.cs" Inherits="WebApplicationWhatIF.WebFormModuloNew" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head>
     <title></title>
     <style>
         #header {
@@ -46,7 +48,6 @@
         </style>
 </head>
 <body>
-    <form id="form1" runat="server">
     <div>
         <div id="header">
         <table style="width: 100%; height: 60px;">
@@ -133,6 +134,6 @@
    
     
     </div>
-    </form>
 </body>
 </html>
+    </asp:Content>

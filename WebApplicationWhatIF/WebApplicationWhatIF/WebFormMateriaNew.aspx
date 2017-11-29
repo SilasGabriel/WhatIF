@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-<!DOCTYPE html>
+    <!DOCTYPE html>
     <div style="margin-top:5%;">
         <html xmlns="http://www.w3.org/1999/xhtml">
         <head>
@@ -22,10 +22,10 @@
         </head>
         <body>
             <div class="corpoNormal">
-                <td colspan="2" align="center"><h2 style="font-family:'Segoe UI Light'"> LISTA DE MATERIAS </h2>
+                <td colspan="2" align="center"><h2 style="font-family:'Segoe UI Light'"> LISTA DE MATÉRIAS </h2>
                     <hr />
                 </td>
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#EDFBF1" BorderStyle="Solid" BorderWidth="2px" CellPadding="20" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="Both" OnRowCommand="GridView1_RowCommand">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#EDFBF1" BorderStyle="Solid" BorderWidth="2px" CellPadding="20" DataSourceID="ObjectDataSource1" ForeColor="#333333" OnRowCommand="GridView1_RowCommand" AllowPaging="True" PageSize="1">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField DataField="idMateria" HeaderText="idMateria" SortExpression="idMateria" ReadOnly="True" />

@@ -14,6 +14,7 @@ namespace WebApplicationWhatIF
             TableRow tr1, tr2, tr3, tr4;
             TableCell tc0, tc1, tc2, tc3;
             string idMateria = Request.QueryString["idMateria"];
+            Session["idMateria"] = idMateria;
             int aux = Convert.ToInt32(idMateria);
             DAL.DALMateria dalmateria = new DAL.DALMateria();
             Modelo.Materia materia = dalmateria.SelectTeste(aux);

@@ -21,6 +21,14 @@
                 {
                     width: 336px;
                 }
+                .acerto {
+                    font-size: 150px;
+                    color: green;
+                    font-weight: bold;
+                    position: absolute;
+                    margin-left: 40%;
+                    margin-top: -20%;
+                }
             </style>
         </head>
         <body>
@@ -74,7 +82,7 @@
                     </tr>
                 </table>
                 <br />
-                <asp:Label ID="Label6" runat="server" Font-Names="Segoe UI Light"></asp:Label>
+                <asp:Label ID="Label6" runat="server" Font-Names="Segoe UI Light" CssClass="acerto"></asp:Label>
                 <br />
                 <asp:Button ID="Button2" runat="server" Text="Responder" OnClick="Button2_Click" class="butaoEnviar"/>
             </div>

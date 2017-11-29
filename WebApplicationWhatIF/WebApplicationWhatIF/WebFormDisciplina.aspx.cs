@@ -37,6 +37,10 @@ namespace WebApplicationWhatIF
                 tr1.Cells.Add(tc1);
                 Table1.Rows.Add(tr1);
             }
+            DAL.DALDisciplina disc = new DAL.DALDisciplina();
+            Modelo.Disciplina disciplina = new Modelo.Disciplina();
+            disciplina = disc.Select(Convert.ToInt32(idDisciplina))[0];
+            Label1.Text = disciplina.nome;
         }
     }
 }

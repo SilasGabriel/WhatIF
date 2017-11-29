@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Web;
+using WebApplicationWhatIF.Modelo;
 
 namespace WebApplicationWhatIF.DAL
 {
@@ -70,32 +71,19 @@ namespace WebApplicationWhatIF.DAL
             cmd.ExecuteNonQuery();
             sc.Close();
         }
-        // FAZER INJECTION SORT, FAZER CRIAR O OBJETO ALUNO
+        // Autenticar
         [DataObjectMethod(DataObjectMethodType.Select)]
         public bool Autenticar(string nome, string senha) 
         { 
-            SqlConnection sc = new SqlConnection(connectionString);
-            SqlCommand cmd = new SqlCommand();
-            SqlDataAdapter sda = new SqlDataAdapter();
-            DataSet ds = new DataSet();
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.Connection = sc;
-            cmd.CommandText = "SELECT * from Aluno WHERE nome = @nome and senha = @senha";
-            cmd.Parameters.AddWithValue("@nome", nome);
-            cmd.Parameters.AddWithValue("@senha", senha);
-            sda.SelectCommand = cmd;
-            sc.Open();
-            cmd.ExecuteNonQuery();
-            sc.Close();
-            sda.Fill(ds, "Aluno");
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                return true; 
-            }
-            else
-            {
-                return false; 
-            }
+            
+            List<Modelo.Aluno> aAluno = new List<Aluno>();
+            DALAluno dalAluno = new DALAluno();
+
+            aAluno = dalAluno.Select(nome);
+            if (aAluno.Count < 1) return false;
+
+            if (aAluno[0].senha == senha) return true;
+            else return false;
         }
 
         //Verificar

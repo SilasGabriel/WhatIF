@@ -43,9 +43,7 @@
                 <table style="width:100%;">
                     <tr>
                         <td class="auto-style2" style="width:80%">
-                            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="Images/iaula.jpg" Height="150px" OnClick="ImageButton1_Click" Width="150px" />
-                            <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="Images/idesafio.jpg" Height="150px" OnClick="ImageButton2_Click1" Width="150px"/>
-                            <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="Images/ialuno.png" Height="150px" OnClick="ImageButton4_Click1" Width="150px"/>
+                            
 
                             <asp:HyperLink ID="CrudModulo" runat="server" NavigateUrl="~/WebFormModulo.aspx">CRUDs de Aula</asp:HyperLink>
                             <br />

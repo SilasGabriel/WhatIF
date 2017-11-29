@@ -12,6 +12,12 @@
     </head>
     <body>
         <div>
+            <h2>
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+
+            </h2>
+        </div>
+        <div>
             <asp:Table ID="Table1" runat="server" class="corpoCadastro">
             </asp:Table>
         </div>

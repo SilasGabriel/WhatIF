@@ -15,37 +15,91 @@
             </script>
 
         <body>
-            <div class="corpoNormal">
-                <td colspan="2" align="center"><h2 style="font-family:'Segoe UI Light'"> EDITAR DESAFIO </h2>
-                    <hr />
+    <div>
+        <h1>Editar Desafio</h1>
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    <asp:Label ID="Label1" runat="server" Text="Título"></asp:Label>
                 </td>
-                <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" BackColor="White" BorderColor="#EDFBF1" BorderStyle="Solid" BorderWidth="3px" CellPadding="20" DataSourceID="ObjectDataSource1" GridLines="Both" Height="150px" Width="700px" OnItemCommand="DetailsView1_ItemCommand">
-                    <EditRowStyle BackColor="White" ForeColor="#000000" BorderColor="#2ecc71" BorderStyle="Solid" BorderWidth="3px"/>
-                    <Fields>
-                        <asp:TemplateField>
-                            <ItemTemplate>
-                                <asp:Image ID="Image1" runat="server" ImageUrl='<%# "HandlerDesafio2.ashx?idDesafio=" + Eval("idDesafio") %>' Height="100px" Width="100px" />
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:BoundField DataField="idDesafio" HeaderText="idDesafio" SortExpression="idDesafio" InsertVisible="False" ReadOnly="True" />
-                        <asp:BoundField DataField="titulo" HeaderText="titulo" SortExpression="titulo" />
-                        <asp:BoundField DataField="questao" HeaderText="questao" SortExpression="questao" />
-                        <asp:CommandField ShowEditButton="True" />
-                        <asp:ButtonField CommandName="Excluir" Text="Excluir" />
-                    </Fields>
-                    <FooterStyle BackColor="#EDFBF1" ForeColor="#000000" />
-                    <HeaderStyle BackColor="#2ecc71" Font-Bold="True" ForeColor="#FFFFFF" />
-                    <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
-                    <RowStyle ForeColor="#000000" />
-                </asp:DetailsView>
-                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebApplicationWhatIF.Modelo.Desafio" InsertMethod="Insert" SelectMethod="Select" TypeName="WebApplicationWhatIF.DAL.DALDesafio" UpdateMethod="Update" DeleteMethod="DeleteTeste">
-                    <SelectParameters>
-                        <asp:SessionParameter Name="idDesafio" SessionField="idDesafio" Type="Int32" />
-                    </SelectParameters>
-                </asp:ObjectDataSource>
-                <br />
-                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormDesafio.aspx">Voltar</asp:HyperLink>
-            </div>
+                <td>
+                    <asp:DataList ID="DataList1" runat="server" DataSourceID="ObjectDataSource1">
+                        <ItemTemplate>
+                            &nbsp;<asp:TextBox ID="TextBox3" runat="server" Text='<%# Eval("titulo") %>'></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                                ControlToValidate="TextBox3" ErrorMessage="O desafio deve possuir um título"></asp:RequiredFieldValidator>
+                            <br />
+                        </ItemTemplate>
+                    </asp:DataList>
+                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+                        SelectMethod="Select" TypeName="WebApplicationWhatIF.DAL.DALDesafio">
+                        <SelectParameters>
+                            <asp:SessionParameter Name="idDesafio" SessionField="idDesafio" Type="Int32" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="Label2" runat="server" Text="Questão"></asp:Label>
+                </td>
+                <td>
+                    <asp:DataList ID="DataList2" runat="server" DataSourceID="ObjectDataSource2">
+                        <ItemTemplate>
+                            <asp:TextBox ID="TextBox4" runat="server" Height="200px" 
+                                Text='<%# Eval("questao") %>' TextMode="MultiLine" Width="500px"></asp:TextBox>
+                            <br />
+                            <br />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                                ControlToValidate="TextBox4" 
+                                ErrorMessage="O desafio deve possuir uma questão (enunciado)"></asp:RequiredFieldValidator>
+                            <br />
+                            <br />
+                        </ItemTemplate>
+                    </asp:DataList>
+                    <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
+                        SelectMethod="Select" TypeName="WebApplicationWhatIF.DAL.DALDesafio">
+                        <SelectParameters>
+                            <asp:SessionParameter Name="idDesafio" SessionField="idDesafio" Type="Int32" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style1">
+                    <asp:Label ID="Label3" runat="server" Text="Imagem da questão"></asp:Label>
+                </td>
+                <td class="auto-style1">
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/HandlerDesafio3.ashx" />
+                    <br />
+                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style1">
+                    Dificuldade</td>
+                <td class="auto-style1">
+                    <asp:DropDownList ID="DropDownList1" runat="server" 
+                        DataSourceID="ObjectDataSource3" DataTextField="grau" 
+                        DataValueField="idDificuldade">
+                    </asp:DropDownList>
+                    <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" 
+                        SelectMethod="SelectAll" TypeName="WebApplicationWhatIF.DAL.DALDificuldade">
+                    </asp:ObjectDataSource>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style1">
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Atualizar" />
+                </td>
+                <td class="auto-style1">
+                    <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Cancelar" />
+                </td>
+            </tr>
+        </table>
+    
+    </div>
         </body>
         </html>
     </div>

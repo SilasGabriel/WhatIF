@@ -17,6 +17,12 @@ namespace WebApplicationWhatIF.Modelo
             get { return materia.idMateria; }
             set { materia.idMateria = value; }
         }
+        public Dificuldade dificuldade { get; set; }
+        public int idDificuldade
+        {
+            get { return dificuldade.idDificuldade; }
+            set { dificuldade.idDificuldade = value; }
+        }
         // Construtor
         public Exercicio()
         {
@@ -25,15 +31,18 @@ namespace WebApplicationWhatIF.Modelo
             this.fotoquestao = null;
             materia = new Materia();
         }
-        public Exercicio(string titulo, string questao, int idMateria)
+        public Exercicio(string titulo, string questao, int idMateria, int idDificuldade)
         {
             this.titulo = titulo;
             this.questao = questao;
             materia = new Materia();
             DAL.DALMateria dalmateria = new DAL.DALMateria();
             materia = dalmateria.Select(idMateria)[0];
+            dificuldade = new Dificuldade();
+            DAL.DALDificuldade daldificuldade = new DAL.DALDificuldade();
+            dificuldade = daldificuldade.Select(idDificuldade)[0];
         }
-        public Exercicio(string titulo, string questao, byte[] fotoquestao, int idMateria)
+        public Exercicio(string titulo, string questao, byte[] fotoquestao, int idMateria, int idDificuldade)
         {
             this.titulo = titulo;
             this.questao = questao;
@@ -41,8 +50,11 @@ namespace WebApplicationWhatIF.Modelo
             materia = new Materia();
             DAL.DALMateria dalmateria = new DAL.DALMateria();
             materia = dalmateria.Select(idMateria)[0];
+            dificuldade = new Dificuldade();
+            DAL.DALDificuldade daldificuldade = new DAL.DALDificuldade();
+            dificuldade = daldificuldade.Select(idDificuldade)[0];
         }
-        public Exercicio(int idExercicio, string titulo, string questao, byte[] fotoquestao, int idMateria)
+        public Exercicio(int idExercicio, string titulo, string questao, byte[] fotoquestao, int idMateria, int idDificuldade)
         {
             this.idExercicio = idExercicio;
             this.titulo = titulo;
@@ -51,6 +63,9 @@ namespace WebApplicationWhatIF.Modelo
             materia = new Materia();
             DAL.DALMateria dalmateria = new DAL.DALMateria();
             materia = dalmateria.Select(idMateria)[0];
+            dificuldade = new Dificuldade();
+            DAL.DALDificuldade daldificuldade = new DAL.DALDificuldade();
+            dificuldade = daldificuldade.Select(idDificuldade)[0];
         }
     }
 }

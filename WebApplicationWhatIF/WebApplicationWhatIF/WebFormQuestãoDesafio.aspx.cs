@@ -27,9 +27,10 @@ namespace WebApplicationWhatIF
             RadioButton5.Checked = false;
 
             //Definindo variáveis que serão utilizadas na table
-            TableRow tr1, tr2, tr3;
+            TableRow tr1, tr2, tr3, tr4;
             TableCell tc0;
             Label titulo = new Label();
+            Label dificuldade = new Label();
             Label questao = new Label();
             Image fotoquestao = new Image();
             Label c = new Label();
@@ -38,7 +39,11 @@ namespace WebApplicationWhatIF
             DAL.DALDesafio daldes = new DAL.DALDesafio();
             Modelo.Desafio des = new Modelo.Desafio();
             des = daldes.Select(codigo)[0];
-            
+
+            DAL.DALDificuldade daldif = new DAL.DALDificuldade();
+            Modelo.Dificuldade dif = new Modelo.Dificuldade();
+            dif = daldif.Select(des.idDificuldade)[0];
+
             //Adicionando título da questão do Desafio na table
             titulo.Text = des.titulo;
             titulo.Font.Name = "Segoe UI Light";
@@ -49,6 +54,16 @@ namespace WebApplicationWhatIF
             tr1 = new TableRow();
             tr1.Cells.Add(tc0);
             Table1.Rows.Add(tr1);
+            
+            dificuldade.Text = dif.grau;
+            dificuldade.Font.Name = "Segoe UI Light";
+            dificuldade.Font.Size = 14;
+            dificuldade.Font.Bold = true;
+            tc0 = new TableCell();
+            tc0.Controls.Add(dificuldade);
+            tr4 = new TableRow();
+            tr4.Cells.Add(tc0);
+            Table1.Rows.Add(tr4);
             
             //Adicionando imagem da questão do Desafio na table
             if (des.fotoquestao != null) {

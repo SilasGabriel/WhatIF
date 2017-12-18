@@ -34,6 +34,8 @@ namespace WebApplicationWhatIF
                 // Grava código do Livro na sessão
                 Session["idDesafio"] = codigo;
 
+                Session["idDificuldade"] = GridView1.Rows[index].Cells[3].Text;
+
                 // Chama a tela de edição
                 Response.Redirect("~\\WebFormDesafioEdit.aspx");
             }

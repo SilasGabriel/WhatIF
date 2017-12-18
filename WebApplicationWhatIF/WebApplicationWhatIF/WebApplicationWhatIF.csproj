@@ -97,6 +97,7 @@
     <Compile Include="DAL\DALAlternativaExercicio.cs" />
     <Compile Include="DAL\DALAluno.cs" />
     <Compile Include="DAL\DALDesafio.cs" />
+    <Compile Include="DAL\DALDificuldade.cs" />
     <Compile Include="DAL\DALDisciplina.cs" />
     <Compile Include="DAL\DALExercicio.cs" />
     <Compile Include="DAL\DALMateria.cs" />
@@ -113,11 +114,17 @@
     <Compile Include="HandlerDesafio2.ashx.cs">
       <DependentUpon>HandlerDesafio2.ashx</DependentUpon>
     </Compile>
+    <Compile Include="HandlerDesafio3.ashx.cs">
+      <DependentUpon>HandlerDesafio3.ashx</DependentUpon>
+    </Compile>
     <Compile Include="HandlerExercicio.ashx.cs">
       <DependentUpon>HandlerExercicio.ashx</DependentUpon>
     </Compile>
     <Compile Include="HandlerExercicio2.ashx.cs">
       <DependentUpon>HandlerExercicio2.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="HandlerExercicio3.ashx.cs">
+      <DependentUpon>HandlerExercicio3.ashx</DependentUpon>
     </Compile>
     <Compile Include="HandlerMateria.ashx.cs">
       <DependentUpon>HandlerMateria.ashx</DependentUpon>
@@ -136,6 +143,7 @@
     <Compile Include="Modelo\alternativaExercicio.cs" />
     <Compile Include="Modelo\Aluno.cs" />
     <Compile Include="Modelo\Desafio.cs" />
+    <Compile Include="Modelo\Dificuldade.cs" />
     <Compile Include="Modelo\Disciplina.cs" />
     <Compile Include="Modelo\Exercicio.cs" />
     <Compile Include="Modelo\Materia.cs" />
@@ -327,6 +335,8 @@
     <Content Include="HandlerExercicio.ashx" />
     <Content Include="HandlerExercicio2.ashx" />
     <Content Include="MasterPageAluno.Master" />
+    <Content Include="HandlerDesafio3.ashx" />
+    <Content Include="HandlerExercicio3.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

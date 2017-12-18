@@ -27,7 +27,7 @@ namespace WebApplicationWhatIF
             //Para o caso do usuário executar o preview
             if (Session["verif1"] == "true")
             {
-                exercicio = new Modelo.Exercicio(TextBox1.Text, TextBox2.Text, (byte[])Session["ImageBytes1"], Convert.ToInt32(Request.QueryString["idMateria"]));
+                exercicio = new Modelo.Exercicio(TextBox1.Text, TextBox2.Text, (byte[])Session["ImageBytes1"], Convert.ToInt32(Request.QueryString["idMateria"]), Convert.ToInt32(DropDownList1.SelectedValue));
                 dalexercicio.Insert(exercicio);
             }
             else
@@ -39,12 +39,12 @@ namespace WebApplicationWhatIF
                 if (FileUpload1.HasFile == false)
                 {
                     // Instancia objeto da camada de negocio
-                    exercicio = new Modelo.Exercicio(TextBox1.Text, TextBox2.Text, Convert.ToInt32(Request.QueryString["idMateria"]));
+                    exercicio = new Modelo.Exercicio(TextBox1.Text, TextBox2.Text, Convert.ToInt32(Request.QueryString["idMateria"]), Convert.ToInt32(DropDownList1.SelectedValue));
                     dalexercicio.Insert(exercicio);
                 }
                 else
                 {
-                    exercicio = new Modelo.Exercicio(TextBox1.Text, TextBox2.Text, (byte[])Session["ImageBytes1"], Convert.ToInt32(Request.QueryString["idMateria"]));
+                    exercicio = new Modelo.Exercicio(TextBox1.Text, TextBox2.Text, (byte[])Session["ImageBytes1"], Convert.ToInt32(Request.QueryString["idMateria"]), Convert.ToInt32(DropDownList1.SelectedValue));
                     dalexercicio.Insert(exercicio);
                 }
             }
@@ -112,7 +112,7 @@ namespace WebApplicationWhatIF
                 // Copia o conteúdo da primeira célula da linha -> Código do Livro
                 codigo = GridView1.Rows[index].Cells[0].Text;
                 Session["idMateria"] = GridView1.Rows[index].Cells[3].Text;
-
+                Session["idExercicio"] = GridView1.Rows[index].Cells[0].Text;
                 // Chama a tela de edição
                 Response.Redirect("~\\WebFormExercicioEdit.aspx?idExercicio=" + codigo);
             }

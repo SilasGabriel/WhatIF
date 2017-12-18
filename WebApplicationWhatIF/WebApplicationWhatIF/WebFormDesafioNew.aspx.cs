@@ -26,7 +26,7 @@ namespace WebApplicationWhatIF
             //Para o caso do usuário executar o preview
             if (Session["verif"] == "true") 
             {
-                desafio = new Modelo.Desafio(TextBox1.Text, TextBox2.Text, (byte[])Session["ImageBytes"]);
+                desafio = new Modelo.Desafio(TextBox1.Text, TextBox2.Text, (byte[])Session["ImageBytes"], Convert.ToInt32(DropDownList1.SelectedValue));
                 daldesafio.Insert(desafio);
             }
             else
@@ -38,16 +38,16 @@ namespace WebApplicationWhatIF
                 if (FileUpload1.HasFile == false)
                 {
                     // Instancia objeto da camada de negocio
-                    desafio = new Modelo.Desafio(TextBox1.Text, TextBox2.Text);
+                    desafio = new Modelo.Desafio(TextBox1.Text, TextBox2.Text, Convert.ToInt32(DropDownList1.SelectedValue));
                     daldesafio.InsertSemFoto(desafio);
                 }
                 else
                 {
-                    desafio = new Modelo.Desafio(TextBox1.Text, TextBox2.Text, (byte[])Session["ImageBytes"]);
+                    desafio = new Modelo.Desafio(TextBox1.Text, TextBox2.Text, (byte[])Session["ImageBytes"], Convert.ToInt32(DropDownList1.SelectedValue));
                     daldesafio.Insert(desafio);
                 }
             }
-                Response.Redirect("~/WebFormIndex.aspx");
+                Response.Redirect("~/WebFormDesafio.aspx");
         }
 
         protected void Button2_Click(object sender, EventArgs e)

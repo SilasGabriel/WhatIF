@@ -49,7 +49,8 @@ namespace WebApplicationWhatIF.DAL
                             dr["titulo"].ToString(),
                             dr["questao"].ToString(),
                             (byte[])dr["fotoquestao"],
-                            Convert.ToInt32(dr["idMateria"]));
+                            Convert.ToInt32(dr["idMateria"]),
+                            Convert.ToInt32(dr["idDificuldade"]));
                     }
                     catch (InvalidCastException) {
                         DALexercicio = new Modelo.Exercicio(
@@ -57,7 +58,8 @@ namespace WebApplicationWhatIF.DAL
                             dr["titulo"].ToString(),
                             dr["questao"].ToString(),
                             null,
-                            Convert.ToInt32(dr["idMateria"]));
+                            Convert.ToInt32(dr["idMateria"]),
+                            Convert.ToInt32(dr["idDificuldade"]));
                     }
                     if (DALexercicio.idMateria != null)
                         DALexercicio.materia = dalmateria.Select(DALexercicio.idMateria)[0];
@@ -103,7 +105,8 @@ namespace WebApplicationWhatIF.DAL
                             dr["titulo"].ToString(),
                             dr["questao"].ToString(),
                             (byte[])dr["fotoquestao"],
-                            Convert.ToInt32(dr["idMateria"]));
+                            Convert.ToInt32(dr["idMateria"]),
+                            Convert.ToInt32(dr["idDificuldade"]));
                     }
                     catch (InvalidCastException)
                     {
@@ -112,7 +115,8 @@ namespace WebApplicationWhatIF.DAL
                             dr["titulo"].ToString(),
                             dr["questao"].ToString(),
                             null,
-                            Convert.ToInt32(dr["idMateria"]));
+                            Convert.ToInt32(dr["idMateria"]),
+                            Convert.ToInt32(dr["idDificuldade"]));
                     }
                     if (DALexercicio.idMateria != null)
                         DALexercicio.materia = dalmateria.Select(DALexercicio.idMateria)[0];
@@ -159,7 +163,8 @@ namespace WebApplicationWhatIF.DAL
                             dr["titulo"].ToString(),
                             dr["questao"].ToString(),
                             (byte[])dr["fotoquestao"],
-                            Convert.ToInt32(dr["idMateria"]));
+                            Convert.ToInt32(dr["idMateria"]),
+                            Convert.ToInt32(dr["idDificuldade"]));
                     }
                     catch (InvalidCastException)
                     {
@@ -168,7 +173,8 @@ namespace WebApplicationWhatIF.DAL
                             dr["titulo"].ToString(),
                             dr["questao"].ToString(),
                             null,
-                            Convert.ToInt32(dr["idMateria"]));
+                            Convert.ToInt32(dr["idMateria"]),
+                            Convert.ToInt32(dr["idDificuldade"]));
                     }
                     if (DALexercicio.idMateria != null)
                         DALexercicio.materia = dalmateria.Select(DALexercicio.idMateria)[0];
@@ -193,21 +199,25 @@ namespace WebApplicationWhatIF.DAL
             cmd.CommandType = System.Data.CommandType.Text;
             Modelo.Materia materia = new Modelo.Materia();
             materia = obj.materia;
+            Modelo.Dificuldade dificuldade = new Modelo.Dificuldade();
+            dificuldade = obj.dificuldade;
             if (obj.fotoquestao != null)
             {
-                cmd.CommandText = "INSERT INTO Exercicio(titulo, questao, fotoquestao, idMateria) VALUES(@titulo, @questao, @fotoquestao, @idMateria)";
+                cmd.CommandText = "INSERT INTO Exercicio(titulo, questao, fotoquestao, idMateria, idDificuldade) VALUES(@titulo, @questao, @fotoquestao, @idMateria, @idDificuldade)";
                 cmd.Parameters.AddWithValue("@titulo", obj.titulo);
                 cmd.Parameters.AddWithValue("@questao", obj.questao);
                 cmd.Parameters.AddWithValue("@fotoquestao", obj.fotoquestao);
                 cmd.Parameters.AddWithValue("@idMateria", materia.idMateria);
+                cmd.Parameters.AddWithValue("@idDificuldade", dificuldade.idDificuldade);
                 cmd.Connection = sc;
             }
             else 
             {
-                cmd.CommandText = "INSERT INTO Exercicio(titulo, questao, idMateria) VALUES(@titulo, @questao, @idMateria)";
+                cmd.CommandText = "INSERT INTO Exercicio(titulo, questao, idMateria, idDificuldade) VALUES(@titulo, @questao, @idMateria, @idDificuldade)";
                 cmd.Parameters.AddWithValue("@titulo", obj.titulo);
                 cmd.Parameters.AddWithValue("@questao", obj.questao);
                 cmd.Parameters.AddWithValue("@idMateria", materia.idMateria);
+                cmd.Parameters.AddWithValue("@idDificuldade", dificuldade.idDificuldade);
                 cmd.Connection = sc;
             }
             cmd.ExecuteNonQuery();
@@ -223,23 +233,27 @@ namespace WebApplicationWhatIF.DAL
             cmd.CommandType = System.Data.CommandType.Text;
             Modelo.Materia materia = new Modelo.Materia();
             materia = obj.materia;
+            Modelo.Dificuldade dificuldade = new Modelo.Dificuldade();
+            dificuldade = obj.dificuldade;
             if (obj.fotoquestao != null)
             {
-                cmd.CommandText = "UPDATE Exercicio SET titulo = @titulo, questao = @questao, fotoquestao = @fotoquestao, idMateria = @idMateria WHERE idExercicio = @idExercicio";
+                cmd.CommandText = "UPDATE Exercicio SET titulo = @titulo, questao = @questao, fotoquestao = @fotoquestao, idMateria = @idMateria, idDificuldade = @idDificuldade WHERE idExercicio = @idExercicio";
                 cmd.Parameters.AddWithValue("@idExercicio", obj.idExercicio);
                 cmd.Parameters.AddWithValue("@titulo", obj.titulo);
                 cmd.Parameters.AddWithValue("@questao", obj.questao);
                 cmd.Parameters.AddWithValue("@fotoquestao", obj.fotoquestao);
                 cmd.Parameters.AddWithValue("@idMateria", materia.idMateria);
+                cmd.Parameters.AddWithValue("@idDificuldade", dificuldade.idDificuldade);
                 cmd.Connection = sc;
             }
             else
             {
-                cmd.CommandText = "UPDATE Exercicio SET titulo = @titulo, questao = @questao, idMateria = @idMateria WHERE idExercicio = @idExercicio";
+                cmd.CommandText = "UPDATE Exercicio SET titulo = @titulo, questao = @questao, idMateria = @idMateria, idDificuldade = @idDificuldade WHERE idExercicio = @idExercicio";
                 cmd.Parameters.AddWithValue("@idExercicio", obj.idExercicio);
                 cmd.Parameters.AddWithValue("@titulo", obj.titulo);
                 cmd.Parameters.AddWithValue("@questao", obj.questao);
                 cmd.Parameters.AddWithValue("@idMateria", materia.idMateria);
+                cmd.Parameters.AddWithValue("@idDificuldade", dificuldade.idDificuldade);
                 cmd.Connection = sc;
             }
             cmd.ExecuteNonQuery();

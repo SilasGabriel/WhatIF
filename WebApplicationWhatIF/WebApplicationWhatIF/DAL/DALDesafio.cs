@@ -20,12 +20,15 @@ namespace WebApplicationWhatIF.DAL
         {
             SqlConnection sc = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand();
+            Modelo.Dificuldade dificuldade = new Modelo.Dificuldade();
+            dificuldade = obj.dificuldade;
             cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = "INSERT INTO Desafio(titulo, questao, fotoquestao)"
-                + "" + "VALUES(@titulo, @questao, @fotoquestao)";
+            cmd.CommandText = "INSERT INTO Desafio(titulo, questao, fotoquestao, idDificuldade)"
+                + "" + "VALUES(@titulo, @questao, @fotoquestao, @idDificuldade)";
             cmd.Parameters.AddWithValue("@titulo", obj.titulo);
             cmd.Parameters.AddWithValue("@questao", obj.questao);
             cmd.Parameters.AddWithValue("@fotoquestao", obj.fotoquestao);
+            cmd.Parameters.AddWithValue("@idDificuldade", dificuldade.idDificuldade);
             cmd.Connection = sc;
 
             sc.Open();
@@ -38,11 +41,14 @@ namespace WebApplicationWhatIF.DAL
         {
             SqlConnection sc = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand();
+            Modelo.Dificuldade dificuldade = new Modelo.Dificuldade();
+            dificuldade = obj.dificuldade;
             cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = "INSERT INTO Desafio(titulo, questao)"
-                + "" + "VALUES(@titulo, @questao)";
+            cmd.CommandText = "INSERT INTO Desafio(titulo, questao, idDificuldade)"
+                + "" + "VALUES(@titulo, @questao, @idDificuldade)";
             cmd.Parameters.AddWithValue("@titulo", obj.titulo);
             cmd.Parameters.AddWithValue("@questao", obj.questao);
+            cmd.Parameters.AddWithValue("@idDificuldade", dificuldade.idDificuldade);
             cmd.Connection = sc;
 
             sc.Open();
@@ -78,7 +84,8 @@ namespace WebApplicationWhatIF.DAL
                             Convert.ToInt32(dr["idDesafio"]),
                             dr["titulo"].ToString(),
                             dr["questao"].ToString(),
-                            (byte[])dr["fotoquestao"]
+                            (byte[])dr["fotoquestao"],
+                            Convert.ToInt32(dr["idDificuldade"])
                             );
                     }
                     catch (InvalidCastException)
@@ -87,7 +94,8 @@ namespace WebApplicationWhatIF.DAL
                             Convert.ToInt32(dr["idDesafio"]),
                             dr["titulo"].ToString(),
                             dr["questao"].ToString(),
-                            null
+                            null,
+                            Convert.ToInt32(dr["idDificuldade"])
                             );
                     }
                     DALlistDes.Add(DALdesafio);
@@ -131,7 +139,8 @@ namespace WebApplicationWhatIF.DAL
                             Convert.ToInt32(dr["idDesafio"]),
                             dr["titulo"].ToString(),
                             dr["questao"].ToString(),
-                            (byte[])dr["fotoquestao"]
+                            (byte[])dr["fotoquestao"],
+                            Convert.ToInt32(dr["idDificuldade"])
                             );
                     }
                     catch (InvalidCastException)
@@ -140,7 +149,8 @@ namespace WebApplicationWhatIF.DAL
                             Convert.ToInt32(dr["idDesafio"]),
                             dr["titulo"].ToString(),
                             dr["questao"].ToString(),
-                            null
+                            null,
+                            Convert.ToInt32(dr["idDificuldade"])
                             );
                     }
                     // Adiciona o livro lido à lista
@@ -159,6 +169,8 @@ namespace WebApplicationWhatIF.DAL
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void Update(Modelo.Desafio obj)
         {
+            Modelo.Dificuldade dificuldade = new Modelo.Dificuldade();
+            dificuldade = obj.dificuldade;
             // Cria Conexão com banco de dados
             SqlConnection conn = new SqlConnection(connectionString);
             // Abre conexão com o banco de dados
@@ -166,19 +178,21 @@ namespace WebApplicationWhatIF.DAL
             // Cria comando SQL
             if (obj.fotoquestao != null)
             {
-                SqlCommand cmd = new SqlCommand("UPDATE Desafio SET titulo = @titulo, questao = @questao, fotoquestao = @fotoquestao WHERE idDesafio = @idDesafio", conn);
+                SqlCommand cmd = new SqlCommand("UPDATE Desafio SET titulo = @titulo, questao = @questao, fotoquestao = @fotoquestao, idDificuldade = @idDificuldade WHERE idDesafio = @idDesafio", conn);
                 cmd.Parameters.AddWithValue("@idDesafio", obj.idDesafio);
                 cmd.Parameters.AddWithValue("@titulo", obj.titulo);
                 cmd.Parameters.AddWithValue("@questao", obj.questao);
                 cmd.Parameters.AddWithValue("@fotoquestao", obj.fotoquestao);
+                cmd.Parameters.AddWithValue("@idDificuldade", dificuldade.idDificuldade);
                 // Executa Comando
                 cmd.ExecuteNonQuery();
             }
             else {
-                SqlCommand cmd = new SqlCommand("UPDATE Desafio SET titulo = @titulo, questao = @questao WHERE idDesafio = @idDesafio", conn);
+                SqlCommand cmd = new SqlCommand("UPDATE Desafio SET titulo = @titulo, questao = @questao, idDificuldade = @idDificuldade WHERE idDesafio = @idDesafio", conn);
                 cmd.Parameters.AddWithValue("@idDesafio", obj.idDesafio);
                 cmd.Parameters.AddWithValue("@titulo", obj.titulo);
                 cmd.Parameters.AddWithValue("@questao", obj.questao);
+                cmd.Parameters.AddWithValue("@idDificuldade", dificuldade.idDificuldade);
                 // Executa Comando
                 cmd.ExecuteNonQuery();
             }
@@ -186,16 +200,18 @@ namespace WebApplicationWhatIF.DAL
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void UpdateDesafioSemFoto(Modelo.Desafio obj)
         {
+            Modelo.Dificuldade dificuldade = new Modelo.Dificuldade();
+            dificuldade = obj.dificuldade;
             // Cria Conexão com banco de dados
             SqlConnection conn = new SqlConnection(connectionString);
             // Abre conexão com o banco de dados
             conn.Open();
             // Cria comando SQL
-            SqlCommand cmd = new SqlCommand("UPDATE Desafio SET titulo = @titulo, questao = @questao WHERE idDesafio = @idDesafio", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Desafio SET titulo = @titulo, questao = @questao, idDesafio = @idDesafio WHERE idDesafio = @idDesafio", conn);
             cmd.Parameters.AddWithValue("@idDesafio", obj.idDesafio);
             cmd.Parameters.AddWithValue("@titulo", obj.titulo);
             cmd.Parameters.AddWithValue("@questao", obj.questao);
-
+            cmd.Parameters.AddWithValue("@idDificuldade", dificuldade.idDificuldade);
             // Executa Comando
             cmd.ExecuteNonQuery();
         }

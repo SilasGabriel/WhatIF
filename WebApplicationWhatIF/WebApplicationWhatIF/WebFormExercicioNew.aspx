@@ -17,6 +17,8 @@
                         <asp:BoundField DataField="titulo" HeaderText="titulo" SortExpression="titulo" />
                         <asp:BoundField DataField="questao" HeaderText="questao" SortExpression="questao" />
                         <asp:BoundField DataField="idMateria" HeaderText="idMateria" SortExpression="idMateria" />
+                        <asp:BoundField DataField="dificuldade.grau" HeaderText="Dificuldade" 
+                            SortExpression="grau" />
                         <asp:ButtonField CommandName="Editar" Text="Editar" />
                         <asp:ButtonField CommandName="Excluir" Text="Excluir" />
                         <asp:ButtonField CommandName="Addcorreta" Text="Adicionar alternativa correta" />
@@ -39,7 +41,7 @@
                     </SelectParameters>
                 </asp:ObjectDataSource>
                 <br />
-                <hr /><h2 style="font-family:'Segoe UI Light'"> ADICIONAR EXERCICIO </h2>
+                <hr /><h2 style="font-family:'Segoe UI Light'"> ADICIONAR EXERCÍCIO </h2>
                 <table style="width: 100%;">
                     <tr>
                         <td>
@@ -68,6 +70,20 @@
                             <br />
                             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Preview" />
                             <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style1">
+                            <asp:Label ID="Label4" runat="server" Text="Dificuldade"></asp:Label>
+                        </td>
+                        <td class="auto-style1">
+                            <asp:DropDownList ID="DropDownList1" runat="server" 
+                                DataSourceID="ObjectDataSource2" DataTextField="grau" 
+                                DataValueField="idDificuldade">
+                            </asp:DropDownList>
+                            <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
+                                SelectMethod="SelectAll" TypeName="WebApplicationWhatIF.DAL.DALDificuldade">
+                            </asp:ObjectDataSource>
                         </td>
                     </tr>
                     <tr>

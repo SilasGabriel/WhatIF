@@ -50,6 +50,20 @@
                     </tr>
                     <tr>
                         <td class="auto-style1">
+                            <asp:Label ID="Label4" runat="server" Text="Dificuldade"></asp:Label>
+                        </td>
+                        <td class="auto-style1">
+                            <asp:DropDownList ID="DropDownList1" runat="server" 
+                                DataSourceID="ObjectDataSource1" DataTextField="grau" 
+                                DataValueField="idDificuldade">
+                            </asp:DropDownList>
+                            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+                                SelectMethod="SelectAll" TypeName="WebApplicationWhatIF.DAL.DALDificuldade">
+                            </asp:ObjectDataSource>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style1">
                             <asp:Button ID="Button1" runat="server" Text="Salvar" OnClick="Button1_Click" />
                         </td>
                         <td class="auto-style1">

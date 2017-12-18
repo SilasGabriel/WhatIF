@@ -13,12 +13,18 @@
                 <td colspan="2" align="center"><h2 style="font-family:'Segoe UI Light'"> DESAFIOS</h2>
                     <hr />
                 </td>
-                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#EDFBF1" BorderStyle="Solid" BorderWidth="2px" CellPadding="20" DataSourceID="ObjectDataSource1" ForeColor="Black" GridLines="Both" OnRowCommand="GridView1_RowCommand" Width="539px" Height="704px">
+                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
+                    AutoGenerateColumns="False" BackColor="White" BorderColor="#EDFBF1" 
+                    BorderStyle="Solid" BorderWidth="2px" CellPadding="20" 
+                    DataSourceID="ObjectDataSource1" ForeColor="Black" 
+                    OnRowCommand="GridView1_RowCommand" Width="539px" Height="704px">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField DataField="idDesafio" HeaderText="id" SortExpression="idDesafio" />
                         <asp:BoundField DataField="titulo" HeaderText="Título" SortExpression="titulo" />
                         <asp:BoundField DataField="questao" HeaderText="Questão" SortExpression="questao" />
+                        <asp:BoundField DataField="dificuldade.grau" HeaderText="Dificuldade" 
+                            SortExpression="grau" />
                         <asp:ButtonField CommandName="Editar" Text="Editar" />
                         <asp:ButtonField CommandName="Addcorreta" Text="Adicionar alternativa correta" />
                         <asp:ButtonField CommandName="Addalterna" Text="Adicionar alternativas" />

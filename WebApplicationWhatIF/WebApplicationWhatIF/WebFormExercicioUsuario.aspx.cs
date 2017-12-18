@@ -22,8 +22,9 @@ namespace WebApplicationWhatIF
                 if (i == 0) {
                     //Definindo variáveis que serão utilizadas na table
                     TableRow tr1, tr2, tr3;
-                    TableCell tc0;
+                    TableCell tc0, tc1;
                     Label titulo = new Label();
+                    Label dificuldade = new Label();
                     Label questao = new Label();
                     Image fotoquestao = new Image();
 
@@ -31,18 +32,31 @@ namespace WebApplicationWhatIF
                     Modelo.Exercicio exer = new Modelo.Exercicio();
                     exer = dalexer.Select(exercicios[i].idExercicio)[0];
 
-                    //Adicionando título da questão do Desafio na table
+                    //Adicionando título da questão do Exercício na table
                     titulo.Text = exer.titulo;
                     titulo.Font.Name = "Segoe UI Light";
                     titulo.Font.Size = 16;
                     titulo.Font.Bold = true;
                     tc0 = new TableCell();
                     tc0.Controls.Add(titulo);
+
+                    DAL.DALDificuldade daldif = new DAL.DALDificuldade();
+                    Modelo.Dificuldade dif = new Modelo.Dificuldade();
+                    dif = daldif.Select(exercicios[i].idDificuldade)[0];
+
+                    dificuldade.Text = "Nível: " + dif.grau;
+                    dificuldade.Font.Name = "Segoe UI Light";
+                    dificuldade.Font.Size = 14;
+                    dificuldade.Font.Bold = true;
+                    tc1 = new TableCell();
+                    tc1.Controls.Add(dificuldade);
+                    
                     tr1 = new TableRow();
                     tr1.Cells.Add(tc0);
+                    tr1.Cells.Add(tc1);
                     Table1.Rows.Add(tr1);
 
-                    //Adicionando imagem da questão do Desafio na table
+                    //Adicionando imagem da questão do Exercício na table
                     if (exer.fotoquestao != null)
                     {
                         fotoquestao.ImageUrl = "~/HandlerExercicio2.ashx?idExercicio=" + exer.idExercicio;
@@ -53,7 +67,7 @@ namespace WebApplicationWhatIF
                     tr2.Cells.Add(tc0);
                     Table1.Rows.Add(tr2);
 
-                    //Adicionando texto da questão do Desafio na table
+                    //Adicionando texto da questão do Exercício na table
                     questao.Text = exer.questao;
                     questao.Font.Name = "Segoe UI Light";
                     questao.Font.Size = 14;
@@ -127,8 +141,9 @@ namespace WebApplicationWhatIF
                 {
                     //Definindo variáveis que serão utilizadas na table
                     TableRow tr1, tr2, tr3;
-                    TableCell tc0;
+                    TableCell tc0, tc1;
                     Label titulo = new Label();
+                    Label dificuldade = new Label();
                     Label questao = new Label();
                     Image fotoquestao = new Image();
 
@@ -136,18 +151,31 @@ namespace WebApplicationWhatIF
                     Modelo.Exercicio exer = new Modelo.Exercicio();
                     exer = dalexer.Select(exercicios[i].idExercicio)[0];
 
-                    //Adicionando título da questão do Desafio na table
+                    //Adicionando título da questão do Exercício na table
                     titulo.Text = exer.titulo;
                     titulo.Font.Name = "Segoe UI Light";
                     titulo.Font.Size = 16;
                     titulo.Font.Bold = true;
                     tc0 = new TableCell();
                     tc0.Controls.Add(titulo);
+
+                    DAL.DALDificuldade daldif = new DAL.DALDificuldade();
+                    Modelo.Dificuldade dif = new Modelo.Dificuldade();
+                    dif = daldif.Select(exercicios[i].idDificuldade)[0];
+
+                    dificuldade.Text = "Nível: " + dif.grau;
+                    dificuldade.Font.Name = "Segoe UI Light";
+                    dificuldade.Font.Size = 14;
+                    dificuldade.Font.Bold = true;
+                    tc1 = new TableCell();
+                    tc1.Controls.Add(dificuldade);
+
                     tr1 = new TableRow();
                     tr1.Cells.Add(tc0);
+                    tr1.Cells.Add(tc1);
                     Table2.Rows.Add(tr1);
 
-                    //Adicionando imagem da questão do Desafio na table
+                    //Adicionando imagem da questão do Exercício na table
                     if (exer.fotoquestao != null)
                     {
                         fotoquestao.ImageUrl = "~/HandlerExercicio2.ashx?idExercicio=" + exer.idExercicio;
@@ -158,7 +186,7 @@ namespace WebApplicationWhatIF
                     tr2.Cells.Add(tc0);
                     Table2.Rows.Add(tr2);
 
-                    //Adicionando texto da questão do Desafio na table
+                    //Adicionando texto da questão do Exercício na table
                     questao.Text = exer.questao;
                     questao.Font.Name = "Segoe UI Light";
                     questao.Font.Size = 14;
@@ -232,8 +260,9 @@ namespace WebApplicationWhatIF
                 {
                     //Definindo variáveis que serão utilizadas na table
                     TableRow tr1, tr2, tr3;
-                    TableCell tc0;
+                    TableCell tc0, tc1;
                     Label titulo = new Label();
+                    Label dificuldade = new Label();
                     Label questao = new Label();
                     Image fotoquestao = new Image();
 
@@ -241,18 +270,31 @@ namespace WebApplicationWhatIF
                     Modelo.Exercicio exer = new Modelo.Exercicio();
                     exer = dalexer.Select(exercicios[i].idExercicio)[0];
 
-                    //Adicionando título da questão do Desafio na table
+                    //Adicionando título da questão do Exercício na table
                     titulo.Text = exer.titulo;
                     titulo.Font.Name = "Segoe UI Light";
                     titulo.Font.Size = 16;
                     titulo.Font.Bold = true;
                     tc0 = new TableCell();
                     tc0.Controls.Add(titulo);
+
+                    DAL.DALDificuldade daldif = new DAL.DALDificuldade();
+                    Modelo.Dificuldade dif = new Modelo.Dificuldade();
+                    dif = daldif.Select(exercicios[i].idDificuldade)[0];
+
+                    dificuldade.Text = "Nível: " + dif.grau;
+                    dificuldade.Font.Name = "Segoe UI Light";
+                    dificuldade.Font.Size = 14;
+                    dificuldade.Font.Bold = true;
+                    tc1 = new TableCell();
+                    tc1.Controls.Add(dificuldade);
+                    
                     tr1 = new TableRow();
                     tr1.Cells.Add(tc0);
+                    tr1.Cells.Add(tc1);
                     Table3.Rows.Add(tr1);
 
-                    //Adicionando imagem da questão do Desafio na table
+                    //Adicionando imagem da questão do Exercício na table
                     if (exer.fotoquestao != null)
                     {
                         fotoquestao.ImageUrl = "~/HandlerExercicio2.ashx?idExercicio=" + exer.idExercicio;
@@ -263,7 +305,7 @@ namespace WebApplicationWhatIF
                     tr2.Cells.Add(tc0);
                     Table3.Rows.Add(tr2);
 
-                    //Adicionando texto da questão do Desafio na table
+                    //Adicionando texto da questão do Exercício na table
                     questao.Text = exer.questao;
                     questao.Font.Name = "Segoe UI Light";
                     questao.Font.Size = 14;
@@ -337,8 +379,9 @@ namespace WebApplicationWhatIF
                 {
                     //Definindo variáveis que serão utilizadas na table
                     TableRow tr1, tr2, tr3;
-                    TableCell tc0;
+                    TableCell tc0, tc1;
                     Label titulo = new Label();
+                    Label dificuldade = new Label();
                     Label questao = new Label();
                     Image fotoquestao = new Image();
 
@@ -346,18 +389,31 @@ namespace WebApplicationWhatIF
                     Modelo.Exercicio exer = new Modelo.Exercicio();
                     exer = dalexer.Select(exercicios[i].idExercicio)[0];
 
-                    //Adicionando título da questão do Desafio na table
+                    //Adicionando título da questão do Exercício na table
                     titulo.Text = exer.titulo;
                     titulo.Font.Name = "Segoe UI Light";
                     titulo.Font.Size = 16;
                     titulo.Font.Bold = true;
                     tc0 = new TableCell();
                     tc0.Controls.Add(titulo);
+
+                    DAL.DALDificuldade daldif = new DAL.DALDificuldade();
+                    Modelo.Dificuldade dif = new Modelo.Dificuldade();
+                    dif = daldif.Select(exercicios[i].idDificuldade)[0];
+
+                    dificuldade.Text = "Nível: " + dif.grau;
+                    dificuldade.Font.Name = "Segoe UI Light";
+                    dificuldade.Font.Size = 14;
+                    dificuldade.Font.Bold = true;
+                    tc1 = new TableCell();
+                    tc1.Controls.Add(dificuldade);
+
                     tr1 = new TableRow();
                     tr1.Cells.Add(tc0);
+                    tr1.Cells.Add(tc1);
                     Table4.Rows.Add(tr1);
 
-                    //Adicionando imagem da questão do Desafio na table
+                    //Adicionando imagem da questão do Exercício na table
                     if (exer.fotoquestao != null)
                     {
                         fotoquestao.ImageUrl = "~/HandlerExercicio2.ashx?idExercicio=" + exer.idExercicio;
@@ -368,7 +424,7 @@ namespace WebApplicationWhatIF
                     tr2.Cells.Add(tc0);
                     Table4.Rows.Add(tr2);
 
-                    //Adicionando texto da questão do Desafio na table
+                    //Adicionando texto da questão do Exercício na table
                     questao.Text = exer.questao;
                     questao.Font.Name = "Segoe UI Light";
                     questao.Font.Size = 14;
@@ -442,8 +498,9 @@ namespace WebApplicationWhatIF
                 {
                     //Definindo variáveis que serão utilizadas na table
                     TableRow tr1, tr2, tr3;
-                    TableCell tc0;
+                    TableCell tc0, tc1;
                     Label titulo = new Label();
+                    Label dificuldade = new Label();
                     Label questao = new Label();
                     Image fotoquestao = new Image();
 
@@ -451,18 +508,31 @@ namespace WebApplicationWhatIF
                     Modelo.Exercicio exer = new Modelo.Exercicio();
                     exer = dalexer.Select(exercicios[i].idExercicio)[0];
 
-                    //Adicionando título da questão do Desafio na table
+                    //Adicionando título da questão do Exercício na table
                     titulo.Text = exer.titulo;
                     titulo.Font.Name = "Segoe UI Light";
                     titulo.Font.Size = 16;
                     titulo.Font.Bold = true;
                     tc0 = new TableCell();
                     tc0.Controls.Add(titulo);
+
+                    DAL.DALDificuldade daldif = new DAL.DALDificuldade();
+                    Modelo.Dificuldade dif = new Modelo.Dificuldade();
+                    dif = daldif.Select(exercicios[i].idDificuldade)[0];
+
+                    dificuldade.Text = "Nível: " + dif.grau;
+                    dificuldade.Font.Name = "Segoe UI Light";
+                    dificuldade.Font.Size = 14;
+                    dificuldade.Font.Bold = true;
+                    tc1 = new TableCell();
+                    tc1.Controls.Add(dificuldade);
+
                     tr1 = new TableRow();
                     tr1.Cells.Add(tc0);
+                    tr1.Cells.Add(tc1);
                     Table5.Rows.Add(tr1);
 
-                    //Adicionando imagem da questão do Desafio na table
+                    //Adicionando imagem da questão do Exercício na table
                     if (exer.fotoquestao != null)
                     {
                         fotoquestao.ImageUrl = "~/HandlerExercicio2.ashx?idExercicio=" + exer.idExercicio;
@@ -473,7 +543,7 @@ namespace WebApplicationWhatIF
                     tr2.Cells.Add(tc0);
                     Table5.Rows.Add(tr2);
 
-                    //Adicionando texto da questão do Desafio na table
+                    //Adicionando texto da questão do Exercício na table
                     questao.Text = exer.questao;
                     questao.Font.Name = "Segoe UI Light";
                     questao.Font.Size = 14;

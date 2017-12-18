@@ -36,11 +36,11 @@ namespace WebApplicationWhatIF
             }
             if ((exercicio.fotoquestao != null) && (FileUpload1.FileName == ""))
             {
-                exercicio = new Modelo.Exercicio(exercicio.idExercicio, exercicio.titulo, exercicio.questao, exercicio.fotoquestao, Convert.ToInt32(Session["idMateria"]));
+                exercicio = new Modelo.Exercicio(exercicio.idExercicio, exercicio.titulo, exercicio.questao, exercicio.fotoquestao, Convert.ToInt32(Session["idMateria"]), Convert.ToInt32(DropDownList1.SelectedValue));
             }
             else
             {
-                exercicio = new Modelo.Exercicio(exercicio.idExercicio, exercicio.titulo, exercicio.questao, FileUpload1.FileBytes, Convert.ToInt32(Session["idMateria"]));
+                exercicio = new Modelo.Exercicio(exercicio.idExercicio, exercicio.titulo, exercicio.questao, FileUpload1.FileBytes, Convert.ToInt32(Session["idMateria"]), Convert.ToInt32(DropDownList1.SelectedValue));
             }
             dalexercicio.Update(exercicio);
             Response.Redirect("~/WebFormExercicioNew.aspx?idMateria=" + Session["idMateria"].ToString());

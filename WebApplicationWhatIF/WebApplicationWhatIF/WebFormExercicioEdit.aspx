@@ -53,10 +53,24 @@
                     <asp:Label ID="Label3" runat="server" Text="Imagem da questão"></asp:Label>
                 </td>
                 <td class="auto-style1">
-                    <asp:Image ID="Image1" runat="server" ImageUrl="~/HandlerExercicio2.ashx" />
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/HandlerExercicio3.ashx" />
                     <br />
                     <asp:FileUpload ID="FileUpload1" runat="server" />
                     <br />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style1">
+                    <asp:Label ID="Label4" runat="server" Text="Dificuldade"></asp:Label>
+                </td>
+                <td class="auto-style1">
+                    <asp:DropDownList ID="DropDownList1" runat="server" 
+                        DataSourceID="ObjectDataSource3" DataTextField="grau" 
+                        DataValueField="idDificuldade">
+                    </asp:DropDownList>
+                    <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" 
+                        SelectMethod="SelectAll" TypeName="WebApplicationWhatIF.DAL.DALDificuldade">
+                    </asp:ObjectDataSource>
                 </td>
             </tr>
             <tr>

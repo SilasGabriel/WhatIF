@@ -30,6 +30,7 @@ namespace WebApplicationWhatIF.Modelo
             this.questao = ""; 
             this.fotoquestao = null;
             materia = new Materia();
+            dificuldade = new Dificuldade();
         }
         public Exercicio(string titulo, string questao, int idMateria, int idDificuldade)
         {

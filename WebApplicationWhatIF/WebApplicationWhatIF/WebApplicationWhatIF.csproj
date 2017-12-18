@@ -148,6 +148,8 @@
     <Compile Include="Modelo\Exercicio.cs" />
     <Compile Include="Modelo\Materia.cs" />
     <Compile Include="Modelo\Modulo.cs" />
+    <Compile Include="Modelo\RespostaDoAlunoDesafio.cs" />
+    <Compile Include="Modelo\RespostaDoAlunoExercicio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebFormAdministrador.aspx.cs">
       <DependentUpon>WebFormAdministrador.aspx</DependentUpon>

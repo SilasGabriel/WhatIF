@@ -13,7 +13,8 @@ namespace WebApplicationWhatIF
         {
             DAL.DALDisciplina daldis = new DAL.DALDisciplina();
             Modelo.Disciplina dis = new Modelo.Disciplina();
-            dis = daldis.Select(Convert.ToInt32(Session["idDisciplina"]))[0];
+            int aux1 = Convert.ToInt32(Session["idDisciplina"]);
+            dis = daldis.Select(aux1)[0];
             Label5.Text = dis.nome;
             DAL.DALRespostaDoAlunoExercicio dalresp = new DAL.DALRespostaDoAlunoExercicio();
             int[] aux = dalresp.SelectAllCertaIdDisciplina(Convert.ToInt32(Session["idDisciplina"]), Session["Nome"].ToString());

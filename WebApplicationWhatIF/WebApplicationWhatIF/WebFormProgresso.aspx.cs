@@ -44,7 +44,7 @@ namespace WebApplicationWhatIF
                 int index = Convert.ToInt32(e.CommandArgument);
 
                 // Copia o conteúdo da primeira célula da linha -> Código do Livro
-                codigo = GridView1.Rows[index].Cells[0].Text;
+                codigo = GridView2.Rows[index].Cells[0].Text;
 
                 // Grava código do Livro na sessão
                 Session["idDisciplina"] = codigo;

@@ -65,7 +65,7 @@ namespace WebApplicationWhatIF.DAL
                     DALresp = new Modelo.RespostaDoAlunoExercicio(
                         Convert.ToInt32(dr["idResposta"]),
                         aluno.nome,
-                        Convert.ToInt32(dr["idAluno"]));
+                        Convert.ToInt32(dr["idAlternativa"]));
 
                     DALlistResp.Add(DALresp);
                 }
@@ -145,6 +145,65 @@ namespace WebApplicationWhatIF.DAL
                 }
             }
             return cont;
+        }
+        // SELECT
+        // 
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.RespostaDoAlunoExercicio> SelectAllIdDif(int idDificuldade, string nome)
+        {
+            // Variavel para armazenar um modulo
+            Modelo.RespostaDoAlunoExercicio DALresp;
+            Modelo.Aluno aluno = new Modelo.Aluno();
+            DALAluno dalaluno = new DALAluno();
+            aluno = (dalaluno.Select(nome))[0];
+            // Cria Lista Vazia
+            List<Modelo.RespostaDoAlunoExercicio> DALlistResp = new List<Modelo.RespostaDoAlunoExercicio>();
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand cmd = conn.CreateCommand();
+
+            // define SQL do comando
+            cmd.CommandText = "Select * from respostaDoAlunoExercicio Where idAluno = @idAluno";
+            cmd.Parameters.AddWithValue("@idAluno", aluno.idAluno);
+            // Executa comando, gerando objeto DbDataReader
+            SqlDataReader dr = cmd.ExecuteReader();
+            // Le titulo do modulo do resultado e apresenta no segundo rótulo
+            if (dr.HasRows)
+            {
+
+                while (dr.Read()) // Le o proximo registro
+                {
+                    // Cria objeto com dados lidos do banco de dados
+                    DALresp = new Modelo.RespostaDoAlunoExercicio(
+                        Convert.ToInt32(dr["idResposta"]),
+                        aluno.nome,
+                        Convert.ToInt32(dr["idAlternativa"]));
+
+                    DALlistResp.Add(DALresp);
+                }
+            }
+            // Fecha DataReader
+            dr.Close();
+            // Fecha Conexão
+            conn.Close();
+            
+            List<Modelo.RespostaDoAlunoExercicio> AQUI = new List<Modelo.RespostaDoAlunoExercicio>();
+                for (int i = 0; i < DALlistResp.Count;i++ ){
+                
+                    Modelo.alternativaExercicio alterna = new Modelo.alternativaExercicio();
+                    DALAlternativaExercicio dalalterna = new DALAlternativaExercicio();
+                    alterna = dalalterna.Select(DALlistResp[i].idAlternativaExercicio)[0];
+
+                    Modelo.Exercicio exerc = new Modelo.Exercicio();
+                    DALExercicio dalexerc = new DALExercicio();
+                    exerc = dalexerc.Select(alterna.idExercicio)[0];
+
+                    if (idDificuldade == exerc.idDificuldade) AQUI.Add(DALlistResp[i]);
+                }
+            return AQUI;
         }
     }
 }

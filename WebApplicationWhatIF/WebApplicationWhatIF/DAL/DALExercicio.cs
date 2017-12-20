@@ -296,5 +296,64 @@ namespace WebApplicationWhatIF.DAL
             da.Fill(ds);
             return ds;
         }
+
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Exercicio> SelectAllIDdif(int idDific)
+        {
+            Modelo.Exercicio DALexercicio;
+            // Cria Lista Vazia
+            List<Modelo.Exercicio> DALlistExer = new List<Modelo.Exercicio>();
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand cmd = conn.CreateCommand();
+            // define SQL do comando
+            cmd.CommandText = "Select * from Exercicio Where idDificuldade = @idDificuldade";
+            cmd.Parameters.AddWithValue("@idDificuldade", idDific);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read()) // Le o proximo registro
+                {
+                    Modelo.Materia materia = new Modelo.Materia();
+                    DALMateria dalmateria = new DALMateria();
+                    materia = (dalmateria.Select(Convert.ToInt32(dr["idMateria"])))[0];
+                    // Cria objeto com dados lidos do banco de dados
+                    try
+                    {
+                        DALexercicio = new Modelo.Exercicio(
+                           Convert.ToInt32(dr["idExercicio"]),
+                            dr["titulo"].ToString(),
+                            dr["questao"].ToString(),
+                            (byte[])dr["fotoquestao"],
+                            Convert.ToInt32(dr["idMateria"]),
+                            Convert.ToInt32(dr["idDificuldade"]));
+                    }
+                    catch (InvalidCastException)
+                    {
+                        DALexercicio = new Modelo.Exercicio(
+                           Convert.ToInt32(dr["idExercicio"]),
+                            dr["titulo"].ToString(),
+                            dr["questao"].ToString(),
+                            null,
+                            Convert.ToInt32(dr["idMateria"]),
+                            Convert.ToInt32(dr["idDificuldade"]));
+                    }
+                    if (DALexercicio.idMateria != null)
+                        DALexercicio.materia = dalmateria.Select(DALexercicio.idMateria)[0];
+                    // Adiciona o livro lido à lista
+                    DALlistExer.Add(DALexercicio);
+                }
+            }
+            // Fecha DataReader
+            dr.Close();
+            // Fecha Conexão
+            conn.Close();
+
+            return DALlistExer;
+        }
     }
 }

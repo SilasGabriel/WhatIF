@@ -47,6 +47,18 @@
                     <br />
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormProgresso.aspx">Acompanhar progresso</asp:HyperLink>
                     </div>
+                    <table style="width:100%;">
+                        <tr>
+                            <td>FÁCIL</td>
+                            <td>MÉDIO</td>
+                            <td>DIFICIL</td>
+                        </tr>
+                        <tr>
+                            <td><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></td>
+                            <td><asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></td>
+                            <td><asp:Label ID="Label3" runat="server" Text="Label"></asp:Label></td>
+                        </tr>
+                    </table>
                 </center>
             </div>
         </body>

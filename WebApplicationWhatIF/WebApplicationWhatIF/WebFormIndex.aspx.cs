@@ -35,6 +35,32 @@ namespace WebApplicationWhatIF
             else {
                 Response.Redirect("~/WebFormAutenticar.aspx");
             }
+            double Qfacil = 0;
+            double QMedio = 0;
+            double QDificil = 0;
+            List<Modelo.Exercicio> exercicios = new List<Modelo.Exercicio>();
+            DAL.DALExercicio dalexe = new DAL.DALExercicio();
+            exercicios = dalexe.SelectAllIDdif(1);
+            List<Modelo.RespostaDoAlunoExercicio> resp = new List<Modelo.RespostaDoAlunoExercicio>();
+            DAL.DALRespostaDoAlunoExercicio dalresp = new DAL.DALRespostaDoAlunoExercicio();
+            resp = dalresp.SelectAllIdDif(1, Session["Nome"].ToString());
+
+            int aux1 = resp.Count;
+            int aux2 = exercicios.Count;
+            Qfacil = Math.Round(((1.0 * aux1 / aux2) * 100), 2);
+            exercicios = dalexe.SelectAllIDdif(2);
+            resp = dalresp.SelectAllIdDif(2, Session["Nome"].ToString());
+            aux1 = resp.Count;
+            aux2 = exercicios.Count;
+            QMedio = Math.Round(((1.0 * aux1 / aux2) * 100), 2);
+            exercicios = dalexe.SelectAllIDdif(3);
+            resp = dalresp.SelectAllIdDif(3, Session["Nome"].ToString());
+            aux1 = resp.Count;
+            aux2 = exercicios.Count;
+            QDificil = Math.Round(((1.0 * aux1 / aux2) * 100), 2);
+            Label1.Text = Qfacil.ToString()+"%";
+            Label2.Text = QMedio.ToString()+"%";
+            Label3.Text = QDificil.ToString()+"%";
         }
 
         protected void Logout_Click(object sender, EventArgs e)

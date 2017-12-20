@@ -35,5 +35,16 @@ namespace WebApplicationWhatIF.Modelo
             DAL.DALAlternativaExercicio dalalternativa = new DAL.DALAlternativaExercicio();
             alternativaexercicio = dalalternativa.Select(idAlternativaExercicio)[0];
         }
+        public RespostaDoAlunoExercicio(int idRespostaDoAlunoExercicio, string nome, int idAlternativaExercicio)
+        {
+            this.idRespostaDoAlunoExercicio = idRespostaDoAlunoExercicio;
+            aluno = new Aluno();
+            DAL.DALAluno dalaluno = new DAL.DALAluno();
+            aluno = dalaluno.Select(nome)[0];
+
+            alternativaexercicio = new alternativaExercicio();
+            DAL.DALAlternativaExercicio dalalternativa = new DAL.DALAlternativaExercicio();
+            alternativaexercicio = dalalternativa.Select(idAlternativaExercicio)[0];
+        }
     }
 }

@@ -177,6 +177,64 @@ namespace WebApplicationWhatIF.DAL
         }
         //Select
         [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Aluno> SelectIdAluno(int idAluno)
+        {
+            Modelo.Aluno DALaluno;
+            // Cria Lista Vazia
+            List<Modelo.Aluno> DALlistAlu = new List<Modelo.Aluno>();
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand cmd = conn.CreateCommand();
+            // define SQL do comando
+            cmd.CommandText = "Select * from Aluno Where idAluno = @idAluno";
+            cmd.Parameters.AddWithValue("@idAluno", idAluno);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+
+                while (dr.Read()) // Le o proximo registro
+                {
+                    // Cria objeto com dados lidos do banco de dados
+                    try
+                    {
+                        DALaluno = new Modelo.Aluno(
+                            Convert.ToInt32(dr["idAluno"]),
+                            dr["nome"].ToString(),
+                            dr["senha"].ToString(),
+                            dr["email"].ToString(),
+                            Convert.ToBoolean(dr["escolaPublica"]),
+                            Convert.ToBoolean(dr["administrador"]),
+                            (byte[])dr["fotoperfil"]
+                            );
+                    }
+                    catch (InvalidCastException)
+                    {
+                        DALaluno = new Modelo.Aluno(
+                            Convert.ToInt32(dr["idAluno"]),
+                            dr["nome"].ToString(),
+                            dr["senha"].ToString(),
+                            dr["email"].ToString(),
+                            Convert.ToBoolean(dr["escolaPublica"]),
+                            Convert.ToBoolean(dr["administrador"]),
+                            null
+                            );
+                    }
+                    // Adiciona a disciplina lida à lista
+                    DALlistAlu.Add(DALaluno);
+                }
+            }
+            // Fecha DataReader
+            dr.Close();
+            // Fecha Conexão
+            conn.Close();
+
+            return DALlistAlu;
+        }
+        //Select
+        [DataObjectMethod(DataObjectMethodType.Select)]
         public DataSet SelectData(string nome)
         {
             // Cria Lista Vazia

@@ -88,6 +88,9 @@
     <Content Include="WebFormModulo.aspx" />
     <Content Include="WebFormModuloEdit.aspx" />
     <Content Include="WebFormModuloNew.aspx" />
+    <Content Include="WebFormProgresso.aspx" />
+    <Content Include="WebFormProgressoDisciplina.aspx" />
+    <Content Include="WebFormProgressoModulo.aspx" />
     <Content Include="WebFormQuestãoDesafio.aspx" />
     <Content Include="WebFormTeste.aspx" />
     <Content Include="WebFormVerAluno.aspx" />
@@ -102,6 +105,8 @@
     <Compile Include="DAL\DALExercicio.cs" />
     <Compile Include="DAL\DALMateria.cs" />
     <Compile Include="DAL\DALModulo.cs" />
+    <Compile Include="DAL\DALRespostaDoAlunoDesafio.cs" />
+    <Compile Include="DAL\DALRespostaDoAlunoExercicio.cs" />
     <Compile Include="HandlerAluno.ashx.cs">
       <DependentUpon>HandlerAluno.ashx</DependentUpon>
     </Compile>
@@ -304,6 +309,27 @@
     </Compile>
     <Compile Include="WebFormModuloNew.aspx.designer.cs">
       <DependentUpon>WebFormModuloNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormProgresso.aspx.cs">
+      <DependentUpon>WebFormProgresso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormProgresso.aspx.designer.cs">
+      <DependentUpon>WebFormProgresso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormProgressoDisciplina.aspx.cs">
+      <DependentUpon>WebFormProgressoDisciplina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormProgressoDisciplina.aspx.designer.cs">
+      <DependentUpon>WebFormProgressoDisciplina.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormProgressoModulo.aspx.cs">
+      <DependentUpon>WebFormProgressoModulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormProgressoModulo.aspx.designer.cs">
+      <DependentUpon>WebFormProgressoModulo.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormQuestãoDesafio.aspx.cs">
       <DependentUpon>WebFormQuestãoDesafio.aspx</DependentUpon>

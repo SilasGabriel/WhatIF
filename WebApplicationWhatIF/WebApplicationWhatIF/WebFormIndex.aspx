@@ -44,6 +44,8 @@
                 <center>
                     <div style="height: 20%">
                     <img id="Img1" src="Images/logo.png" style="height:20%; width:20%" runat="server" />
+                    <br />
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormProgresso.aspx">Acompanhar progresso</asp:HyperLink>
                     </div>
                 </center>
             </div>

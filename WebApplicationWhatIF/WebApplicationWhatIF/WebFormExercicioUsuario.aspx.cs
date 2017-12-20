@@ -638,262 +638,1003 @@ namespace WebApplicationWhatIF
             List<Modelo.Exercicio> exercicios = new List<Modelo.Exercicio>();
             DAL.DALExercicio dalexercicio = new DAL.DALExercicio();
             exercicios = dalexercicio.SelectAllIdMateria(Convert.ToInt32(Request.QueryString["idMateria"]));
+            
             DAL.DALAlternativaExercicio dalalterna = new DAL.DALAlternativaExercicio();
+            List<Modelo.alternativaExercicio> alterna;
+
+            DAL.DALRespostaDoAlunoExercicio dalresposta = new DAL.DALRespostaDoAlunoExercicio();
+            Modelo.RespostaDoAlunoExercicio resposta;
+            string nome = Session["Nome"].ToString();
             for (int j = 0; j < exercicios.Count; j++)
             {
                 if (j == 0)
                 {
+                    alterna = new List<Modelo.alternativaExercicio>();
+                    alterna = dalalterna.SelectAll(exercicios[j].idExercicio);
                     for (int i = 0; i < dalalterna.calcAlterna(exercicios[j].idExercicio); i++)
                     {
                         if (i == 0)
                         {
                             if ((RadioButton1.Font.Name == "Arial") && (RadioButton1.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label26.Text = "&#10003;";
                                 break;
                             }
-                            else Label26.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton2.Checked) && (RadioButton2.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[1].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton3.Checked) && (RadioButton3.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[2].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton4.Checked) && (RadioButton4.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[3].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton5.Checked) && (RadioButton5.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[4].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                         if (i == 1)
                         {
                             if ((RadioButton2.Font.Name == "Arial") && (RadioButton2.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label26.Text = "&#10003;";
                                 break;
                             }
-                            else Label26.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton1.Checked) && (RadioButton1.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[0].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton3.Checked) && (RadioButton3.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[2].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton4.Checked) && (RadioButton4.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[3].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton5.Checked) && (RadioButton5.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[4].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                         if (i == 2)
                         {
                             if ((RadioButton3.Font.Name == "Arial") && (RadioButton3.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label26.Text = "&#10003;";
                                 break;
                             }
-                            else Label26.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton1.Checked) && (RadioButton1.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[0].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton2.Checked) && (RadioButton2.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[1].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton4.Checked) && (RadioButton4.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[3].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton5.Checked) && (RadioButton5.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[4].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                         if (i == 3)
                         {
                             if ((RadioButton4.Font.Name == "Arial") && (RadioButton4.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label26.Text = "&#10003;";
                                 break;
                             }
-                            else Label26.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton1.Checked) && (RadioButton1.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[0].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton2.Checked) && (RadioButton2.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[1].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton3.Checked) && (RadioButton3.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[2].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton5.Checked) && (RadioButton5.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[4].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                         if (i == 4)
                         {
                             if ((RadioButton5.Font.Name == "Arial") && (RadioButton5.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label26.Text = "&#10003;";
                                 break;
                             }
-                            else Label26.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton1.Checked) && (RadioButton1.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[0].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton2.Checked) && (RadioButton2.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[1].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton3.Checked) && (RadioButton3.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[2].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton4.Checked) && (RadioButton4.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[3].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                     }
                 }
                 
                 if (j == 1) {
+                    alterna = new List<Modelo.alternativaExercicio>();
+                    alterna = dalalterna.SelectAll(exercicios[j].idExercicio);
                     for (int i = 0; i < dalalterna.calcAlterna(exercicios[j].idExercicio); i++)
                     {
                         if (i == 0)
                         {
                             if ((RadioButton6.Font.Name == "Arial") && (RadioButton6.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label27.Text = "&#10003;";
                                 break;
                             }
-                            else Label27.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton7.Checked) && (RadioButton7.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[1].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label27.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton8.Checked) && (RadioButton8.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[2].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label27.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton9.Checked) && (RadioButton9.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[3].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label27.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton10.Checked) && (RadioButton10.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[4].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label27.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                         if (i == 1)
                         {
                             if ((RadioButton7.Font.Name == "Arial") && (RadioButton7.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label27.Text = "&#10003;";
                                 break;
                             }
-                            else Label27.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton6.Checked) && (RadioButton6.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[0].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton8.Checked) && (RadioButton8.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[2].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton9.Checked) && (RadioButton9.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[3].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton10.Checked) && (RadioButton10.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[4].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label26.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                         if (i == 2)
                         {
                             if ((RadioButton8.Font.Name == "Arial") && (RadioButton8.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label27.Text = "&#10003;";
                                 break;
                             }
-                            else Label27.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton6.Checked) && (RadioButton6.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[0].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label27.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton7.Checked) && (RadioButton7.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[1].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label27.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton9.Checked) && (RadioButton9.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[3].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label27.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton10.Checked) && (RadioButton10.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[4].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label27.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                         if (i == 3)
                         {
                             if ((RadioButton9.Font.Name == "Arial") && (RadioButton9.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label27.Text = "&#10003;";
                                 break;
                             }
-                            else Label27.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton6.Checked) && (RadioButton6.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[0].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label27.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton7.Checked) && (RadioButton7.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[1].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label27.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton8.Checked) && (RadioButton8.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[2].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label27.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton10.Checked) && (RadioButton10.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[4].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label27.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                         if (i == 4)
                         {
                             if ((RadioButton10.Font.Name == "Arial") && (RadioButton10.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label27.Text = "&#10003;";
                                 break;
                             }
-                            else Label27.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton6.Checked) && (RadioButton6.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[0].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label27.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton7.Checked) && (RadioButton7.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[1].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label27.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton8.Checked) && (RadioButton8.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[2].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label27.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton9.Checked) && (RadioButton9.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[3].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label27.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                     }
                 }
 
                 if (j == 2) {
+                    alterna = new List<Modelo.alternativaExercicio>();
+                    alterna = dalalterna.SelectAll(exercicios[j].idExercicio);
                     for (int i = 0; i < dalalterna.calcAlterna(exercicios[j].idExercicio); i++)
                     {
                         if (i == 0)
                         {
                             if ((RadioButton11.Font.Name == "Arial") && (RadioButton11.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label28.Text = "&#10003;";
                                 break;
                             }
-                            else Label28.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton12.Checked) && (RadioButton12.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[1].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label28.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton13.Checked) && (RadioButton13.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[2].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label28.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton14.Checked) && (RadioButton14.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[3].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label28.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton15.Checked) && (RadioButton15.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[4].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label28.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                         if (i == 1)
                         {
                             if ((RadioButton12.Font.Name == "Arial") && (RadioButton12.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label28.Text = "&#10003;";
                                 break;
                             }
-                            else Label28.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton11.Checked) && (RadioButton11.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[0].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label28.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton13.Checked) && (RadioButton13.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[2].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label28.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton14.Checked) && (RadioButton14.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[3].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label28.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton15.Checked) && (RadioButton15.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[4].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label28.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                         if (i == 2)
                         {
                             if ((RadioButton13.Font.Name == "Arial") && (RadioButton13.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label28.Text = "&#10003;";
                                 break;
                             }
-                            else Label28.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton11.Checked) && (RadioButton11.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[0].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label28.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton12.Checked) && (RadioButton12.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[1].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label28.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton14.Checked) && (RadioButton14.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[3].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label28.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton15.Checked) && (RadioButton15.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[4].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label28.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                         if (i == 3)
                         {
                             if ((RadioButton14.Font.Name == "Arial") && (RadioButton14.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label28.Text = "&#10003;";
                                 break;
                             }
-                            else Label28.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton11.Checked) && (RadioButton11.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[0].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label28.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton12.Checked) && (RadioButton12.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[1].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label28.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton13.Checked) && (RadioButton13.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[2].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label28.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton15.Checked) && (RadioButton15.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[4].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label28.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                         if (i == 4)
                         {
                             if ((RadioButton15.Font.Name == "Arial") && (RadioButton15.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label28.Text = "&#10003;";
                                 break;
                             }
-                            else Label28.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton11.Checked) && (RadioButton11.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[0].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label28.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton12.Checked) && (RadioButton12.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[1].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label28.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton13.Checked) && (RadioButton13.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[2].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label28.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton14.Checked) && (RadioButton14.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[3].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label28.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                     }
                 }
 
                 if (j == 3) {
+                    alterna = new List<Modelo.alternativaExercicio>();
+                    alterna = dalalterna.SelectAll(exercicios[j].idExercicio);
                     for (int i = 0; i < dalalterna.calcAlterna(exercicios[j].idExercicio); i++)
                     {
                         if (i == 0)
                         {
                             if ((RadioButton16.Font.Name == "Arial") && (RadioButton16.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label29.Text = "&#10003;";
                                 break;
                             }
-                            else Label29.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton17.Checked) && (RadioButton17.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[1].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label29.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton18.Checked) && (RadioButton18.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[2].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label29.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton19.Checked) && (RadioButton19.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[3].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label29.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton20.Checked) && (RadioButton20.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[4].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label29.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                         if (i == 1)
                         {
                             if ((RadioButton17.Font.Name == "Arial") && (RadioButton17.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label29.Text = "&#10003;";
                                 break;
                             }
-                            else Label29.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton16.Checked) && (RadioButton16.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[0].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label29.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton18.Checked) && (RadioButton18.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[2].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label29.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton19.Checked) && (RadioButton19.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[3].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label29.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton20.Checked) && (RadioButton20.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[4].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label29.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                         if (i == 2)
                         {
                             if ((RadioButton18.Font.Name == "Arial") && (RadioButton18.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label29.Text = "&#10003;";
                                 break;
                             }
-                            else Label29.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton16.Checked) && (RadioButton16.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[0].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label29.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton17.Checked) && (RadioButton17.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[1].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label29.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton19.Checked) && (RadioButton19.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[3].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label29.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton20.Checked) && (RadioButton20.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[4].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label29.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                         if (i == 3)
                         {
                             if ((RadioButton19.Font.Name == "Arial") && (RadioButton19.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label29.Text = "&#10003;";
                                 break;
                             }
-                            else Label29.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton16.Checked) && (RadioButton16.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[0].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label29.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton17.Checked) && (RadioButton17.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[1].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label29.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton18.Checked) && (RadioButton18.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[2].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label29.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton20.Checked) && (RadioButton20.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[4].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label29.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                         if (i == 4)
                         {
                             if ((RadioButton20.Font.Name == "Arial") && (RadioButton20.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label29.Text = "&#10003;";
                                 break;
                             }
-                            else Label29.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton16.Checked) && (RadioButton16.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[0].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label29.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton17.Checked) && (RadioButton17.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[1].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label29.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton18.Checked) && (RadioButton18.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[2].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label29.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton19.Checked) && (RadioButton19.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[3].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label29.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                     }
                 }
 
                 if (j == 4) 
                 {
+                    alterna = new List<Modelo.alternativaExercicio>();
+                    alterna = dalalterna.SelectAll(exercicios[j].idExercicio);
                     for (int i = 0; i < dalalterna.calcAlterna(exercicios[j].idExercicio); i++)
                     {
                         if (i == 0)
                         {
                             if ((RadioButton21.Font.Name == "Arial") && (RadioButton21.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label30.Text = "&#10003;";
                                 break;
                             }
-                            else Label30.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton22.Checked) && (RadioButton22.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[1].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label30.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton23.Checked) && (RadioButton23.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[2].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label30.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton24.Checked) && (RadioButton24.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[3].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label30.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton25.Checked) && (RadioButton25.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[4].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label30.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                         if (i == 1)
                         {
                             if ((RadioButton22.Font.Name == "Arial") && (RadioButton22.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label30.Text = "&#10003;";
                                 break;
                             }
-                            else Label30.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton21.Checked) && (RadioButton21.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[0].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label30.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton23.Checked) && (RadioButton23.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[2].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label30.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton24.Checked) && (RadioButton24.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[3].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label30.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton25.Checked) && (RadioButton25.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[4].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label30.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                         if (i == 2)
                         {
                             if ((RadioButton23.Font.Name == "Arial") && (RadioButton23.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label30.Text = "&#10003;";
                                 break;
                             }
-                            else Label30.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton21.Checked) && (RadioButton21.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[0].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label30.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton22.Checked) && (RadioButton22.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[1].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label30.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton24.Checked) && (RadioButton24.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[3].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label30.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton25.Checked) && (RadioButton25.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[4].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label30.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                         if (i == 3)
                         {
                             if ((RadioButton24.Font.Name == "Arial") && (RadioButton24.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label30.Text = "&#10003;";
                                 break;
                             }
-                            else Label30.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton21.Checked) && (RadioButton21.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[0].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label30.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton22.Checked) && (RadioButton22.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[1].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label30.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton23.Checked) && (RadioButton23.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[2].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label30.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton25.Checked) && (RadioButton25.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[4].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label30.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                         if (i == 4)
                         {
                             if ((RadioButton25.Font.Name == "Arial") && (RadioButton25.Checked))
                             {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[i].idAlternativa);
+                                dalresposta.Insert(resposta);
                                 Label30.Text = "&#10003;";
                                 break;
                             }
-                            else Label30.Text = "<g style='color: red;'>X</g>";
+                            else if ((RadioButton21.Checked) && (RadioButton21.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[0].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label30.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton22.Checked) && (RadioButton22.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[1].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label30.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton23.Checked) && (RadioButton23.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[2].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label30.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
+                            else if ((RadioButton24.Checked) && (RadioButton24.Font.Name != "Arial"))
+                            {
+                                resposta = new Modelo.RespostaDoAlunoExercicio(nome, alterna[3].idAlternativa);
+                                dalresposta.Insert(resposta);
+                                Label30.Text = "<g style='color: red;'>X</g>";
+                                break;
+                            }
                         }
                     }
                 }

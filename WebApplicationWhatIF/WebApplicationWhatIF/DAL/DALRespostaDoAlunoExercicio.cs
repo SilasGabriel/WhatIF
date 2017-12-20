@@ -100,7 +100,7 @@ namespace WebApplicationWhatIF.DAL
                         resp = dalresp.Select(alternativa.idAlternativa, nome);
                         if (resp.Count > 0)
                         {
-                            if (resp[0].alternativaexercicio.correta) cont[0]++;
+                            if (alternativa.correta) cont[0]++;
                             else cont[1]++;
                         }
                     }
@@ -137,7 +137,7 @@ namespace WebApplicationWhatIF.DAL
                             resp = dalresp.Select(alternativa.idAlternativa, nome);
                             if (resp.Count > 0)
                             {
-                                if (resp[0].alternativaexercicio.correta) cont[0]++;
+                                if (alternativa.correta) cont[0]++;
                                 else cont[1]++;
                             }
                         }

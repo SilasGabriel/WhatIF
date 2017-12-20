@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
     <div>
         <h1>Acompanhar progresso por Módulo</h1><br />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None" Height="199px" OnRowCommand="GridView1_RowCommand" Width="521px">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None" Height="199px" OnRowCommand="GridView1_RowCommand" Width="521px" AllowPaging="True" PageSize="5">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="idModulo" HeaderText="idModulo" SortExpression="idModulo" />

@@ -38,6 +38,7 @@ namespace WebApplicationWhatIF
             double Qfacil = 0;
             double QMedio = 0;
             double QDificil = 0;
+            double QTotal = 0;
             List<Modelo.Exercicio> exercicios = new List<Modelo.Exercicio>();
             DAL.DALExercicio dalexe = new DAL.DALExercicio();
             exercicios = dalexe.SelectAllIDdif(1);
@@ -45,22 +46,27 @@ namespace WebApplicationWhatIF
             DAL.DALRespostaDoAlunoExercicio dalresp = new DAL.DALRespostaDoAlunoExercicio();
             resp = dalresp.SelectAllIdDif(1, Session["Nome"].ToString());
 
-            int aux1 = resp.Count;
-            int aux2 = exercicios.Count;
-            Qfacil = Math.Round(((1.0 * aux1 / aux2) * 100), 2);
+            int aux1 = 0;
+            int aux2 = 0;
+            aux1 += resp.Count;
+            aux2 += exercicios.Count;
+            Qfacil = Math.Round(((1.0 * resp.Count / exercicios.Count) * 100), 2);
             exercicios = dalexe.SelectAllIDdif(2);
             resp = dalresp.SelectAllIdDif(2, Session["Nome"].ToString());
-            aux1 = resp.Count;
-            aux2 = exercicios.Count;
-            QMedio = Math.Round(((1.0 * aux1 / aux2) * 100), 2);
+            aux1 += resp.Count;
+            aux2 += exercicios.Count;
+            QMedio = Math.Round(((1.0 * resp.Count / exercicios.Count) * 100), 2);
             exercicios = dalexe.SelectAllIDdif(3);
             resp = dalresp.SelectAllIdDif(3, Session["Nome"].ToString());
-            aux1 = resp.Count;
-            aux2 = exercicios.Count;
-            QDificil = Math.Round(((1.0 * aux1 / aux2) * 100), 2);
-            Label1.Text = Qfacil.ToString()+"%";
-            Label2.Text = QMedio.ToString()+"%";
-            Label3.Text = QDificil.ToString()+"%";
+            aux1 += resp.Count;
+            aux2 += exercicios.Count;
+            QDificil = Math.Round(((1.0 * resp.Count / exercicios.Count) * 100), 2);
+
+            QTotal = Math.Round(((1.0 * aux1 / aux2) * 100), 2);
+            Label1.Text = Qfacil.ToString() + "%";
+            Label2.Text = QMedio.ToString() + "%";
+            Label3.Text = QDificil.ToString() + "%";
+            Label4.Text = QTotal.ToString() + "%";
         }
 
         protected void Logout_Click(object sender, EventArgs e)

@@ -45,9 +45,21 @@
                     <div style="height: 20%">
                     <img id="Img1" src="Images/logo.png" style="height:20%; width:20%" runat="server" />
                     <br />
-                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormProgresso.aspx">Acompanhar progresso</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormProgresso.aspx">Acompanhar progresso detalhado</asp:HyperLink>
                     </div>
-                    <table style="width:100%;">
+                    <center>
+                    <table style="width:50%;">
+                        <center>
+
+                        <tr>
+                            <td></td>
+                            <td>PORCENTAGEM DE CONCLUSÃO</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><asp:Label ID="Label4" runat="server" Text="Label"></asp:Label></td>
+                            
+                        </tr>
                         <tr>
                             <td>FÁCIL</td>
                             <td>MÉDIO</td>
@@ -58,7 +70,9 @@
                             <td><asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></td>
                             <td><asp:Label ID="Label3" runat="server" Text="Label"></asp:Label></td>
                         </tr>
+                            </center>
                     </table>
+                        </center>
                 </center>
             </div>
         </body>

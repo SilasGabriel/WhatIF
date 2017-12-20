@@ -98,3 +98,8 @@ C:\Users\Silas\Desktop\Projeto\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\
 C:\Users\Silas\Desktop\Projeto\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.csprojResolveAssemblyReference.cache
 C:\Users\Silas\Desktop\Projeto\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.dll
 C:\Users\Silas\Desktop\Projeto\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.pdb
+C:\Users\20151011110171\Desktop\123\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\bin\WebApplicationWhatIF.dll
+C:\Users\20151011110171\Desktop\123\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\bin\WebApplicationWhatIF.pdb
+C:\Users\20151011110171\Desktop\123\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.csprojResolveAssemblyReference.cache
+C:\Users\20151011110171\Desktop\123\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.dll
+C:\Users\20151011110171\Desktop\123\WhatIF\WebApplicationWhatIF\WebApplicationWhatIF\obj\Debug\WebApplicationWhatIF.pdb

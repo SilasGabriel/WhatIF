@@ -1,14 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormProgresso.aspx.cs" Inherits="WebApplicationWhatIF.WebFormProgresso" %>
-
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPageAluno.Master"  AutoEventWireup="true" CodeBehind="WebFormProgresso.aspx.cs" Inherits="WebApplicationWhatIF.WebFormProgresso" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head>
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
+    <div style="margin-top:5%;">
         <h1>Acompanhar progresso por Módulo</h1><br />
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None" Height="199px" OnRowCommand="GridView1_RowCommand" Width="521px" AllowPaging="True" PageSize="5">
             <AlternatingRowStyle BackColor="White" />
@@ -56,6 +57,6 @@
         <br />
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormIndex.aspx">Voltar</asp:HyperLink>
     </div>
-    </form>
 </body>
 </html>
+    </asp:Content>
